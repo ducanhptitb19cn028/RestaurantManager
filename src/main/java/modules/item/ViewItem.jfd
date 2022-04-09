@@ -1,0 +1,55 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, comp scrollPane1::::378:x, space :::p}, seq l {space :p:160:p, comp backbtn:::p::p, space ::183:x}}"
+			"$verticalGroup": "par l {seq l {space :p:50:p, comp scrollPane1::::105:x, space :p:66:p, comp backbtn:::p::p, space :p:104:p}}"
+		} ) {
+			name: "this"
+			"title": "Item"
+			"background": new java.awt.Color( 255, 255, 153, 255 )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				"background": new java.awt.Color( 255, 255, 153, 255 )
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "itemtb"
+					"dropMode": enum javax.swing.DropMode INSERT_ROWS
+					"autoResizeMode": 4
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "name" )
+						add( "price" )
+						add( "quantity" )
+						add( "import_date" )
+					}, new java.util.Vector {
+						add( class java.lang.String )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+					"selectionForeground": new java.awt.Color( 255, 255, 153, 255 )
+					"background": new java.awt.Color( 255, 255, 153, 255 )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 380 )
+		} )
+	}
+}

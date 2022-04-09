@@ -1,0 +1,55 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:111:p, comp loginbtn:::p::p, space :p:35:p, comp signupbtn:::p::p}, seq l {space :p:25:p, par t {comp restauranticon:::p::p, par l {comp label1::l:p::p, comp label2::l:p::p}}, space :p:39:p, par l:::p {comp tfUsername::::203:x, comp tfPassword::::203:x}}}, space ::60:x}, seq t {space :::x, comp restaurant:::p:233:p, space :p:47:p}}"
+			"$verticalGroup": "par l {seq l {par l {seq {space :p:44:p, comp restaurant:::p::p, space :p:35:p}, seq t {space :::p, comp restauranticon:::p::p, space :p:26:p}}, par b {comp label1::b:p::p, comp tfUsername::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfPassword::b:p::p}, space :p:32:p, par b {comp loginbtn::b:p::p, comp signupbtn::b:p::p}, space ::19:x}}"
+		} ) {
+			name: "this"
+			"title": "Login"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "restaurant"
+				"text": "Đức Anh's Restaurant"
+				"font": new java.awt.Font( "Segoe UI", 1, 22 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Username:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfUsername"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Password:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "tfPassword"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "loginbtn"
+				"text": "Log in"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "loginbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "signupbtn"
+				"text": "Sign up"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "signupbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "restauranticon"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/images/restaurant.png" )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 220, 50 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

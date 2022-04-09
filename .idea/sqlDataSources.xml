@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="ac4c663b-afc7-4387-ac57-a2fbaa63a4df" name="myrestaurant@localhost Mapping">
+      <data-sources db="d7022632-bb1d-4878-a4b5-c1fab6fe4db3" />
+      <scope>
+        <node kind="schema">
+          <name qname="murach" />
+          <name qname="myrestaurant" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>

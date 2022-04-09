@@ -1,0 +1,87 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp scrollPane1::l::436:x, seq {par l {comp label1::l:p::p, comp label2::l:p::p, comp label3::l:p::p, comp label4::l:p::p}, space s:::p, par l {comp tfNewprice::::250:x, comp tfNewname::l::250:x, comp tfName::l::250:x, comp tfNewQuantity::l::250:x}}}, space :::p}, seq l {space :p:109:p, comp updatebtn:::p::p, space :p:94:p, comp backbtn:::p::p, space ::89:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:122:p, space s:::p, par b {comp label1::b:p::p, comp tfName::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfNewname::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfNewprice::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp tfNewQuantity::b:p::p}, space ::34:x, par b {comp updatebtn::b:p::p, comp backbtn::b:p::p}, space :p:54:p}}"
+		} ) {
+			name: "this"
+			"title": "Update items in stock"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "itemtb"
+					"dropMode": enum javax.swing.DropMode INSERT_ROWS
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "name" )
+						add( "price" )
+						add( "quantity" )
+						add( "import_date" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Enter item that need updating"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "New name:"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "New price:"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "New quantity:"
+				"font": new java.awt.Font( "Segoe UI", 1, 12 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfName"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfNewname"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfNewprice"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfNewQuantity"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "updatebtn"
+				"text": "Update"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "updatebtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 450, 470 )
+		} )
+	}
+}

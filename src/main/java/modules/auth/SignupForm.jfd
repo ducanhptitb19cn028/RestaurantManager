@@ -1,0 +1,99 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:39:p, par l {seq {par l {comp iconlb::l:p::p, comp namelb::l:p::p, comp emaillb::l:p::p, comp phonelb::l:p::p, comp label4::l:p::p}, space :p:90:p, par l:::p {comp label1:::p::p, comp tfName::l:::x, comp tfEmail::l:::x, seq t {par t {comp tfPhone::l:::x, comp tfPosition:::::x}, space :p:44:p}}}, par t:l::p {seq {comp label2:::p::p, space :::x, comp tfPassword:::p:234:p}, seq l {comp usernamelb:::p::p, space :p:77:p, comp tfUsername:::p:234:p}}, seq l {comp label3:::p::p, space :p:22:p, comp tfConfirm:::p:234:p}}}, seq l {space :p:127:p, comp signupbtn:::p::p, space :p:63:p, comp Cancelbtn:::p::p}}, space ::23:x}}"
+			"$verticalGroup": "par l {seq l {space :p:27:p, par l {comp iconlb:::p::p, seq l {space :p:9:p, comp label1:::p::p}}, space s:::p, par b {comp namelb::b:p::p, comp tfName::b:p::p}, space s:::p, par b {comp tfEmail::b:p::p, comp emaillb::b:p::p}, space s:::p, par b {comp tfPhone::b:p::p, comp phonelb::b:p::p}, space s:::p, par l {comp tfPosition:::p::p, comp label4:::p::p}, space ::9:x, par b {comp usernamelb::b:p::p, comp tfUsername::b:p::p}, space s:::p, par t {comp label2:::p::p, comp tfPassword:::p::p}, space u:::p, par b {comp label3::b:p::p, comp tfConfirm::b:p::p}, space ::56:x, par b {comp signupbtn::b:p::p, comp Cancelbtn::b:p::p}, space :p:14:p}}"
+		} ) {
+			name: "this"
+			"foreground": new java.awt.Color( 0, 146, 143, 255 )
+			"title": "Sign up"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "iconlb"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/images/signup.png" )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Welcome to the restaurant"
+				"font": new java.awt.Font( "Javanese Text", 1, 22 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "namelb"
+				"text": "Name:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "emaillb"
+				"text": "Email:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfName"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfEmail"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "phonelb"
+				"text": "Phone:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfPhone"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "usernamelb"
+				"text": "Username:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfUsername"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Password:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "tfPassword"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Confirm password:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "tfConfirm"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "signupbtn"
+				"text": "Sign up"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "signupbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Cancelbtn"
+				"text": "Cancel"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Cancelbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Position:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfPosition"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 75, 10 )
+			"size": new java.awt.Dimension( 490, 540 )
+		} )
+	}
+}

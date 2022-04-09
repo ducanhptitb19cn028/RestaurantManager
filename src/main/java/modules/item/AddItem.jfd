@@ -1,0 +1,54 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:36:p, par l {comp label1::l:p::p, comp label2::l:p::p, comp label3::l:p::p}, space :p:32:p, par l:::p {comp tfItemname::::172:x, comp tfItemprice::::172:x, comp tfItemquantity::::172:x}}, seq l {space :p:108:p, comp backbtn:::p::p, space s:::p, comp Addbtn:::p::p}}, space ::65:x}}"
+			"$verticalGroup": "par l {seq l {space :p:47:p, par b {comp label1::b:p::p, comp tfItemname::b:p::p}, space u:::p, par b {comp label2::b:p::p, comp tfItemprice::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp tfItemquantity::b:p::p}, space :p:39:p, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space ::38:x}}"
+		} ) {
+			name: "this"
+			"title": "Add item"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Item name:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfItemname"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Item price:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfItemprice"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Item quantity:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfItemquantity"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Addbtn"
+				"text": "Add"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Addbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
