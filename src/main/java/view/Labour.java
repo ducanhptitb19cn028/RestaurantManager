@@ -1,23 +1,29 @@
 package view;
 
-public class Labour {
-    private String id;
-    private String name;
-    private double salary;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
-    public Labour(String id, String name, double salary) {
-        this.id = id;
+public class Labour implements Serializable {
+    public String email;
+    public String date_ofBirth;
+    public String phone;
+    public String address;
+    public String position;
+    public String name;
+
+    public BigDecimal salary;
+
+    public Labour(String name,String date_ofBirth ,String email,String phone,String address,String position, BigDecimal salary) {
         this.name = name;
+        this.date_ofBirth = date_ofBirth;
+        this.email=email;
+        this.phone = phone;
+        this.address = address;
+        this.position = position;
         this.salary = salary;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -25,13 +31,5 @@ public class Labour {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
     }
 }

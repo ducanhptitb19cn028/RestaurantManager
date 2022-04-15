@@ -24,37 +24,36 @@ public class AddItem extends JFrame {
 
     private void backbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         ItemManager im = new ItemManager();
         im.setVisible(true);
     }
     private void Addbtn(ActionEvent e) {
         // TODO add your code here
-        String name = tfItemname.getText();
-        String price = tfItemprice.getText();
-        String quantity = tfItemquantity.getText();
-        BigDecimal pr = BigDecimal.valueOf(Long.parseLong(price));
-        Integer quant = Integer.valueOf(quantity);
-        Date dtToday = new java.util.Date();
-        java.sql.Date date = new java.sql.Date(dtToday.getTime());
-        if(name.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Item name cannot be empty","Try again",JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if(price.isEmpty() || !price.chars().allMatch( Character::isDigit) ||
-                Double.parseDouble(price) <= 0) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid price for the item","Try again",JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if(quantity.isEmpty() || !quantity.chars().allMatch( Character::isDigit)
-                || Integer.parseInt(quantity) <=0) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid quantity for the item","Try again",JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        itemController.addItem(name,pr,quant,date);
-        tfItemname.setText("");
-        tfItemprice.setText("");
-        tfItemquantity.setText("");
-        JOptionPane.showMessageDialog(this, "Item has been added");
+            String name = tfItemname.getText();
+            String price = tfItemprice.getText();
+            String quantity = tfItemquantity.getText();
+            BigDecimal pr = BigDecimal.valueOf(Long.parseLong(price));
+            Integer quant = Integer.valueOf(quantity);
+            Date dtToday = new java.util.Date();
+            java.sql.Date date = new java.sql.Date(dtToday.getTime());
+            if(name.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Item name cannot be empty","Try again",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if(price.isEmpty() || !price.chars().allMatch( Character::isDigit) ||
+                    Double.parseDouble(price) <= 0) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid price for the item","Try again",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if(quantity.isEmpty() || !quantity.chars().allMatch( Character::isDigit)
+                    || Integer.parseInt(quantity) <=0) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid quantity for the item","Try again",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            itemController.addItem(name,pr,quant,date);
+            JOptionPane.showMessageDialog(this, "Item has been added");
+
     }
 
     private void initComponents() {

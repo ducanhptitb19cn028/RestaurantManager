@@ -22,9 +22,9 @@ public class ViewItem extends JFrame {
     public ViewItem() {
 
         initComponents();
-        InsertDatabasetoTable();
+        InsertDatabaseintoTable();
     }
-    public void InsertDatabasetoTable(){
+    public void InsertDatabaseintoTable(){
         Object[] ob = new Object[10];
         DefaultTableModel table = (DefaultTableModel)itemtb.getModel();
         try {

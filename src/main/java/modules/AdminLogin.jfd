@@ -1,0 +1,49 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:29:p, comp label1:::p::p}, seq t {space :::p, par l {comp label2::l:p::p, comp label3::l:p::p}, space ::32:x, par l:::p {comp tfUsername::::279:x, comp tfPassword::::279:x}}}, space :p:35:p}, seq l {space :p:94:p, comp adminbtn:::p::p, space :p:62:p, comp backbtn:::p::p, space ::111:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp label1:::p:51:p, space :p:28:p, par b {comp label2::b:p::p, comp tfUsername::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfPassword::b:p::p}, space :p:33:p, par b {comp adminbtn::b:p::p, comp backbtn::b:p::p}, space ::42:x}}"
+		} ) {
+			name: "this"
+			"title": "Admin login"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Only owner can access this function"
+				"font": new java.awt.Font( "Segoe UI", 1, 20 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Username:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Password:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfUsername"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "tfPassword"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "adminbtn"
+				"text": "Login"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "adminbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 215, 25 )
+			"size": new java.awt.Dimension( 425, 300 )
+		} )
+	}
+}

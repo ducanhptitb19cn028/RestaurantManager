@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="" />
+    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/LabourController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/AdminLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/AdminLogin.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/AddLabour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/AddLabour.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/labour.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/MainMenu.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/MainMenu.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/AddItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/AddItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/DeleteItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/DeleteItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/DeleteItem.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/DeleteItem.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/ItemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/ItemManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/UpdateItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/UpdateItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/ViewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/ViewItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/labour/LabourManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/labour/LabourManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/labour/LabourManager.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/labour/LabourManager.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Labour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Labour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/databasecreated/tableitems.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databasecreated/tableitems.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +47,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Restaurant-manager-app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/console.sql" root0="SKIP_INSPECTION" />
@@ -36,7 +64,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -59,19 +87,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ChangesTree.GroupingKeys" value="directory" />
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/RestaurantManager/src/main/resources/images",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
+    ]
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\RestaurantManager\src\main\resources\images" />
@@ -83,39 +110,18 @@
       <recent name="D:\RestaurantManager\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Login">
-    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="modules.auth.Login" />
-      <module name="RestaurantManager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="modules.auth.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignupForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="modules.auth.SignupForm" />
-      <module name="RestaurantManager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="modules.auth.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Login" />
-        <item itemvalue="Application.SignupForm" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -139,6 +145,15 @@
       <workItem from="1649465907068" duration="9563000" />
       <workItem from="1649478801873" duration="369000" />
       <workItem from="1649479418043" duration="1131000" />
+      <workItem from="1649481214736" duration="2026000" />
+      <workItem from="1649684545027" duration="1482000" />
+      <workItem from="1649814686062" duration="597000" />
+      <workItem from="1649839308554" duration="13302000" />
+      <workItem from="1649896492305" duration="1127000" />
+      <workItem from="1649903898699" duration="5223000" />
+      <workItem from="1649911809681" duration="3933000" />
+      <workItem from="1649947162055" duration="7608000" />
+      <workItem from="1649984944258" duration="11582000" />
     </task>
     <servers />
   </component>
@@ -179,6 +194,14 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="3" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

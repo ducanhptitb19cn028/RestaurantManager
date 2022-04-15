@@ -4,6 +4,8 @@
 
 package modules.item;
 
+import modules.MainMenu;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -19,26 +21,37 @@ public class ItemManager extends JFrame {
 
     private void additembtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         AddItem ai = new AddItem();
         ai.setVisible(true);
     }
 
     private void updatebtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
+        UpdateItem ai = new UpdateItem();
+        ai.setVisible(true);
     }
 
     private void deleteitembtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
+        DeleteItem di = new DeleteItem();
+        di.setVisible(true);
     }
 
     private void viewitemlistbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         ViewItem vi = new ViewItem();
         vi.setVisible(true);
     }
 
     private void backbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
+        MainMenu mm = new MainMenu();
+        mm.setVisible(true);
     }
 
 

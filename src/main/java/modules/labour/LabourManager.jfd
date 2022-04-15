@@ -1,0 +1,49 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq t {space ::91:x, comp label1:::p::p, space :p:83:p}, seq {par l {seq {space :p:65:p, par l:::p {comp deeletelabbtn:::::x, comp addlabbtn:::::x}, space :p:61:p, par l:::p {comp updatelabbtn:::::x, comp viewbtn:::::x}}, seq l {space :p:159:p, comp backbtn:::p::p}}, space ::54:x}}"
+			"$verticalGroup": "par l {seq l {space :p:38:p, comp label1:::p::p, space :p:43:p, par b {comp updatelabbtn::b:p::p, comp addlabbtn::b:p::p}, space :p:27:p, par b {comp deeletelabbtn::b:p::p, comp viewbtn::b:p::p}, space :p:29:p, comp backbtn:::p::p, space ::66:x}}"
+		} ) {
+			name: "this"
+			"title": "Labour manager"
+			"background": new java.awt.Color( 102, 255, 153, 255 )
+			"foreground": new java.awt.Color( 153, 255, 153, 255 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Labour managerment"
+				"font": new java.awt.Font( "Segoe UI", 1, 22 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "addlabbtn"
+				"text": "Add labour"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addlabbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "updatelabbtn"
+				"text": "Update labour"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "updatelabbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "deeletelabbtn"
+				"text": "Delete labour"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "deeletelabbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "viewbtn"
+				"text": "View labour list"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "viewbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 105, 60 )
+			"size": new java.awt.Dimension( 400, 355 )
+		} )
+	}
+}

@@ -4,6 +4,8 @@
 
 package modules;
 
+import modules.item.ItemManager;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -19,14 +21,30 @@ public class MainMenu extends JFrame {
 
     private void labourmngbtn(ActionEvent e) {
         // TODO add your code here
+        AdminLogin al = new AdminLogin();
+        al.setVisible(true);
+    }
+
+    private void Itemmanbtn(ActionEvent e) {
+        // TODO add your code here
+        ItemManager im = new ItemManager();
+        im.setVisible(true);
+    }
+
+    private void menumanbtn(ActionEvent e) {
+        // TODO add your code here
+    }
+
+    private void billmanbtn(ActionEvent e) {
+        // TODO add your code here
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         labourmngbtn = new JButton();
-        button2 = new JButton();
-        button3 = new JButton();
-        button4 = new JButton();
+        Itemmanbtn = new JButton();
+        menumanbtn = new JButton();
+        billmanbtn = new JButton();
         label1 = new JLabel();
 
         //======== this ========
@@ -36,14 +54,17 @@ public class MainMenu extends JFrame {
         labourmngbtn.setText("Labour manager");
         labourmngbtn.addActionListener(e -> labourmngbtn(e));
 
-        //---- button2 ----
-        button2.setText(" Item manager");
+        //---- Itemmanbtn ----
+        Itemmanbtn.setText(" Item manager");
+        Itemmanbtn.addActionListener(e -> Itemmanbtn(e));
 
-        //---- button3 ----
-        button3.setText("Menu manager");
+        //---- menumanbtn ----
+        menumanbtn.setText("Menu manager");
+        menumanbtn.addActionListener(e -> menumanbtn(e));
 
-        //---- button4 ----
-        button4.setText("Bill manager");
+        //---- billmanbtn ----
+        billmanbtn.setText("Bill manager");
+        billmanbtn.addActionListener(e -> billmanbtn(e));
 
         //---- label1 ----
         label1.setText("Main menu");
@@ -56,12 +77,12 @@ public class MainMenu extends JFrame {
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addGap(45, 45, 45)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addComponent(button3, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                        .addComponent(menumanbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                         .addComponent(labourmngbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
                     .addGap(41, 41, 41)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addComponent(button2, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                        .addComponent(button4, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                        .addComponent(Itemmanbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                        .addComponent(billmanbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
                     .addContainerGap(42, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                     .addContainerGap(163, Short.MAX_VALUE)
@@ -76,11 +97,11 @@ public class MainMenu extends JFrame {
                     .addGap(36, 36, 36)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(labourmngbtn)
-                        .addComponent(button2))
+                        .addComponent(Itemmanbtn))
                     .addGap(31, 31, 31)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(button3)
-                        .addComponent(button4))
+                        .addComponent(menumanbtn)
+                        .addComponent(billmanbtn))
                     .addContainerGap(84, Short.MAX_VALUE))
         );
         pack();
@@ -90,9 +111,9 @@ public class MainMenu extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JButton labourmngbtn;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
+    private JButton Itemmanbtn;
+    private JButton menumanbtn;
+    private JButton billmanbtn;
     private JLabel label1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

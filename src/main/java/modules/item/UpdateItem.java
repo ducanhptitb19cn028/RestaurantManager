@@ -26,11 +26,11 @@ public class UpdateItem extends JFrame {
     public UpdateItem() {
         this.itemController = new ItemController();
         initComponents();
-        InsertDatabasetoTable();
+        InsertDatabaseintoTable();
     }
     public Item item;
 
-    public void InsertDatabasetoTable(){
+    public void InsertDatabaseintoTable(){
         Object[] ob = new Object[10];
         DefaultTableModel table = (DefaultTableModel)itemtb.getModel();
         try {
