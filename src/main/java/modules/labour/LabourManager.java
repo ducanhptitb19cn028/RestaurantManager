@@ -46,6 +46,7 @@ public class LabourManager extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Đức Anh Nguyễn Ngọc
         label1 = new JLabel();
         addlabbtn = new JButton();
         updatelabbtn = new JButton();
@@ -87,12 +88,11 @@ public class LabourManager extends JFrame {
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
-                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                    .addContainerGap(91, Short.MAX_VALUE)
-                    .addComponent(label1)
-                    .addGap(83, 83, 83))
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addGroup(contentPaneLayout.createParallelGroup()
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGap(159, 159, 159)
+                            .addComponent(backbtn))
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(65, 65, 65)
                             .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
@@ -103,16 +103,16 @@ public class LabourManager extends JFrame {
                                 .addComponent(updatelabbtn, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(viewbtn, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(159, 159, 159)
-                            .addComponent(backbtn)))
-                    .addContainerGap(54, Short.MAX_VALUE))
+                            .addGap(91, 91, 91)
+                            .addComponent(label1, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(49, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(38, 38, 38)
+                    .addGap(41, 41, 41)
                     .addComponent(label1)
-                    .addGap(43, 43, 43)
+                    .addGap(40, 40, 40)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(updatelabbtn)
                         .addComponent(addlabbtn))
@@ -130,6 +130,7 @@ public class LabourManager extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Đức Anh Nguyễn Ngọc
     private JLabel label1;
     private JButton addlabbtn;
     private JButton updatelabbtn;
