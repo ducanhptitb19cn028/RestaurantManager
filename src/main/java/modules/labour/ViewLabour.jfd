@@ -4,26 +4,30 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq {space :::p, comp scrollPane1::::581:x}, seq {space :p:65:p, comp addbtn:::p::p, space :p:54:p, comp deletebtn:::p::p, space ::69:x, comp updatebtn:::p::p, space :p:62:p, comp backbtn:::p::p, space :p:25:p}}, space :::p}, seq l {space :p:237:p, comp label1:::p:116:p, space ::240:x}}"
-			"$verticalGroup": "par l {seq l {space :::p, comp label1:::p:48:p, space s:::p, comp scrollPane1::::76:x, space :p:59:p, par b {comp addbtn::b:p::p, comp deletebtn::b:p::p, comp backbtn::b:p::p, comp updatebtn::b:p::p}, space :p:111:p}}"
+			"$horizontalGroup": "par l {seq {par l {seq {space :::p, comp scrollPane1::::646:x}, seq {par l {seq {space :p:276:p, comp label1:::p:117:p}, seq l {space :p:79:p, comp addbtn:::p::p, space :p:69:p, comp deletebtn:::p::p, space :p:74:p, comp updatebtn:::p::p}}, space :0:196:x}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:8:p, comp label1:::p::p, space s:::p, comp scrollPane1:::p:181:p, space s:::p, par b {comp addbtn::b:p::p, comp updatebtn::b:p::p, comp deletebtn::b:p::p}, space ::68:x}}"
 		} ) {
 			name: "this"
-			"title": "Item"
-			"background": new java.awt.Color( 255, 255, 153, 255 )
+			"title": "View labour"
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
-				"background": new java.awt.Color( 255, 255, 153, 255 )
 				add( new FormComponent( "javax.swing.JTable" ) {
-					name: "itemtb"
-					"dropMode": enum javax.swing.DropMode INSERT_ROWS
-					"autoResizeMode": 4
+					name: "table1"
 					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
-						add( "name" )
-						add( "price" )
-						add( "quantity" )
-						add( "import_date" )
+						add( "Labour id" )
+						add( "Name" )
+						add( "Date of birth" )
+						add( "Email" )
+						add( "Phone" )
+						add( "Address" )
+						add( "Position" )
+						add( "Salary" )
 					}, new java.util.Vector {
-						add( class java.lang.String )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
 						add( null )
 						add( null )
 						add( null )
@@ -32,20 +36,26 @@ new FormModel {
 						add( null )
 						add( null )
 						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
 					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
 						add( null )
 						add( null )
 						add( null )
 						add( null )
 					} )
-					"selectionForeground": new java.awt.Color( 255, 255, 153, 255 )
-					"background": new java.awt.Color( 255, 255, 153, 255 )
 				} )
 			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "backbtn"
-				"text": "Back"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Labour list"
+				"font": new java.awt.Font( "Segoe UI", 1, 22 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "addbtn"
@@ -62,14 +72,9 @@ new FormModel {
 				"text": "Update"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "updatebtn", true ) )
 			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
-				"text": "Item list"
-				"font": new java.awt.Font( "Segoe UI", 1, 22 )
-			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 595, 380 )
+			"size": new java.awt.Dimension( 660, 385 )
 		} )
 	}
 }

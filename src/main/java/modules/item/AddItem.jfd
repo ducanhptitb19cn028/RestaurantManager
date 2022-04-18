@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq l {space :p:36:p, par l {comp label1::l:p::p, comp label2::l:p::p, comp label3::l:p::p}, space :p:32:p, par l:::p {comp tfItemname::::172:x, comp tfItemprice::::172:x, comp tfItemquantity::::172:x}}, seq l {space :p:108:p, comp backbtn:::p::p, space s:::p, comp Addbtn:::p::p}}, space ::65:x}}"
-			"$verticalGroup": "par l {seq l {space :p:47:p, par b {comp label1::b:p::p, comp tfItemname::b:p::p}, space u:::p, par b {comp label2::b:p::p, comp tfItemprice::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp tfItemquantity::b:p::p}, space :p:39:p, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space ::38:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:36:p, par l {comp label1::l:p::p, comp label2::l:p::p, comp label3::l:p::p}, space :p:32:p, par l {comp tfItemprice::::231:x, comp tfItemquantity::::231:x, comp tfItemname::l::231:x}}, seq {space :p:80:p, comp backbtn:::p::p, space ::78:x, comp Addbtn:::p::p, space :p:78:p}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:47:p, par b {comp label1::b:p::p, comp tfItemname::b:p::p}, space u:::p, par b {comp label2::b:p::p, comp tfItemprice::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp tfItemquantity::b:p::p}, space :p:39:p, par b {comp backbtn::b:p::p, comp Addbtn::b:p::p}, space ::38:x}}"
 		} ) {
 			name: "this"
 			"title": "Add item"

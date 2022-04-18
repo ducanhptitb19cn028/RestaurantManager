@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  * @author unknown
@@ -61,6 +62,10 @@ public class UpdateItem extends JFrame {
             JOptionPane.showMessageDialog(this, "Item name cannot be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
+        if (!itemController.existsItem(name)){
+            JOptionPane.showMessageDialog(this, "Item name does not exist!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (newName.isEmpty()){
             JOptionPane.showMessageDialog(this, "New item name cannot be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;
@@ -74,9 +79,10 @@ public class UpdateItem extends JFrame {
             JOptionPane.showMessageDialog(this, "Please enter a valid quantity for the item!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        BigDecimal newPr = BigDecimal.valueOf(Long.valueOf(newPrice));
-        Integer newQ = Integer.parseInt(newQuantity);
-        itemController.updateItem(newName,newPr,newQ,name);
+        Date dtToday = new Date();
+        java.sql.Date date = new java.sql.Date(dtToday.getTime());
+        Item item = new Item(newName,BigDecimal.valueOf(Double.parseDouble(newPrice)),Integer.parseInt(newQuantity),date);
+        itemController.updateItem(name,item);
         tfName.setText("");
         tfNewname.setText("");
         tfNewprice.setText("");

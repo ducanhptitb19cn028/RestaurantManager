@@ -4,34 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/LabourController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/AdminLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/AdminLogin.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/AddLabour.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/AddLabour.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/labour.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit">
+      <change afterPath="$PROJECT_DIR$/.idea/GitLink.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/bill/BillManagement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/bill/BillManagement.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/DeleteLabour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/DeleteLabour.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/UpdateLabour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/UpdateLabour.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/ViewLabour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/labour/ViewLabour.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/menu/AddFood.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/menu/AddFood.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/menu/MenuManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/menu/MenuManager.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/menu/MenuScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/menu/MenuScreen.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/menu/ModifyFood.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modules/menu/ModifyFood.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/pizza.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LabourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LabourController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/MainMenu.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/MainMenu.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/AddItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/AddItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/AddItem.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/AddItem.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/DeleteItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/DeleteItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/DeleteItem.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/DeleteItem.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/ItemManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/ItemManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/UpdateItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/UpdateItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/ViewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/ViewItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/item/ViewItem.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/item/ViewItem.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/labour/AddLabour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/labour/AddLabour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modules/labour/AddLabour.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/labour/AddLabour.jfd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modules/labour/LabourManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/labour/LabourManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modules/labour/LabourManager.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modules/labour/LabourManager.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Labour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Labour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/databasecreated/tableitems.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databasecreated/tableitems.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +101,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Excel (xlsx)",
     "last_opened_file_path": "D:/RestaurantManager/src/main/resources/images",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   },
@@ -110,7 +124,72 @@
       <recent name="D:\RestaurantManager\src\main\java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AddFood">
+    <configuration name="AddFood" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="modules.menu.AddFood" />
+      <module name="RestaurantManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modules.menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddItem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="modules.item.AddItem" />
+      <module name="RestaurantManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modules.item.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddLabour" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="modules.labour.AddLabour" />
+      <module name="RestaurantManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modules.labour.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeleteItem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="modules.item.DeleteItem" />
+      <module name="RestaurantManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modules.item.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateItem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="modules.item.UpdateItem" />
+      <module name="RestaurantManager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modules.item.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,6 +201,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AddFood" />
+        <item itemvalue="Application.UpdateItem" />
+        <item itemvalue="Application.AddItem" />
+        <item itemvalue="Application.DeleteItem" />
+        <item itemvalue="Application.AddLabour" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -154,7 +242,24 @@
       <workItem from="1649911809681" duration="3933000" />
       <workItem from="1649947162055" duration="7608000" />
       <workItem from="1649984944258" duration="11582000" />
+      <workItem from="1650035142164" duration="846000" />
+      <workItem from="1650036507214" duration="5137000" />
+      <workItem from="1650070166078" duration="60000" />
+      <workItem from="1650070798331" duration="4992000" />
+      <workItem from="1650095892249" duration="2047000" />
+      <workItem from="1650124188502" duration="2984000" />
+      <workItem from="1650158766892" duration="1208000" />
+      <workItem from="1650207461386" duration="3323000" />
+      <workItem from="1650242835142" duration="25466000" />
     </task>
+    <task id="LOCAL-00001" summary="new commit">
+      <created>1650035411554</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650035411554</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +292,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Restaurant-manager" />
     </ignored-roots>
+    <MESSAGE value="new commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="new commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

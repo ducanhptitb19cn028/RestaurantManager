@@ -5,6 +5,7 @@
 package modules.item;
 
 import controller.ItemController;
+import view.Item;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,30 +31,30 @@ public class AddItem extends JFrame {
     }
     private void Addbtn(ActionEvent e) {
         // TODO add your code here
-            String name = tfItemname.getText();
-            String price = tfItemprice.getText();
-            String quantity = tfItemquantity.getText();
-            BigDecimal pr = BigDecimal.valueOf(Long.parseLong(price));
-            Integer quant = Integer.valueOf(quantity);
-            Date dtToday = new java.util.Date();
-            java.sql.Date date = new java.sql.Date(dtToday.getTime());
-            if(name.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Item name cannot be empty","Try again",JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if(price.isEmpty() || !price.chars().allMatch( Character::isDigit) ||
-                    Double.parseDouble(price) <= 0) {
-                JOptionPane.showMessageDialog(this, "Please enter a valid price for the item","Try again",JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if(quantity.isEmpty() || !quantity.chars().allMatch( Character::isDigit)
-                    || Integer.parseInt(quantity) <=0) {
-                JOptionPane.showMessageDialog(this, "Please enter a valid quantity for the item","Try again",JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            itemController.addItem(name,pr,quant,date);
-            JOptionPane.showMessageDialog(this, "Item has been added");
-
+        String name = tfItemname.getText();
+        String price = tfItemprice.getText();
+        String quantity = tfItemquantity.getText();
+        Date dtToday = new Date();
+        java.sql.Date date = new java.sql.Date(dtToday.getTime());
+        if(name.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Item name cannot be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (itemController.existsItem(name)){
+            JOptionPane.showMessageDialog(this, "Item has existed!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(price.isEmpty() || !price.chars().allMatch( Character::isDigit) || Double.parseDouble(price) <= 0) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid price for the item!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(quantity.isEmpty() || !quantity.chars().allMatch( Character::isDigit) || Integer.parseInt(quantity) <=0) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid quantity for the item!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Item item = new Item(name,BigDecimal.valueOf(Double.parseDouble(price)),Integer.parseInt(quantity),date);
+        itemController.addItem(item);
+        JOptionPane.showMessageDialog(this, "Item has been added!!");
     }
 
     private void initComponents() {
@@ -113,16 +114,17 @@ public class AddItem extends JFrame {
                                 .addComponent(label2)
                                 .addComponent(label3))
                             .addGap(32, 32, 32)
-                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tfItemname, GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                .addComponent(tfItemprice, GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                                .addComponent(tfItemquantity, GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)))
+                            .addGroup(contentPaneLayout.createParallelGroup()
+                                .addComponent(tfItemprice, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                                .addComponent(tfItemquantity, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                                .addComponent(tfItemname, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)))
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(108, 108, 108)
+                            .addGap(80, 80, 80)
                             .addComponent(backbtn)
-                            .addGap(18, 18, 18)
-                            .addComponent(Addbtn)))
-                    .addContainerGap(65, Short.MAX_VALUE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                            .addComponent(Addbtn)
+                            .addGap(78, 78, 78)))
+                    .addContainerGap())
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -141,8 +143,8 @@ public class AddItem extends JFrame {
                         .addComponent(tfItemquantity, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(39, 39, 39)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(Addbtn)
-                        .addComponent(backbtn))
+                        .addComponent(backbtn)
+                        .addComponent(Addbtn))
                     .addContainerGap(38, Short.MAX_VALUE))
         );
         pack();

@@ -5,6 +5,8 @@
 package modules.labour;
 
 import modules.MainMenu;
+import modules.item.UpdateItem;
+import modules.item.ViewItem;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -22,24 +24,35 @@ public class LabourManager extends JFrame {
 
     private void addlabbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         AddLabour addLabour = new AddLabour();
         addLabour.setVisible(true);
     }
 
     private void updatelabbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
+        UpdateItem ui = new UpdateItem();
+        ui.setVisible(true);
     }
 
     private void deeletelabbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
+        DeleteLabour dl = new DeleteLabour();
+        dl.setVisible(true);
     }
 
     private void viewbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
+        ViewItem vi = new ViewItem();
+        vi.setVisible(true);
     }
 
     private void backbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         MainMenu mm = new MainMenu();
         mm.setVisible(true);
     }

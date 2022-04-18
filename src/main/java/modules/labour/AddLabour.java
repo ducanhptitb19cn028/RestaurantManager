@@ -5,6 +5,7 @@
 package modules.labour;
 
 import controller.LabourController;
+import view.Labour;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,14 +24,13 @@ public class AddLabour extends JFrame {
     }
     private void addbtn(ActionEvent e) {
         // TODO add your code here
-        String name = tfName.getText();
-        String dob = tfBirthday.getText();
-        String email = tfEmail.getText();
-        String phone = tfPhone.getText();
-        String address = tfAddress.getText();
-        String position = tfPosition.getText();
-        String sal = tfSalary.getText();
-        BigDecimal salary = BigDecimal.valueOf(Long.parseLong(sal));
+        String name = tfName.getText().trim();
+        String dob = tfBirthday.getText().trim();
+        String email = tfEmail.getText().trim();
+        String phone = tfPhone.getText().trim();
+        String address = tfAddress.getText().trim();
+        String position = tfPosition.getText().trim();
+        String sal = tfSalary.getText().trim();
         if (name.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Labour's name cannot be empty","Try again",JOptionPane.ERROR_MESSAGE);
             return;
@@ -43,7 +43,7 @@ public class AddLabour extends JFrame {
             JOptionPane.showMessageDialog(this, "Date of birth is not valid","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if (email.isEmpty() || Pattern.matches("^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$",email)==false){
+        if (email.isEmpty() || !Pattern.matches("^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$", email)){
             JOptionPane.showMessageDialog(this, "Email is empty or not valid","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -56,14 +56,15 @@ public class AddLabour extends JFrame {
             return;
         }
         if (position.isEmpty()){
-            JOptionPane.showMessageDialog(this, "posititon can not be empty","Try again",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Position can not be empty","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
         if (sal.isEmpty() || !sal.chars().allMatch( Character::isDigit) || Double.parseDouble(sal)<=0){
             JOptionPane.showMessageDialog(this, "Salary is empty or not valid","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        labctrl.addLabour(name,dob,email,phone,address,position,salary);
+        Labour labour = new Labour(name,dob,email,phone,address,position,BigDecimal.valueOf(Double.parseDouble(sal.trim())));
+        labctrl.addLabour(labour);
         tfName.setText("");
         tfBirthday.setText("");
         tfEmail.setText("");
@@ -199,15 +200,15 @@ public class AddLabour extends JFrame {
                                         .addComponent(label8)
                                         .addComponent(label1))
                                     .addGap(44, 44, 44)
-                                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tfName, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                                        .addComponent(tfEmail, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                                        .addComponent(tfBirthday, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                                        .addComponent(tfPhone, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                                        .addComponent(tfAddress, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                                        .addComponent(tfPosition, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                                        .addComponent(tfSalary, GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))))))
-                    .addContainerGap(4, Short.MAX_VALUE))
+                                    .addGroup(contentPaneLayout.createParallelGroup()
+                                        .addComponent(tfEmail, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                        .addComponent(tfBirthday, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                        .addComponent(tfPhone, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                        .addComponent(tfAddress, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                        .addComponent(tfPosition, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                        .addComponent(tfSalary, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                        .addComponent(tfName, GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE))))))
+                    .addContainerGap())
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()

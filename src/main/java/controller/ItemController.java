@@ -4,60 +4,38 @@ import modules.db.DBConnection;
 import view.Item;
 
 import java.math.BigDecimal;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class ItemController {
-    private static Date import_date;
     public Item item;
-    public static ArrayList<Item> GetItems() {
-        try {
-            Connection conn = DBConnection.getConnection();
-            String query = "SELECT * FROM items";
-            PreparedStatement ps = conn.prepareStatement(query);
-            ResultSet rs = ps.executeQuery(query);
-            ArrayList<Item> ls = new ArrayList<>();
-            while (rs.next()) {
-               Item item = new Item(rs.getString("name"),rs.getBigDecimal("price"), rs.getInt("quantity"),rs.getDate("import_date"));
-               ls.add(item);
-            }
-            return ls;
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-    public static void addItem(String name, BigDecimal price, int quantity,java.sql.Date import_date) {
-        Item item = null;
+    public static void addItem(Item item) {
         try {
             Connection conn = DBConnection.getConnection();
             String query = "INSERT INTO items(name,price,quantity,import_date) VALUES(?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, name);
-            ps.setBigDecimal(2,price);
-            ps.setInt(3,quantity);
-            ps.setDate(4,import_date);
-            int addedRows = ps.executeUpdate();
-            if (addedRows > 0) {
-                item.name=name;
-                item.price = price;
-                item.quantity=quantity;
-                item.import_date=import_date;
-            }
+            ps.setString(1, item.name);
+            ps.setBigDecimal(2,item.price);
+            ps.setInt(3,item.quantity);
+            ps.setDate(4,item.import_date);
+            ps.executeUpdate();
+            conn.close();
+
         }catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-    public static void updateItem(String newname, BigDecimal newprice, int newquantity,String name){
+    public static void updateItem(String name, Item item){
         try{
             Connection conn= DBConnection.getConnection();
-            String query = "UPDATE items SET name = ?, price = ?, quantity = ? WHERE name = ?";
+            String query = "UPDATE items SET name = ?, price = ?, quantity = ?  WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1,newname);
-            ps.setBigDecimal(2,newprice);
-            ps.setInt(3,newquantity);
+            ps.setString(1,item.name);
+            ps.setBigDecimal(2,item.price);
+            ps.setInt(3,item.quantity);
             ps.setString(4,name);
             ps.executeUpdate();
             conn.close();
@@ -65,15 +43,12 @@ public class ItemController {
             e.printStackTrace();
         }
     }
-    public static void deleteItem() {
-        Item item = null;
+    public static void deleteItem(String name) {
         try {
             Connection conn = DBConnection.getConnection();
             String query = "DELETE FROM items WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, item.getName());
-
-
+            ps.setString(1, name);
             ps.executeUpdate();
             conn.close();
         } catch (SQLException | ClassNotFoundException e) {

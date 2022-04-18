@@ -21,12 +21,14 @@ public class MainMenu extends JFrame {
 
     private void labourmngbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         AdminLogin al = new AdminLogin();
         al.setVisible(true);
     }
 
     private void Itemmanbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         ItemManager im = new ItemManager();
         im.setVisible(true);
     }
@@ -74,20 +76,20 @@ public class MainMenu extends JFrame {
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
-                .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(45, 45, 45)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addComponent(menumanbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                        .addComponent(labourmngbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
-                    .addGap(41, 41, 41)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Itemmanbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                        .addComponent(billmanbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
-                    .addContainerGap(42, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                     .addContainerGap(163, Short.MAX_VALUE)
                     .addComponent(label1)
                     .addGap(129, 129, 129))
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addGap(45, 45, 45)
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addComponent(labourmngbtn, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(menumanbtn, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE))
+                    .addGap(41, 41, 41)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                        .addComponent(Itemmanbtn, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(billmanbtn, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(42, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -98,11 +100,11 @@ public class MainMenu extends JFrame {
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(labourmngbtn)
                         .addComponent(Itemmanbtn))
-                    .addGap(31, 31, 31)
+                    .addGap(67, 67, 67)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(menumanbtn)
-                        .addComponent(billmanbtn))
-                    .addContainerGap(84, Short.MAX_VALUE))
+                        .addComponent(billmanbtn)
+                        .addComponent(menumanbtn))
+                    .addContainerGap(48, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());

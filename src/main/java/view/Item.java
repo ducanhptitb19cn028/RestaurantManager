@@ -1,18 +1,17 @@
 package view;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-public class Item implements Serializable {
+public class Item {
     public String name;
     public BigDecimal price;
-    public int quantity;
+    public Integer quantity;
     public java.sql.Date import_date;
 
     public Item() {
     }
-    public Item(String name, BigDecimal price, int quantity, java.sql.Date import_date) {
+    public Item(String name, BigDecimal price, Integer quantity, java.sql.Date import_date) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;

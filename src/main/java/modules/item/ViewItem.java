@@ -52,11 +52,33 @@ public class ViewItem extends JFrame {
         ItemManager im = new ItemManager();
         im.setVisible(true);
     }
+
+    private void addbtn(ActionEvent e) {
+        // TODO add your code here
+        AddItem addItem = new AddItem();
+        addItem.setVisible(true);
+    }
+
+    private void deletebtn(ActionEvent e) {
+        // TODO add your code here
+        DeleteItem deleteItem = new DeleteItem();
+        deleteItem.setVisible(true);
+    }
+
+    private void updatebtn(ActionEvent e) {
+        // TODO add your code here
+        UpdateItem ui = new UpdateItem();
+        ui.setVisible(true);
+    }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         scrollPane1 = new JScrollPane();
         itemtb = new JTable();
         backbtn = new JButton();
+        addbtn = new JButton();
+        deletebtn = new JButton();
+        updatebtn = new JButton();
+        label1 = new JLabel();
 
         //======== this ========
         setTitle("Item");
@@ -94,27 +116,61 @@ public class ViewItem extends JFrame {
         backbtn.setText("Back");
         backbtn.addActionListener(e -> backbtn(e));
 
+        //---- addbtn ----
+        addbtn.setText("Add");
+        addbtn.addActionListener(e -> addbtn(e));
+
+        //---- deletebtn ----
+        deletebtn.setText("Delete");
+        deletebtn.addActionListener(e -> deletebtn(e));
+
+        //---- updatebtn ----
+        updatebtn.setText("Update");
+        updatebtn.addActionListener(e -> updatebtn(e));
+
+        //---- label1 ----
+        label1.setText("Item list");
+        label1.setFont(new Font("Segoe UI", Font.BOLD, 22));
+
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 581, Short.MAX_VALUE))
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGap(65, 65, 65)
+                            .addComponent(addbtn)
+                            .addGap(54, 54, 54)
+                            .addComponent(deletebtn)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                            .addComponent(updatebtn)
+                            .addGap(62, 62, 62)
+                            .addComponent(backbtn)
+                            .addGap(25, 25, 25)))
                     .addContainerGap())
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(160, 160, 160)
-                    .addComponent(backbtn)
-                    .addContainerGap(183, Short.MAX_VALUE))
+                    .addGap(237, 237, 237)
+                    .addComponent(label1, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(240, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(50, 50, 50)
-                    .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                    .addGap(66, 66, 66)
-                    .addComponent(backbtn)
-                    .addGap(104, 104, 104))
+                    .addContainerGap()
+                    .addComponent(label1, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
+                    .addGap(59, 59, 59)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(addbtn)
+                        .addComponent(deletebtn)
+                        .addComponent(backbtn)
+                        .addComponent(updatebtn))
+                    .addGap(111, 111, 111))
         );
         pack();
         setLocationRelativeTo(getOwner());
@@ -130,5 +186,9 @@ public class ViewItem extends JFrame {
     private JScrollPane scrollPane1;
     private JTable itemtb;
     private JButton backbtn;
+    private JButton addbtn;
+    private JButton deletebtn;
+    private JButton updatebtn;
+    private JLabel label1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
