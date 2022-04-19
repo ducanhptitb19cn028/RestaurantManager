@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp scrollPane1::::486:x, space :::p}, seq {par l {seq {comp label1:::p::p, space s:::p, comp tfFood:::::x}, seq l {par l:::p {comp label2::t:::x, comp label3::l:p::p, comp label4::t:::x}, space s:::p, par l {comp tfPrice:::::x, comp tfUnit:::::x, seq {comp choosefilebtn:::p::p, space :p:53:p, comp lblanh:::p::p, space :0:284:x}, seq l {comp Addbtn:::p::p, space ::215:x, comp backbtn:::p::p, space :p:59:p}}}}, space :p:6:p}}}}"
-			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:103:p, space s:::p, par b {comp label1::b:p::p, comp tfFood::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfPrice::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfUnit::b:p::p}, space s:::p, par b {comp choosefilebtn::b:p::p, comp label4::b:p::p, comp lblanh::b:p::p}, space ::34:x, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space :p:43:p}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp scrollPane1::::486:x, space :::p}, seq {par l {seq {comp label1:::p::p, space s:::p, comp tfFood:::::x}, seq l {par l:::p {comp label2::t:::x, comp label3::l:p::p, comp label4::t:::x}, space s:::p, par l {comp tfPrice:::::x, comp tfUnit:::::x, seq {comp choosefilebtn:::p::p, space ::53:x, comp lblanh:::p:112:p, space :p:164:p}, seq l {comp Addbtn:::p::p, space ::207:x, comp backbtn:::p::p, space :p:59:p}}}}, space :p:6:p}}}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:103:p, space s:::p, par b {comp label1::b:p::p, comp tfFood::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfPrice::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfUnit::b:p::p}, space s:::p, par l {seq {par b {comp choosefilebtn::b:p::p, comp label4::b:p::p}, space ::34:x, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space :p:43:p}, seq l {comp lblanh:::p:107:p, space ::30:x}}}}"
 		} ) {
 			name: "this"
 			"title": "Add food"
@@ -74,7 +74,8 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
-				"text": "Image"
+				"text": "Image:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "Addbtn"
@@ -87,6 +88,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "lblanh"
+				"text": "sasadd"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

@@ -7,6 +7,7 @@ package modules.menu;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
+import java.math.BigDecimal;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.table.*;
@@ -50,6 +51,27 @@ public class AddFood extends JFrame {
 
     private void Addbtn(ActionEvent e) {
         // TODO add your code here
+        String food = tfFood.getText();
+        String image = choosefilebtn.getText();
+        String price = tfPrice.getText();
+        String unit = tfUnit.getText();
+        if (food.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Food field can not be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (image.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Image can not be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (price.isEmpty() || !price.chars().allMatch( Character::isDigit)){
+            JOptionPane.showMessageDialog(this, "Please enter a valid value!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (unit.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Unit field can not be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Menu menu = new Menu(food,image, BigDecimal.valueOf(Double.parseDouble(price)),unit);
     }
 
     private void initComponents() {
@@ -112,7 +134,8 @@ public class AddFood extends JFrame {
         choosefilebtn.addActionListener(e -> choosefilebtn(e));
 
         //---- label4 ----
-        label4.setText("Image");
+        label4.setText("Image:");
+        label4.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
         //---- Addbtn ----
         Addbtn.setText("Add");
@@ -120,6 +143,9 @@ public class AddFood extends JFrame {
 
         //---- backbtn ----
         backbtn.setText("Back");
+
+        //---- lblanh ----
+        lblanh.setText("sasadd");
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
@@ -148,12 +174,12 @@ public class AddFood extends JFrame {
                                         .addComponent(tfUnit)
                                         .addGroup(contentPaneLayout.createSequentialGroup()
                                             .addComponent(choosefilebtn)
-                                            .addGap(53, 53, 53)
-                                            .addComponent(lblanh)
-                                            .addGap(0, 284, Short.MAX_VALUE))
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                                            .addComponent(lblanh, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(164, 164, 164))
                                         .addGroup(contentPaneLayout.createSequentialGroup()
                                             .addComponent(Addbtn)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
                                             .addComponent(backbtn)
                                             .addGap(59, 59, 59)))))
                             .addGap(6, 6, 6))))
@@ -176,15 +202,19 @@ public class AddFood extends JFrame {
                         .addComponent(label3)
                         .addComponent(tfUnit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(choosefilebtn)
-                        .addComponent(label4)
-                        .addComponent(lblanh))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(Addbtn)
-                        .addComponent(backbtn))
-                    .addGap(43, 43, 43))
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(choosefilebtn)
+                                .addComponent(label4))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(Addbtn)
+                                .addComponent(backbtn))
+                            .addGap(43, 43, 43))
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addComponent(lblanh, GroupLayout.PREFERRED_SIZE, 107, GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(30, Short.MAX_VALUE))))
         );
         pack();
         setLocationRelativeTo(getOwner());
