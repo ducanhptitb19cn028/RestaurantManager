@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/src/main/java/controller/LabourController.java" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/modules/auth/SignupForm.java" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/modules/item/UpdateItem.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/dao/LabourDAO.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/dao/MenuDAO.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/view/auth/SignupForm.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/view/item/UpdateItem.java" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/databasecreated/tableitems.sql" dialect="MySQL" />
   </component>
 </project>

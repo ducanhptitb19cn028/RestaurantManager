@@ -1,0 +1,93 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp scrollPane1::::486:x, space :::p}, seq {par l {par l:l {comp label2::t:p:46:p, comp label3::l:p::p}, comp label1::l:p::p, comp choosebtn::l:p::p}, space s:::p, par l {seq {par l {comp tfFood::::382:x, comp tfPrice:::::x, comp tfUnit:::::x, seq l {comp Addbtn:::p::p, space ::167:x, comp backbtn:::p::p, space :p:59:p}}, space :p:6:p}, seq {comp imglbl:::p:78:p, space ::310:x}}}}}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:103:p, space s:::p, par b {comp label1::b:p::p, comp tfFood::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfPrice::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfUnit::b:p::p}, space s:::p, par l {seq {comp choosebtn:::p::p, space :0:52:x}, seq {space :7:7:p, comp imglbl::::75:x}}, space :::p, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space :p:19:p}}"
+		} ) {
+			name: "this"
+			"title": "Add food"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tablemenu"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "No" )
+						add( "Food" )
+						add( "Image" )
+						add( "Price" )
+						add( "Unit" )
+					}, new java.util.Vector {
+						add( class java.lang.Integer )
+						add( null )
+						add( class java.lang.Byte )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Food:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Price:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Unit:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfFood"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfPrice"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfUnit"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "Addbtn"
+				"text": "Add"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Addbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "choosebtn"
+				"text": "Chọn ảnh"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "choosebtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "imglbl"
+				"text": "text"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 500, 440 )
+		} )
+	}
+}

@@ -28,7 +28,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="48858768-62a3-4e60-9c60-6b38017d99bc">
-      <console name="Connection" type="STANDARD" schema="myrestaurant" session="Main"><![CDATA[drop table users]]></console>
+      <console name="Connection" type="STANDARD" schema="myrestaurant" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -38,6 +38,7 @@
     <connection id="48858768-62a3-4e60-9c60-6b38017d99bc" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" dataset="myrestaurant.menu" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" dataset="myrestaurant.items" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" dataset="myrestaurant.users" active-filter-id="EMPTY_FILTER">
       <filter id="3932598c-48ec-49ae-b63f-233de4b6b37e" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
@@ -52,7 +53,10 @@
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$APPLICATION_CONFIG_DIR$/consoles/db/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/console.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
     <mapping file-url="file://$PROJECT_DIR$/src/main/resources/databasecreated/tableuser.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
+    <mapping file-url="file://$APPLICATION_CONFIG_DIR$/consoles/db/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/console_2.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/databasecreated/createmenutbl.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
     <mapping file-url="file://$PROJECT_DIR$/src/main/resources/databasecreated/tableitems.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
@@ -75,7 +79,7 @@
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
     <recently-used-interfaces>
-      <mapping database-type="MYSQL" interface-id="DEFAULT" />
+      <mapping database-type="MYSQL" interface-id="28e41ad3-1a25-414b-8bf3-1efd4e0281fe" />
     </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
