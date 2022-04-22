@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp scrollPane1::::486:x, space :::p}, seq {par l {par l:l {comp label2::t:p:46:p, comp label3::l:p::p}, comp label1::l:p::p, comp choosebtn::l:p::p}, space s:::p, par l {seq {par l {comp tfFood::::382:x, comp tfPrice:::::x, comp tfUnit:::::x, seq l {comp Addbtn:::p::p, space ::167:x, comp backbtn:::p::p, space :p:59:p}}, space :p:6:p}, seq {comp imglbl:::p:78:p, space ::310:x}}}}}}"
-			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:103:p, space s:::p, par b {comp label1::b:p::p, comp tfFood::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfPrice::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfUnit::b:p::p}, space s:::p, par l {seq {comp choosebtn:::p::p, space :0:52:x}, seq {space :7:7:p, comp imglbl::::75:x}}, space :::p, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space :p:19:p}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp choosebtn:::p::p, space s:::p, par l {seq l {comp Addbtn:::p::p, space ::287:x, comp backbtn:::p::p, space :p:65:p}, seq {comp imglbl:::p:78:p, space ::430:x}}}, seq t {par t {comp scrollPane1::::606:x, seq {par l {comp label3::l:p::p, comp label2::l:p:46:p, comp label1::l:p::p}, space :p:45:p, par t {comp tfPrice::::515:x, comp tfFood::::515:x, comp tfUnit::::515:x}}}, space :::p}}}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:169:p, space u:::p, par t {comp label1:::p::p, comp tfFood:::p::p}, space s:::p, par b {comp label2::b:p::p, comp tfPrice::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfUnit::b:p::p}, space :p:21:p, par b {comp choosebtn::b:p::p, comp imglbl::b:p:67:p}, space :::p, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space :p:19:p}}"
 		} ) {
 			name: "this"
 			"title": "Add food"
@@ -83,11 +83,10 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "imglbl"
-				"text": "text"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 500, 440 )
+			"size": new java.awt.Dimension( 620, 530 )
 		} )
 	}
 }

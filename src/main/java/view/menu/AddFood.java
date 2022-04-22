@@ -40,7 +40,7 @@ public class AddFood extends JFrame {
         MenuDAO md = new MenuDAO();
         ArrayList<Menuuu> list = md.BindTable();
         String[] columns = {"No", "Food", "Image", "Price", "Unit"};
-        Object[][] rows = new Object[list.size()][5];
+        Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
             rows[i][0] = list.get(i).getId();
             rows[i][1] = list.get(i).getFood();
@@ -89,7 +89,7 @@ public class AddFood extends JFrame {
             ps.setString(4,unit);
             int i = ps.executeUpdate();
             if (i>0){
-                JOptionPane.showMessageDialog(this,"Menuuu has been added!!!");
+                JOptionPane.showMessageDialog(this,"Menu has been added!!!");
             }
             conn.close();
         }catch (SQLException | ClassNotFoundException | FileNotFoundException ex) {
@@ -187,9 +187,6 @@ public class AddFood extends JFrame {
         choosebtn.setText("Ch\u1ecdn \u1ea3nh");
         choosebtn.addActionListener(e -> choosebtn(e));
 
-        //---- imglbl ----
-        imglbl.setText("text");
-
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
@@ -198,39 +195,39 @@ public class AddFood extends JFrame {
                     .addContainerGap()
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
-                            .addContainerGap())
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGroup(contentPaneLayout.createParallelGroup()
-                                .addGroup(contentPaneLayout.createParallelGroup()
-                                    .addComponent(label2, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label3))
-                                .addComponent(label1)
-                                .addComponent(choosebtn))
+                            .addComponent(choosebtn)
                             .addGap(18, 18, 18)
                             .addGroup(contentPaneLayout.createParallelGroup()
                                 .addGroup(contentPaneLayout.createSequentialGroup()
-                                    .addGroup(contentPaneLayout.createParallelGroup()
-                                        .addComponent(tfFood, GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
-                                        .addComponent(tfPrice)
-                                        .addComponent(tfUnit)
-                                        .addGroup(contentPaneLayout.createSequentialGroup()
-                                            .addComponent(Addbtn)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
-                                            .addComponent(backbtn)
-                                            .addGap(59, 59, 59)))
-                                    .addGap(6, 6, 6))
+                                    .addComponent(Addbtn)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
+                                    .addComponent(backbtn)
+                                    .addGap(65, 65, 65))
                                 .addGroup(contentPaneLayout.createSequentialGroup()
                                     .addComponent(imglbl, GroupLayout.PREFERRED_SIZE, 78, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(310, Short.MAX_VALUE))))))
+                                    .addContainerGap(430, Short.MAX_VALUE))))
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE)
+                                .addGroup(contentPaneLayout.createSequentialGroup()
+                                    .addGroup(contentPaneLayout.createParallelGroup()
+                                        .addComponent(label3)
+                                        .addComponent(label2, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(label1))
+                                    .addGap(45, 45, 45)
+                                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(tfPrice, GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                                        .addComponent(tfFood, GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                                        .addComponent(tfUnit, GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE))))
+                            .addContainerGap())))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                         .addComponent(label1)
                         .addComponent(tfFood, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
@@ -241,14 +238,10 @@ public class AddFood extends JFrame {
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label3)
                         .addComponent(tfUnit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(contentPaneLayout.createParallelGroup()
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(choosebtn)
-                            .addGap(0, 52, Short.MAX_VALUE))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(7, 7, 7)
-                            .addComponent(imglbl, GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)))
+                    .addGap(21, 21, 21)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(choosebtn)
+                        .addComponent(imglbl, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(Addbtn)
