@@ -45,8 +45,8 @@ public class LabourManager extends JFrame {
     private void viewbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
-        ViewItem vi = new ViewItem();
-        vi.setVisible(true);
+        ViewLabour vl = new ViewLabour();
+        vl.setVisible(true);
     }
 
     private void backbtn(ActionEvent e) {

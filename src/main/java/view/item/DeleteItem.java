@@ -52,7 +52,7 @@ public class DeleteItem extends JFrame {
 
     private void deletebtn(ActionEvent e) {
         // TODO add your code here
-        String name = tfItem.getText();
+        String name = tfItem.getText().trim();
         if (name.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Item name cannot be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;

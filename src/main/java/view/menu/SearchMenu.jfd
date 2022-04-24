@@ -1,0 +1,61 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, par l {comp scrollPane1:::::x, seq {comp label1:::p::p, space s:::p, comp tfSearch:::p:504:p, space s:::p, comp searchbtn::::37:x}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {par l {seq {space :p:24:p, par b {comp label1::b:p::p, comp tfSearch::b:p::p}}, seq t {space :::p, comp searchbtn:::p::p}}, space s:::p, comp scrollPane1:::p:271:p, space ::70:x}}"
+		} ) {
+			name: "this"
+			"title": "Search menu"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Search :"
+				"font": new java.awt.Font( "Segoe UI", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfSearch"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tablemenu"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "No" )
+						add( "Name" )
+						add( "Image" )
+						add( "Price" )
+						add( "Kind" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( class java.lang.Byte )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "searchbtn"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/images/search.png" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 650, 445 )
+		} )
+	}
+}

@@ -28,6 +28,7 @@ public class AdminLogin extends JFrame {
     public User user;
     private void backbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         MainMenu mm = new MainMenu();
         mm.setVisible(true);
     }

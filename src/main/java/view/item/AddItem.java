@@ -31,9 +31,9 @@ public class AddItem extends JFrame {
     }
     private void Addbtn(ActionEvent e) {
         // TODO add your code here
-        String name = tfItemname.getText();
-        String price = tfItemprice.getText();
-        String quantity = tfItemquantity.getText();
+        String name = tfItemname.getText().trim();
+        String price = tfItemprice.getText().trim();
+        String quantity = tfItemquantity.getText().trim();
         Date dtToday = new Date();
         java.sql.Date date = new java.sql.Date(dtToday.getTime());
         if(name.isEmpty()) {
@@ -54,6 +54,9 @@ public class AddItem extends JFrame {
         }
         Item item = new Item(name,BigDecimal.valueOf(Double.parseDouble(price)),Integer.parseInt(quantity),date);
         itemDAO.addItem(item);
+        tfItemname.setText("");
+        tfItemprice.setText("");
+        tfItemquantity.setText("");
         JOptionPane.showMessageDialog(this, "Item has been added!!");
     }
 

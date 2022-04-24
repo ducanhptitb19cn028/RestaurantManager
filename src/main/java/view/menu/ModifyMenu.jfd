@@ -1,0 +1,93 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp scrollPane1::l::666:x, seq t {par l {seq {par l {comp label3::l:p::p, comp label4::l:p::p}, space :p:10:p, par l {comp tfNewPrice:::::x, comp tfNewKind::::563:x}}, seq {par l {comp label1::l:p::p, comp label2::l:p::p}, space :::p, par l {comp tfNewName::::563:x, comp tfName::::563:x}}, seq l {space :p:90:p, comp modifybtn:::p:94:p, space ::258:x, comp backbtn:::p::p, space :p:109:p}}, space :p:37:p}, seq l {comp choosebtn:::p::p, space :p:59:p, comp imglbl:::p:73:p, space :0:448:x}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:173:p, space s:::p, par l {comp label1:::p::p, comp tfName:::p::p}, space s:::p, par b {comp label2::b:p::p, comp tfNewName::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfNewPrice::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp tfNewKind::b:p::p}, space :p:40:p, par b {comp choosebtn::b:p::p, comp imglbl::b:p:70:p}, space :p:43:p, par b {comp modifybtn::b:p::p, comp backbtn::b:p::p}, space ::34:x}}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tablemenu"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "No" )
+						add( "Name" )
+						add( "Image" )
+						add( "Price" )
+						add( "Kind" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( class java.lang.Byte )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Name:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "New name:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "New price:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "New Kind:"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfName"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfNewName"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfNewPrice"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfNewKind"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "choosebtn"
+				"text": "Chọn ảnh"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "choosebtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "imglbl"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "modifybtn"
+				"text": "Modify"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "modifybtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 130, 90 )
+			"size": new java.awt.Dimension( 680, 620 )
+		} )
+	}
+}

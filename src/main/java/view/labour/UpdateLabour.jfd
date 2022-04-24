@@ -4,10 +4,11 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {comp scrollPane1::l::626:x, seq l {comp label1:::p::p, space u:::p, comp textField1::::381:x}, seq {comp label8:::p::p, space s:::p, comp textField8::::530:x}, seq l {comp label2:::p::p, space s:::p, comp textField2::::533:x}, seq l {comp label3:::p::p, space s:::p, comp textField3::::513:x}, seq l {comp label4:::p::p, space s:::p, comp textField4::::533:x}, seq l {comp label5:::p::p, space s:::p, comp textField5::::472:x}, seq l {comp label6:::p::p, space s:::p, comp textField6::::518:x}, seq l {comp label7:::p::p, space s:::p, comp textField7::::516:x}}, space :::p}, seq l {space :p:169:p, comp button1:::p::p, space :p:161:p, comp button2:::p::p, space ::152:x}}"
-			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:216:p, space s:::p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp textField4::b:p::p}, space s:::p, par b {comp label5::b:p::p, comp textField5::b:p::p}, space s:::p, par b {comp label6::b:p::p, comp textField6::b:p::p}, space s:::p, par b {comp label7::b:p::p, comp textField7::b:p::p}, space s:::p, par b {comp label8::b:p::p, comp textField8::b:p::p}, space :p:26:p, par b {comp button1::b:p::p, comp button2::b:p::p}, space ::41:x}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp scrollPane1::l::626:x, seq l {comp label1:::p::p, space u:::p, comp tfName::::381:x}, seq {comp label8:::p::p, space s:::p, comp tfNewSalary::::530:x}, seq l {comp label2:::p::p, space s:::p, comp tfNewName::::533:x}, seq l {comp label3:::p::p, space s:::p, comp tfNewBirthday::::513:x}, seq l {comp label4:::p::p, space s:::p, comp tfNewEmail::::533:x}, seq l {comp label5:::p::p, space s:::p, comp tfNewPhonenum::::472:x}, seq l {comp label6:::p::p, space s:::p, comp tfNewAddress::::518:x}, seq l {comp label7:::p::p, space s:::p, comp tfNewPosition::::516:x}}, space :::p}, seq l {space :p:169:p, comp updbtn:::p::p, space :p:161:p, comp button2:::p::p, space ::152:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:216:p, space s:::p, par b {comp label1::b:p::p, comp tfName::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfNewName::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfNewBirthday::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp tfNewEmail::b:p::p}, space s:::p, par b {comp label5::b:p::p, comp tfNewPhonenum::b:p::p}, space s:::p, par b {comp label6::b:p::p, comp tfNewAddress::b:p::p}, space s:::p, par b {comp label7::b:p::p, comp tfNewPosition::b:p::p}, space s:::p, par b {comp label8::b:p::p, comp tfNewSalary::b:p::p}, space :p:26:p, par b {comp updbtn::b:p::p, comp button2::b:p::p}, space ::41:x}}"
 		} ) {
 			name: "this"
+			"title": "Update labour"
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
 				add( new FormComponent( "javax.swing.JTable" ) {
@@ -83,7 +84,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label7"
-				"text": "New Position:"
+				"text": "New position:"
 				"font": new java.awt.Font( "Segoe UI", 1, 14 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -92,36 +93,38 @@ new FormModel {
 				"font": new java.awt.Font( "Segoe UI", 1, 14 )
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField1"
+				name: "tfName"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField2"
+				name: "tfNewName"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField3"
+				name: "tfNewBirthday"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField4"
+				name: "tfNewEmail"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField5"
+				name: "tfNewPhonenum"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField6"
+				name: "tfNewAddress"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField7"
+				name: "tfNewPosition"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField8"
+				name: "tfNewSalary"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
+				name: "updbtn"
 				"text": "Update"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "updbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button2"
 				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button2", true ) )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

@@ -19,7 +19,7 @@ public class TheModel extends AbstractTableModel {
 
     public Class getColumnClass(int column){
 // 4 is the index of the column image
-        if(column == 4){
+        if(column == 2){
             return Icon.class;
         }
         else{

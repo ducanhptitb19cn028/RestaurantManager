@@ -12,34 +12,36 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.math.BigDecimal;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static java.awt.Image.SCALE_SMOOTH;
-import static javax.swing.UIManager.get;
 
 /**
  * @author unknown
  */
-public class AddFood extends JFrame {
+public class AddMenu extends JFrame {
     public File file = null;
     public static String path = null;
 
     public MenuDAO menuDAO;
-    ArrayList<Menuuu> list = new ArrayList<>();
-    public AddFood() {
+
+    public AddMenu() {
         initComponents();
         this.menuDAO = new MenuDAO();
         InsertDatabaseintoTable();
     }
     public void InsertDatabaseintoTable(){
         MenuDAO md = new MenuDAO();
-        ArrayList<Menuuu> list = md.BindTable();
-        String[] columns = {"No", "Food", "Image", "Price", "Unit"};
+        ArrayList<Menuuu> list = md.BindtoTable();
+        String[] columns = {"No", "Name", "Image", "Price", "Kind"};
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
             rows[i][0] = list.get(i).getId();
@@ -52,7 +54,7 @@ public class AddFood extends JFrame {
                 rows[i][2] = null;
             }
             rows[i][3] = list.get(i).getPrice();
-            rows[i][4] = list.get(i).getUnit();
+            rows[i][4] = list.get(i).getKind();
         }
         TheModel model = new TheModel(rows, columns);
         tablemenu.setModel(model);
@@ -61,19 +63,19 @@ public class AddFood extends JFrame {
     }
     private void Addbtn(ActionEvent e) {
         // TODO add your code here
-        String food = tfFood.getText();
-        String price = tfPrice.getText();
-        String unit = tfUnit.getText();
+        String name = tfName.getText().trim();
+        String price = tfPrice.getText().trim();
+        String kind = tfKind.getText().trim();
 
-        if (food.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Food field can not be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
+        if (name.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Name field can not be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
         if (price.isEmpty() || !price.chars().allMatch( Character::isDigit)){
             JOptionPane.showMessageDialog(this, "Please enter a valid value!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if (unit.isEmpty()){
+        if (kind.isEmpty()){
             JOptionPane.showMessageDialog(this, "Unit field can not be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -81,12 +83,12 @@ public class AddFood extends JFrame {
         try {
             InputStream is = new FileInputStream(f);
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO menu(food,image,price,unit) VALUES(?,?,?,?)";
+            String query = "INSERT INTO menu(mname,image,price,kind) VALUES(?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1,food);
+            ps.setString(1,name);
             ps.setBlob(2,is);
             ps.setBigDecimal(3, BigDecimal.valueOf(Double.parseDouble(price)));
-            ps.setString(4,unit);
+            ps.setString(4,kind);
             int i = ps.executeUpdate();
             if (i>0){
                 JOptionPane.showMessageDialog(this,"Menu has been added!!!");
@@ -114,6 +116,13 @@ public class AddFood extends JFrame {
         }
     }
 
+    private void backbtn(ActionEvent e) {
+        // TODO add your code here
+        this.dispose();
+        MenuView mv = new MenuView();
+        mv.setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         scrollPane1 = new JScrollPane();
@@ -121,9 +130,9 @@ public class AddFood extends JFrame {
         label1 = new JLabel();
         label2 = new JLabel();
         label3 = new JLabel();
-        tfFood = new JTextField();
+        tfName = new JTextField();
         tfPrice = new JTextField();
-        tfUnit = new JTextField();
+        tfKind = new JTextField();
         Addbtn = new JButton();
         backbtn = new JButton();
         choosebtn = new JButton();
@@ -141,7 +150,7 @@ public class AddFood extends JFrame {
                 new Object[][] {
                 },
                 new String[] {
-                    "No", "Food", "Image", "Price", "Unit"
+                    "No", "Name", "Image", "Price", "Kind"
                 }
             ) {
                 Class<?>[] columnTypes = new Class<?>[] {
@@ -156,7 +165,7 @@ public class AddFood extends JFrame {
         }
 
         //---- label1 ----
-        label1.setText("Food:");
+        label1.setText("Name:");
         label1.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
         //---- label2 ----
@@ -164,17 +173,17 @@ public class AddFood extends JFrame {
         label2.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
         //---- label3 ----
-        label3.setText("Unit:");
+        label3.setText("Kind:");
         label3.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
-        //---- tfFood ----
-        tfFood.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        //---- tfName ----
+        tfName.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 
         //---- tfPrice ----
         tfPrice.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 
-        //---- tfUnit ----
-        tfUnit.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        //---- tfKind ----
+        tfKind.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 
         //---- Addbtn ----
         Addbtn.setText("Add");
@@ -182,6 +191,7 @@ public class AddFood extends JFrame {
 
         //---- backbtn ----
         backbtn.setText("Back");
+        backbtn.addActionListener(e -> backbtn(e));
 
         //---- choosebtn ----
         choosebtn.setText("Ch\u1ecdn \u1ea3nh");
@@ -217,8 +227,8 @@ public class AddFood extends JFrame {
                                     .addGap(45, 45, 45)
                                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                         .addComponent(tfPrice, GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
-                                        .addComponent(tfFood, GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
-                                        .addComponent(tfUnit, GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE))))
+                                        .addComponent(tfName, GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE)
+                                        .addComponent(tfKind, GroupLayout.DEFAULT_SIZE, 515, Short.MAX_VALUE))))
                             .addContainerGap())))
         );
         contentPaneLayout.setVerticalGroup(
@@ -229,7 +239,7 @@ public class AddFood extends JFrame {
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                         .addComponent(label1)
-                        .addComponent(tfFood, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label2)
@@ -237,7 +247,7 @@ public class AddFood extends JFrame {
                     .addGap(18, 18, 18)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label3)
-                        .addComponent(tfUnit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfKind, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(21, 21, 21)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(choosebtn)
@@ -254,7 +264,7 @@ public class AddFood extends JFrame {
     }
 
     public static void main(String[] args) {
-        AddFood af = new AddFood();
+        AddMenu af = new AddMenu();
         af.setVisible(true);
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
@@ -263,9 +273,9 @@ public class AddFood extends JFrame {
     private JLabel label1;
     private JLabel label2;
     private JLabel label3;
-    private JTextField tfFood;
+    private JTextField tfName;
     private JTextField tfPrice;
-    private JTextField tfUnit;
+    private JTextField tfKind;
     private JButton Addbtn;
     private JButton backbtn;
     private JButton choosebtn;

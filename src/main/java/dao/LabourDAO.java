@@ -38,12 +38,19 @@ public class LabourDAO {
             e.printStackTrace();
         }
     }
-    public static void updateLabours(String name){
+    public static void updateLabours(Labour labour,String name){
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "DELETE FROM labour WHERE name = ?";
+            String query = "UPDATE labour SET name = ?, date_ofBirth = ?,email = ?,phone = ?, address = ?, position = ?, salary = ? WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, name);
+            ps.setString(1, labour.name);
+            ps.setString(2,labour.date_ofBirth);
+            ps.setString(3, labour.email);
+            ps.setString(4, labour.phone);
+            ps.setString(5, labour.address);
+            ps.setString(6, labour.position);
+            ps.setBigDecimal(7, labour.salary);
+            ps.setString(8,name);
             ps.executeUpdate();
             conn.close();
         } catch (SQLException | ClassNotFoundException e) {

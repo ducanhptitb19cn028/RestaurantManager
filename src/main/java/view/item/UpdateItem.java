@@ -54,10 +54,10 @@ public class UpdateItem extends JFrame {
 
     private void updatebtn(ActionEvent e) {
         // TODO add your code here
-        String name = tfName.getText();
-        String newName = tfNewname.getText();
-        String newPrice = tfNewprice.getText();
-        String newQuantity = tfNewQuantity.getText();
+        String name = tfName.getText().trim();
+        String newName = tfNewname.getText().trim();
+        String newPrice = tfNewprice.getText().trim();
+        String newQuantity = tfNewQuantity.getText().trim();
         if (name.isEmpty()){
             JOptionPane.showMessageDialog(this, "Item name cannot be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;

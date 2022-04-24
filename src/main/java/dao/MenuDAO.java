@@ -2,15 +2,13 @@ package dao;
 
 import model.Menuuu;
 import view.db.DBConnection;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.awt.*;
+import java.sql.*;
 import java.util.ArrayList;
 
-public class MenuDAO {
-    public ArrayList<Menuuu> BindTable() {
+
+public class MenuDAO extends Component {
+    public ArrayList<Menuuu> BindtoTable() {
         ArrayList<Menuuu> list = new ArrayList<>();
         Connection conn;
         try {
@@ -25,7 +23,7 @@ public class MenuDAO {
             rs = st.executeQuery("SELECT * FROM menu");
             Menuuu mn;
             while (rs.next()) {
-                mn = new Menuuu(rs.getInt("no"),rs.getString("food"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("unit"));
+                mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
                 list.add(mn);
             }
         }
@@ -33,5 +31,39 @@ public class MenuDAO {
             e.printStackTrace();
         }
         return list;
+    }
+    public ArrayList<Menuuu> BindToSearch(String search) {
+        ArrayList<Menuuu> list = new ArrayList<>();
+
+        try {
+            Connection conn = DBConnection.getConnection();
+            String query = "SELECT * FROM menu WHERE mname like '%"+search+"%'";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Menuuu mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                list.add(mn);
+            }
+        }
+        catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public static boolean MenuExists(String name){
+        try {
+            Connection conn = DBConnection.getConnection();
+            String query = "SELECT mname FROM menu WHERE mname = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return true;
+            }
+            conn.close();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
