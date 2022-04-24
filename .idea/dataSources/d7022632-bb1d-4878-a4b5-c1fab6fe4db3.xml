@@ -1087,7 +1087,6 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="306" parent="289" name="image">
       <DataType>longblob|0s</DataType>
-      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="307" parent="289" name="price">

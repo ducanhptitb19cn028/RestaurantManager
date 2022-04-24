@@ -92,11 +92,15 @@ public class AddMenu extends JFrame {
             int i = ps.executeUpdate();
             if (i>0){
                 JOptionPane.showMessageDialog(this,"Menu has been added!!!");
+                tfName.setText("");
+                tfPrice.setText("");
+                tfKind.setText("");
             }
             conn.close();
         }catch (SQLException | ClassNotFoundException | FileNotFoundException ex) {
             ex.printStackTrace();
         }
+
     }
 
     private void choosebtn(ActionEvent e) {

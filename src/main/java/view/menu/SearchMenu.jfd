@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :::p, par l {comp scrollPane1:::::x, seq {comp label1:::p::p, space s:::p, comp tfSearch:::p:504:p, space s:::p, comp searchbtn::::37:x}}, space :::p}}"
-			"$verticalGroup": "par l {seq l {par l {seq {space :p:24:p, par b {comp label1::b:p::p, comp tfSearch::b:p::p}}, seq t {space :::p, comp searchbtn:::p::p}}, space s:::p, comp scrollPane1:::p:271:p, space ::70:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq t {space :::p, par t {comp scrollPane1:::::x, seq {comp label1:::p::p, space s:::p, comp tfSearch:::p:504:p, space s:::p, comp searchbtn::::37:x}}}, seq l {space :p:71:p, comp drinkbtn:::p::p, space :p:108:p, par l {seq {comp foodbtn:::p::p, space :p:101:p, comp desertbtn:::p::p}, comp button4:::p::p}, space :0:66:x}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {par l {seq {space :p:24:p, par b {comp label1::b:p::p, comp tfSearch::b:p::p}}, seq t {space :::p, comp searchbtn:::p::p}}, space s:::p, comp scrollPane1:::p:293:p, space s:::p, par b {comp drinkbtn::b:p::p, comp desertbtn::b:p::p, comp foodbtn::b:p::p}, space ::39:x, comp button4:::p::p, space :::p}}"
 		} ) {
 			name: "this"
 			"title": "Search menu"
@@ -53,9 +53,28 @@ new FormModel {
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/images/search.png" )
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchbtn", true ) )
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "drinkbtn"
+				"text": "List of drink"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "drinkbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "foodbtn"
+				"text": "List of food"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "foodbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "desertbtn"
+				"text": "List of dessert"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "desertbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button4"
+				"text": "Back"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 650, 445 )
+			"size": new java.awt.Dimension( 650, 520 )
 		} )
 	}
 }

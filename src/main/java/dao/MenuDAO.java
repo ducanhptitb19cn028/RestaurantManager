@@ -50,6 +50,78 @@ public class MenuDAO extends Component {
         }
         return list;
     }
+    public ArrayList<Menuuu> BindtoDrinksearch(){
+        ArrayList<Menuuu> list = new ArrayList<>();
+        Connection conn;
+        try {
+            conn = DBConnection.getConnection();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Statement st;
+        ResultSet rs;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM menu WHERE kind = 'Drink'");
+            Menuuu mn;
+            while (rs.next()) {
+                mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                list.add(mn);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public ArrayList<Menuuu> BindtoFoodsearch(){
+        ArrayList<Menuuu> list = new ArrayList<>();
+        Connection conn;
+        try {
+            conn = DBConnection.getConnection();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Statement st;
+        ResultSet rs;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM menu WHERE kind = 'Food'");
+            Menuuu mn;
+            while (rs.next()) {
+                mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                list.add(mn);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public ArrayList<Menuuu> BindtoDessertsearch(){
+        ArrayList<Menuuu> list = new ArrayList<>();
+        Connection conn;
+        try {
+            conn = DBConnection.getConnection();
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        Statement st;
+        ResultSet rs;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery("SELECT * FROM menu WHERE kind = 'Dessert'");
+            Menuuu mn;
+            while (rs.next()) {
+                mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                list.add(mn);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
     public static boolean MenuExists(String name){
         try {
             Connection conn = DBConnection.getConnection();

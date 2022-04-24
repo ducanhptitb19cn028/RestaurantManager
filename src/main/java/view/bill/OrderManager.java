@@ -1,5 +1,5 @@
 /*
- * Created by JFormDesigner on Sun Apr 17 22:01:59 ICT 2022
+ * Created by JFormDesigner on Sun Apr 24 16:11:32 ICT 2022
  */
 
 package view.bill;
@@ -10,8 +10,8 @@ import javax.swing.GroupLayout;
 /**
  * @author unknown
  */
-public class BillManagement extends JFrame {
-    public BillManagement() {
+public class OrderManager extends JFrame {
+    public OrderManager() {
         initComponents();
     }
 

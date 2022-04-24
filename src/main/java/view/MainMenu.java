@@ -41,16 +41,13 @@ public class MainMenu extends JFrame {
         mv.setVisible(true);
     }
 
-    private void billmanbtn(ActionEvent e) {
-        // TODO add your code here
-    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         labourmngbtn = new JButton();
         Itemmanbtn = new JButton();
         menumanbtn = new JButton();
-        billmanbtn = new JButton();
+        ordermanbtn = new JButton();
         label1 = new JLabel();
 
         //======== this ========
@@ -69,9 +66,8 @@ public class MainMenu extends JFrame {
         menumanbtn.setText("Menu manager");
         menumanbtn.addActionListener(e -> menumanbtn(e));
 
-        //---- billmanbtn ----
-        billmanbtn.setText("Bill manager");
-        billmanbtn.addActionListener(e -> billmanbtn(e));
+        //---- ordermanbtn ----
+        ordermanbtn.setText("Order manager");
 
         //---- label1 ----
         label1.setText("Main menu");
@@ -91,7 +87,7 @@ public class MainMenu extends JFrame {
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                             .addGroup(contentPaneLayout.createParallelGroup()
                                 .addComponent(Itemmanbtn, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(billmanbtn, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(ordermanbtn, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)))
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(146, 146, 146)
                             .addComponent(label1)))
@@ -109,7 +105,7 @@ public class MainMenu extends JFrame {
                     .addGap(67, 67, 67)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(menumanbtn)
-                        .addComponent(billmanbtn))
+                        .addComponent(ordermanbtn))
                     .addContainerGap(48, Short.MAX_VALUE))
         );
         pack();
@@ -121,7 +117,7 @@ public class MainMenu extends JFrame {
     private JButton labourmngbtn;
     private JButton Itemmanbtn;
     private JButton menumanbtn;
-    private JButton billmanbtn;
+    private JButton ordermanbtn;
     private JLabel label1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
