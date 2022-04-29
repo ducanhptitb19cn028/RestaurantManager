@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CartDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CartItemDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/order/OrderManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/order/OrderManagement.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Menuuu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Menuuu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/OrderLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/OrderLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenu.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenu.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/bill/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/UpdateRemain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/bill/OrderManager.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/UpdateRemain.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/AddMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/AddMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/AddMenu.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/AddMenu.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/MenuView.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/MenuView.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/ModifyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/ModifyMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/SearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/SearchMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/databasecreated/myrestaurant_menu.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databasecreated/myrestaurant_menu.sql" afterDir="false" />
-    </list>
+    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +71,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "database.data.extractors.current.export.id": "SQL Inserts",
-    "last_opened_file_path": "D:/ShopCDDucAnh",
+    "last_opened_file_path": "D:/RestaurantManager/src/main/resources/databasecreated",
     "settings.editor.selected.configurable": "database.query.execution"
   },
   "keyToStringList": {
@@ -272,7 +247,7 @@
       <workItem from="1651020347391" duration="5960000" />
       <workItem from="1651064604643" duration="5149000" />
       <workItem from="1651108491901" duration="14527000" />
-      <workItem from="1651193451715" duration="23226000" />
+      <workItem from="1651193451715" duration="23427000" />
     </task>
     <task id="LOCAL-00001" summary="new commit">
       <created>1650035411554</created>
@@ -344,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650792602814</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="new commit">
+      <created>1651252589917</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651252589917</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
