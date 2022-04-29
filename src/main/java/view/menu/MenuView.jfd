@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq {space :::p, comp scrollPane1::::761:x}, seq {space :p:360:p, comp label1:::p::p, space :0:0:x}, seq t {par t {seq t {space ::622:x, comp modifybtn:::p:78:p}, seq l {space :p:80:p, par t {comp searchbtn:::p::p, comp addbtn:::p::p}, space ::464:x, comp backbtn:::p::p}}, space :p:67:p}}, space :::p}}"
-			"$verticalGroup": "par l {seq l {space :p:28:p, comp label1:::p::p, space :p:28:p, comp scrollPane1:::p:263:p, space :p:31:p, par b {comp addbtn::b:p::p, comp modifybtn::b:p::p}, space s:::p, par b {comp searchbtn::b:p::p, comp backbtn::b:p::p}, space ::40:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq {space :::p, comp scrollPane1::::761:x}, seq {space :p:360:p, comp label1:::p::p, space :0:0:x}, seq t {par t {seq t {space ::622:x, comp modifybtn:::p:78:p}, seq l {space :p:80:p, par t {comp searchbtn:::p::p, comp addbtn:::p::p}, space ::464:x, comp backbtn:::p::p}}, space :p:67:p}, seq t {space :0:332:x, comp updatebtn:::p::p, space :p:316:p}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:28:p, comp label1:::p::p, space :p:28:p, comp scrollPane1:::p:263:p, space :p:31:p, par b {comp addbtn::b:p::p, comp modifybtn::b:p::p}, space s:::p, par b {comp searchbtn::b:p::p, comp backbtn::b:p::p}, space u:::p, comp updatebtn:::p::p, space ::23:x}}"
 		} ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
@@ -72,9 +72,14 @@ new FormModel {
 				"text": "Menu"
 				"font": new java.awt.Font( "Segoe UI", 1, 22 )
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "updatebtn"
+				"text": "Update quantity"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "updatebtn", true ) )
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 775, 530 )
+			"size": new java.awt.Dimension( 775, 555 )
 		} )
 	}
 }

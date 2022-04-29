@@ -27,6 +27,7 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "ordermanbtn"
 				"text": "Order manager"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ordermanbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"

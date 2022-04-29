@@ -1,39 +1,39 @@
 
 package model;
 
-import java.util.List;
+import java.math.BigDecimal;
+
 
 public class Cart {
-    
-   private List<CartItem> cartItems;
-   private double totalPrice;
+   private String cname;
+   private BigDecimal price;
+   private int num;
+   public Cart(String cname, BigDecimal price, int num){
+       this.cname = cname;
+       this.price = price;
+       this.num = num;
+   }
 
-    public Cart(List<CartItem> cartItems, double totalPrice) {
-        this.cartItems = cartItems;
-        this.totalPrice = totalPrice;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public List<CartItem> getCartItems() {
-        return cartItems;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
-    public void setCartItems(List<CartItem> cartItems) {
-        this.cartItems = cartItems;
-    }
-    
-    public void addItemToCart(CartItem cartItem) {
-        this.cartItems.add(cartItem);
+    public String getCname() {
+        return cname;
     }
 
-    public double getTotalPrice() {
-        totalPrice = 0;
-        cartItems.forEach((cartItem) -> {
-            totalPrice += cartItem.getPrice();
-        });
-        return totalPrice;
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    } 
+    public int getNum() {
+        return num;
+    }
+    public void setNum(int num) {
+        this.num = num;
+    }
 }

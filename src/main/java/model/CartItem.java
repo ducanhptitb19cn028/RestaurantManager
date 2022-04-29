@@ -1,24 +1,37 @@
 
 package model;
 
+import java.math.BigDecimal;
+
 public class CartItem {
     
-    private Item item;
-    private int quantity;
-    private double price;
+    public String cname;
+    public BigDecimal price;
 
-    public CartItem(Item item, int quantity, double price) {
-        this.item = item;
-        this.quantity = quantity;
+    public int quantity;
+    public CartItem(){
+
+    }
+    public CartItem(String cname, BigDecimal price,int quantity){
+        this.cname = cname;
         this.price = price;
+        this.quantity = quantity;
     }
 
-    public Item getItem() {
-        return item;
+    public String getCname() {
+        return cname;
     }
 
-    public void setItem(Item item) {
-        this.item = item;
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public int getQuantity() {
@@ -27,13 +40,5 @@ public class CartItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 }

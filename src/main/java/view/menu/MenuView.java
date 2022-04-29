@@ -32,7 +32,7 @@ public class MenuView extends JFrame {
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
             rows[i][0] = list.get(i).getId();
-            rows[i][1] = list.get(i).getFood();
+            rows[i][1] = list.get(i).getMname();
             if(list.get(i).getImages() != null){
                 ImageIcon img = new ImageIcon(new ImageIcon(list.get(i).getImages()).getImage().getScaledInstance(64,64, SCALE_SMOOTH));
                 rows[i][2]= img;
@@ -77,6 +77,10 @@ public class MenuView extends JFrame {
         MainMenu mm = new MainMenu();
         mm.setVisible(true);
     }
+
+    private void updatebtn(ActionEvent e) {
+        // TODO add your code here
+    }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         scrollPane1 = new JScrollPane();
@@ -86,6 +90,7 @@ public class MenuView extends JFrame {
         searchbtn = new JButton();
         backbtn = new JButton();
         label1 = new JLabel();
+        updatebtn = new JButton();
 
         //======== this ========
         var contentPane = getContentPane();
@@ -133,6 +138,10 @@ public class MenuView extends JFrame {
         label1.setText("Menu");
         label1.setFont(new Font("Segoe UI", Font.BOLD, 22));
 
+        //---- updatebtn ----
+        updatebtn.setText("Update quantity");
+        updatebtn.addActionListener(e -> updatebtn(e));
+
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
@@ -158,7 +167,11 @@ public class MenuView extends JFrame {
                                         .addComponent(addbtn))
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 464, Short.MAX_VALUE)
                                     .addComponent(backbtn)))
-                            .addGap(67, 67, 67)))
+                            .addGap(67, 67, 67))
+                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                            .addGap(0, 332, Short.MAX_VALUE)
+                            .addComponent(updatebtn)
+                            .addGap(316, 316, 316)))
                     .addContainerGap())
         );
         contentPaneLayout.setVerticalGroup(
@@ -176,7 +189,9 @@ public class MenuView extends JFrame {
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(searchbtn)
                         .addComponent(backbtn))
-                    .addContainerGap(40, Short.MAX_VALUE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(updatebtn)
+                    .addContainerGap(23, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());
@@ -196,5 +211,6 @@ public class MenuView extends JFrame {
     private JButton searchbtn;
     private JButton backbtn;
     private JLabel label1;
+    private JButton updatebtn;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

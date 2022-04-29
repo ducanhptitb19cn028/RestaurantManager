@@ -1,0 +1,110 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :p:154:p, comp separator1:::p::p, space ::709:x}, seq {space :::p, par l {comp scrollPane1:::p:592:p, seq l {par l {comp label1::l:p::p, comp label2::l:p::p}, space :::p, par l:::p {seq {comp backbtn:::p::p, space :::x, comp addtocartbtn:::p:234:p}, comp tfItem::::357:x, comp tfNumber::::357:x}}}, space :::p, par l {comp scrollPane2::::259:x, seq {par l {seq {space :0:69:x, comp orderbtn:::p::p}, comp sumMoneyField::l::147:x}, par l {seq {space :p:28:p, comp billbtn:::p:84:p}, seq t {space :::p, comp cancelbtn:::p::p, space :::p}}}}}}"
+			"$verticalGroup": "par l {seq l {space :p:16:p, par l {comp scrollPane2::::163:x, comp scrollPane1::::163:x}, space :::p, par b {comp cancelbtn::b:p::p, comp sumMoneyField::b:p::p}, space :p:8:p, comp separator1:::p::p, space :p:29:p, par l {seq {par b {comp tfItem::b:p::p, comp label1::b:p::p}, space :::p, par b {comp label2::b:p::p, comp tfNumber::b:p::p}}, par b:t {comp orderbtn::b:p:66:p, comp billbtn::b:p::p}}, space s:::p, par b {comp addtocartbtn::b:p::p, comp backbtn::b:p::p}, space :p:29:p}}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tablecartitem"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "Name" )
+						add( "Price" )
+						add( "Quantity" )
+					}, new java.util.Vector {
+						add( null )
+						add( class java.lang.Object )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tablecart"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "Name" )
+						add( "Price" )
+						add( "Num" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JSeparator" ) {
+				name: "separator1"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "sumMoneyField"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "sumMoneyField", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "cancelbtn"
+				"text": "Cancel"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Enter item that you have chosen:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfItem"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Enter number:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfNumber"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "addtocartbtn"
+				"text": "Add to cart"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addtocartbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "orderbtn"
+				"text": "Order"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "orderbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "billbtn"
+				"text": "Bill"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "billbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 865, 430 )
+		} )
+	}
+}

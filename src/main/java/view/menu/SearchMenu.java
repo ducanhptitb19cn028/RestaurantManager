@@ -32,7 +32,7 @@ public class SearchMenu extends JFrame {
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
             rows[i][0] = list.get(i).getId();
-            rows[i][1] = list.get(i).getFood();
+            rows[i][1] = list.get(i).getMname();
             if(list.get(i).getImages() != null){
                 ImageIcon img = new ImageIcon(new ImageIcon(list.get(i).getImages()).getImage().getScaledInstance(64,64, SCALE_SMOOTH));
                 rows[i][2]= img;
@@ -57,7 +57,7 @@ public class SearchMenu extends JFrame {
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
             rows[i][0] = list.get(i).getId();
-            rows[i][1] = list.get(i).getFood();
+            rows[i][1] = list.get(i).getMname();
             if(list.get(i).getImages() != null){
                 ImageIcon img = new ImageIcon(new ImageIcon(list.get(i).getImages()).getImage().getScaledInstance(64,64, SCALE_SMOOTH));
                 rows[i][2]= img;
@@ -82,7 +82,7 @@ public class SearchMenu extends JFrame {
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
             rows[i][0] = list.get(i).getId();
-            rows[i][1] = list.get(i).getFood();
+            rows[i][1] = list.get(i).getMname();
             if(list.get(i).getImages() != null){
                 ImageIcon img = new ImageIcon(new ImageIcon(list.get(i).getImages()).getImage().getScaledInstance(64,64, SCALE_SMOOTH));
                 rows[i][2]= img;
@@ -107,7 +107,7 @@ public class SearchMenu extends JFrame {
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
             rows[i][0] = list.get(i).getId();
-            rows[i][1] = list.get(i).getFood();
+            rows[i][1] = list.get(i).getMname();
             if(list.get(i).getImages() != null){
                 ImageIcon img = new ImageIcon(new ImageIcon(list.get(i).getImages()).getImage().getScaledInstance(64,64, SCALE_SMOOTH));
                 rows[i][2]= img;

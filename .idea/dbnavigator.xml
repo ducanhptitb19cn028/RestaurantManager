@@ -28,7 +28,15 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="48858768-62a3-4e60-9c60-6b38017d99bc">
-      <console name="Connection" type="STANDARD" schema="myrestaurant" session="Main" />
+      <console name="Connection" type="STANDARD" schema="myrestaurant" session="Main"><![CDATA[CREATE TABLE cart IF NOT EXISTS(
+    mname VARCHAR(50) NOT NULL,
+    image longblob ,
+    price DECIMAL(10,2),
+    remain int NOT NULL,
+    FOREIGN KEY (mname) REFERENCES menu (mname),
+    FOREIGN KEY (image) REFERENCES menu (image),
+    FOREIGN KEY (price) REFERENCES menu (price)
+)]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -53,7 +61,7 @@
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$APPLICATION_CONFIG_DIR$/consoles/db/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/console.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/databasecreated/myrestaurant_menu.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
     <mapping file-url="file://$APPLICATION_CONFIG_DIR$/consoles/db/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/console_2.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
@@ -76,7 +84,7 @@
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
     <recently-used-interfaces>
-      <mapping database-type="MYSQL" interface-id="28e41ad3-1a25-414b-8bf3-1efd4e0281fe" />
+      <mapping database-type="MYSQL" interface-id="DEFAULT" />
     </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">

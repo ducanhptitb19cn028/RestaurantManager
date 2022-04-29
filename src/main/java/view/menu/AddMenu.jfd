@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp choosebtn:::p::p, space s:::p, par l {seq l {comp Addbtn:::p::p, space ::287:x, comp backbtn:::p::p, space :p:65:p}, seq {comp imglbl:::p:78:p, space ::430:x}}}, seq t {par t {comp scrollPane1::::606:x, seq {par l {comp label3::l:p::p, comp label2::l:p:46:p, comp label1::l:p::p}, space :p:45:p, par t {comp tfPrice::::515:x, comp tfName::::515:x, comp tfKind::::515:x}}}, space :::p}}}}"
-			"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1:::p:169:p, space u:::p, par t {comp label1:::p::p, comp tfName:::p::p}, space s:::p, par b {comp label2::b:p::p, comp tfPrice::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfKind::b:p::p}, space :p:21:p, par b {comp choosebtn::b:p::p, comp imglbl::b:p:67:p}, space :::p, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space :p:19:p}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp choosebtn:::p::p, space s:::p, comp imglbl:::p:78:p, space :0:424:x}, comp scrollPane1::t::606:x, seq l {par l {comp label3::l:p::p, comp label2::l:p:46:p, comp label1::l:p::p, comp label4::l:p::p}, space :p:45:p, par l {seq {comp Addbtn:::p::p, space ::287:x, comp backbtn:::p::p, space :p:57:p}, comp tfPrice::t::500:x, comp tfName::t::500:x, comp tfKind::t::500:x, comp tfCQuantity::l::500:x}}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space s:::p, comp scrollPane1:::p:169:p, space u:::p, par t {comp label1:::p::p, comp tfName:::p::p}, space s:::p, par b {comp label2::b:p::p, comp tfPrice::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfKind::b:p::p}, space :p:18:p, par b {comp tfCQuantity::b:p::p, comp label4::b:p::p}, space s:::p, par l {comp choosebtn:::p::p, comp imglbl::l:p:67:p}, space :p:9:p, par b {comp Addbtn::b:p::p, comp backbtn::b:p::p}, space :::p}}"
 		} ) {
 			name: "this"
 			"title": "Add food"
@@ -84,6 +84,14 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "imglbl"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Quantity:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfCQuantity"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

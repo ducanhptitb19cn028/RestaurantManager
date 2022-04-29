@@ -1,0 +1,43 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp label1::l:p::p, comp label2::l:p::p}, space s:::p, par l {comp tfName::::195:x, comp tfQuantity::::195:x}, space :::p}, seq l {space :p:84:p, comp updatebtn:::p::p, space ::119:x, comp backbtn:::p::p, space :p:89:p}}"
+			"$verticalGroup": "par l {seq l {space :p:60:p, par b {comp label1::b:p::p, comp tfName::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfQuantity::b:p::p}, space :p:27:p, par l {comp updatebtn:::p::p, comp backbtn:::p::p}, space ::23:x}}"
+		} ) {
+			name: "this"
+			"title": "Update quantity"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Enter an item that need updating:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfName"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "New quantity:"
+				"font": new java.awt.Font( "Segoe UI", 1, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "tfQuantity"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "updatebtn"
+				"text": "Update"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "updatebtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 450, 250 )
+		} )
+	}
+}

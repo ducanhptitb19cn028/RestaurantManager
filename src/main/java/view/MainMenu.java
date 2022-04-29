@@ -6,6 +6,7 @@ package view;
 
 import view.item.ItemManager;
 import view.menu.MenuView;
+import view.order.OrderManagement;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -41,6 +42,13 @@ public class MainMenu extends JFrame {
         mv.setVisible(true);
     }
 
+    private void ordermanbtn(ActionEvent e) {
+        // TODO add your code here
+        this.dispose();
+        OrderManagement om = new OrderManagement();
+        om.setVisible(true);
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -68,6 +76,7 @@ public class MainMenu extends JFrame {
 
         //---- ordermanbtn ----
         ordermanbtn.setText("Order manager");
+        ordermanbtn.addActionListener(e -> ordermanbtn(e));
 
         //---- label1 ----
         label1.setText("Main menu");
@@ -113,6 +122,10 @@ public class MainMenu extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    public static void main(String[] args) {
+        MainMenu mm = new MainMenu();
+        mm.setVisible(true);
+    }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JButton labourmngbtn;
     private JButton Itemmanbtn;

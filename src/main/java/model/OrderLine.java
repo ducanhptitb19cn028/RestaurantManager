@@ -1,6 +1,7 @@
 package model;
 
-public class OrderLine {
+public class
+OrderLine {
     private int orderID;
     private String name;
     private int quantity;

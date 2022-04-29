@@ -5,25 +5,25 @@ import java.math.BigDecimal;
 
 public class Menuuu implements Serializable {
     public int id;
-    public String food;
+    public String mname;
     public byte[] images;
     public BigDecimal price;
     public String kind;
 
-    public Menuuu(int id, String food, byte[] images, BigDecimal price, String kind) {
+    public Menuuu(int id, String mname, byte[] images, BigDecimal price, String kind) {
         this.id = id;
-        this.food=food;
+        this.mname = mname;
         this.images=images;
         this.price = price;
         this.kind = kind;
     }
 
-    public String getFood() {
-        return food;
+    public String getMname() {
+        return mname;
     }
 
-    public void setFood(String food) {
-        this.food = food;
+    public void setMname(String mname) {
+        this.mname = mname;
     }
 
     public byte[] getImages() {
