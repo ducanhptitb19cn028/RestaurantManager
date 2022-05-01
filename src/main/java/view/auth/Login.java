@@ -25,7 +25,7 @@ public class Login extends JFrame {
         initComponents();
     }
     private User user;
-    private void loginbtn(ActionEvent e) {
+    private void loginbtn() {
         // TODO add your code here
         String username = tfUsername.getText();
         String password = String.valueOf(tfPassword.getPassword());
@@ -86,7 +86,7 @@ public class Login extends JFrame {
         //---- loginbtn ----
         loginbtn.setText("Log in");
         loginbtn.setFont(new Font("Segoe UI", Font.BOLD, 12));
-        loginbtn.addActionListener(e -> loginbtn(e));
+        loginbtn.addActionListener(e -> loginbtn());
 
         //---- signupbtn ----
         signupbtn.setText("Sign up");

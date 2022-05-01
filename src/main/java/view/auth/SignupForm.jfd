@@ -4,7 +4,7 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq l {space :p:39:p, par l:::p {seq {comp label2:::p::p, space :p:80:p, comp tfPassword:::::x}, seq l {comp label3:::p::p, space :p:22:p, comp tfConfirm:::::x}, seq l {par l {comp iconlb::l:p::p, comp namelb::l:p::p, comp emaillb::l:p::p, comp phonelb::l:p::p, comp label4::l:p::p, comp usernamelb::l:p::p}, space :p:77:p, par l:::p {comp tfUsername:::::x, comp label1:::::x, comp tfName::l:::x, comp tfEmail::l:::x, comp tfPhone:::::x, comp tfPosition::l:::x}}}}, seq l {space :p:127:p, comp signupbtn:::p::p, space :p:63:p, comp Cancelbtn:::p::p}}, space ::23:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:39:p, par l:::p {seq {comp label2:::p::p, space :p:80:p, comp tfPassword:::::x}, seq l {comp label3:::p::p, space :p:22:p, comp tfConfirm:::::x}, seq l {par l {comp iconlb::l:p::p, comp namelb::l:p::p, comp emaillb::l:p::p, comp phonelb::l:p::p, comp label4::l:p::p, comp usernamelb::l:p::p}, space :p:77:p, par l:::p {comp tfUsername:::::x, comp label1:::::x, comp tfName::l:::x, comp tfEmail::l:::x, comp tfPhone:::::x, comp tfPosition::l:::x}}}}, seq l {space :p:127:p, comp signupbtn:::p::p, space :p:63:p, comp Cancelbtn:::p::p}}, space ::35:x}}"
 			"$verticalGroup": "par l {seq l {space :p:27:p, par l {comp iconlb:::p::p, seq l {space :p:9:p, comp label1:::p::p}}, space s:::p, par b {comp namelb::b:p::p, comp tfName::b:p::p}, space s:::p, par b {comp tfEmail::b:p::p, comp emaillb::b:p::p}, space s:::p, par b {comp phonelb::b:p::p, comp tfPhone::b:p::p}, space s:::p, par l {comp label4:::p::p, comp tfPosition:::p::p}, space ::14:x, par b {comp usernamelb::b:p::p, comp tfUsername::b:p::p}, space s:::p, par t {comp label2:::p::p, comp tfPassword:::p::p}, space u:::p, par b {comp label3::b:p::p, comp tfConfirm::b:p::p}, space ::51:x, par b {comp signupbtn::b:p::p, comp Cancelbtn::b:p::p}, space :p:14:p}}"
 		} ) {
 			name: "this"
@@ -53,6 +53,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "tfUsername"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
@@ -61,6 +62,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JPasswordField" ) {
 				name: "tfPassword"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
@@ -69,6 +71,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JPasswordField" ) {
 				name: "tfConfirm"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "signupbtn"

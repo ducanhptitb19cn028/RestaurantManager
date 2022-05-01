@@ -82,36 +82,41 @@ public class OrderManagement extends JFrame {
 
     private void addtocartbtn(ActionEvent e) {
         // TODO add your code here
-        String newName = tfItem.getText().trim();
-        String num = tfNumber.getText().trim();
-        int number = Integer.parseInt(num);
-        Cart cart =new Cart(newName,cartDAO.getTotalPrice(),number);
 
-        if (newName.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Please enter item id to add to cart","Try again",JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (num.isEmpty() || !num.chars().allMatch( Character::isDigit)){
-            JOptionPane.showMessageDialog(this, "Please enter valid quantity to add to cart","Try again",JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        CartItem cartItem = cartItemDAO.GetCartItemByname(newName);
-        if (number > cartItem.getQuantity()){
-            JOptionPane.showMessageDialog(this, "Sorry , This item is out of stock","Try again",JOptionPane.ERROR_MESSAGE);
+        try{
+            String newName = tfItem.getText().trim();
+            String num = tfNumber.getText().trim();
+            if (newName.isEmpty()){
+                JOptionPane.showMessageDialog(this, "Please enter item name to add to cart","Try again",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (num.isEmpty() || !num.chars().allMatch( Character::isDigit)){
+                JOptionPane.showMessageDialog(this, "Please enter valid quantity to add to cart","Try again",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            Cart cart = new Cart(newName,cartDAO.getTotalPrice(),Integer.parseInt(num));
+            CartItem cartItem = cartItemDAO.GetCartItemByname(cart);
+            if (!cartItemDAO.ExistsCartItem(cart)){
+                JOptionPane.showMessageDialog(this, "This item does not exist in menu","Try again",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if (cart.getNum() > cartItemDAO.GetCartItemByname(cart).getQuantity()){
+                JOptionPane.showMessageDialog(this, "Sorry , This item is out of stock","Try again",JOptionPane.ERROR_MESSAGE);
+                tfItem.setText("");
+                tfNumber.setText("");
+                return;
+            }
+
+            cartDAO.addToCart(cartItem,cart);
+            JOptionPane.showMessageDialog(this, "Add to cart successfully!!");
+            AddtoCartTable();
             tfItem.setText("");
             tfNumber.setText("");
-            return;
+            sumMoneyField.setText(String.valueOf(cartDAO.getTotalPrice()));
+        }catch (NumberFormatException ex){
+
         }
-        if (!cartItemDAO.ExistsCartItem(newName)){
-            JOptionPane.showMessageDialog(this, "This item does not exist in menu","Try again",JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        cartDAO.addToCart(cartItem,cart);
-        JOptionPane.showMessageDialog(this, "Add to cart successfully!!");
-        AddtoCartTable();
-        tfItem.setText("");
-        tfNumber.setText("");
-        sumMoneyField.setText(String.valueOf(cartDAO.getTotalPrice()));
+
     }
 
     private void cancelbtn(ActionEvent e) {
@@ -238,7 +243,7 @@ public class OrderManagement extends JFrame {
                                 .addGroup(contentPaneLayout.createSequentialGroup()
                                     .addComponent(backbtn)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(addtocartbtn, GroupLayout.PREFERRED_SIZE, 234, GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(addtocartbtn))
                                 .addComponent(tfItem, GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
                                 .addComponent(tfNumber, GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE))))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -287,8 +292,8 @@ public class OrderManagement extends JFrame {
                             .addComponent(billbtn)))
                     .addGap(18, 18, 18)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(addtocartbtn)
-                        .addComponent(backbtn))
+                        .addComponent(backbtn)
+                        .addComponent(addtocartbtn))
                     .addGap(29, 29, 29))
         );
         pack();

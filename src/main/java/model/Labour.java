@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Labour  {
+public class Labour implements Serializable {
     public String email;
     public String date_ofBirth;
     public String phone;

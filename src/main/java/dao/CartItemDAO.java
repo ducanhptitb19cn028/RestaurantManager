@@ -62,12 +62,12 @@ public class CartItemDAO {
             e.printStackTrace();
         }
     }
-    public static boolean ExistsCartItem(String cname){
+    public static boolean ExistsCartItem(Cart cart){
         try {
             Connection conn = DBConnection.getConnection();
             String query = "SELECT cname FROM cartitem WHERE cname = ?";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, cname);
+            ps.setString(1, cart.getCname());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return true;
@@ -78,13 +78,13 @@ public class CartItemDAO {
         }
         return false;
     }
-    public static void UpdateQuantity(String name, CartItem cartItem, Cart cart){
+    public static void UpdateQuantity( CartItem cartItem, Cart cart){
         try{
             Connection conn= DBConnection.getConnection();
             String query = "UPDATE cartitem SET cquantity = ?  WHERE cname = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setInt(1,cartItem.getQuantity()-cart.getNum());
-            ps.setString(2,name);
+            ps.setString(2, cartItem.getCname());
             ps.executeUpdate();
             conn.close();
         }catch (SQLException | ClassNotFoundException e) {
@@ -112,10 +112,13 @@ public class CartItemDAO {
         }
         return cartItems;
     }
-    public CartItem GetCartItemByname(String cname){
+    public CartItem GetCartItemByname(Cart cart){
+
         ArrayList<CartItem> cartItems = getAllCartItems();
-        if (cartItems.get(0).getCname().equals(cname)){
-            return cartItems.get(0);
+        for (CartItem i:cartItems ) {
+            if (i.getCname().equalsIgnoreCase(cart.getCname()) ) {
+                return i;
+            }
         }
         return null;
     }

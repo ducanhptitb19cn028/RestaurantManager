@@ -18,7 +18,7 @@ public class CartDAO {
             Connection conn = DBConnection.getConnection();
             String query = "INSERT INTO cart(cname,price,num) VALUES(?,?,?) ";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, cart.getCname());
+            ps.setString(1, cartItem.getCname());
             ps.setBigDecimal(2,cartItem.getPrice().multiply(BigDecimal.valueOf(cart.getNum())));
             ps.setInt(3,cart.getNum());
             ps.executeUpdate();
@@ -41,6 +41,18 @@ public class CartDAO {
             e.printStackTrace();
         }
     }
+    public int getSumQuantity(){
+        int sum;
+        try {
+            PreparedStatement ps = DBConnection.getConnection().prepareStatement("SELECT SUM(num) FROM cart");
+            ResultSet resultSet = ps.executeQuery();
+            resultSet.next();
+            sum = resultSet.getInt(1);
+        } catch (Exception e) {
+            sum = Integer.parseInt(null);
+        }
+        return sum;
+    }
     public BigDecimal getTotalPrice() {
         BigDecimal totalPrice;
         try {
@@ -52,8 +64,5 @@ public class CartDAO {
             totalPrice = null;
         }
         return totalPrice;
-    }
-    public Cart getCart(){
-        return this.cart;
     }
 }

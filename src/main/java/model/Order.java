@@ -1,37 +1,45 @@
 package model;
 
-public class Order {
-    private int orderID;
-    private double price;
-    private String date;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.sql.Date;
 
-    public Order(int orderID, double price, String date) {
-        this.orderID = orderID;
+public class Order implements Serializable {
+    private int quantity;
+
+
+    private BigDecimal price;
+    private java.sql.Date orderday;
+
+    public Order(  int quantity, BigDecimal price,java.sql.Date orderday) {
+        this.quantity = quantity;
         this.price = price;
-        this.date = date;
+        this.orderday= orderday;
     }
 
-    public int getOrderID() {
-        return orderID;
+
+
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public String getDate() {
-        return date;
+    public Date getOrderday() {
+        return orderday;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setOrderday(Date orderday) {
+        this.orderday = orderday;
     }
 }

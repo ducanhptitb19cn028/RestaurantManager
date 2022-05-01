@@ -14,6 +14,10 @@ public class User implements Serializable {
     public String position;
     public String username;
     public String password;
+    public User() {
+
+    }
+
 
     public Long getId() {
         return id;
@@ -31,9 +35,6 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public User() {
-
-    }
 
     public String getEmail() {
         return email;

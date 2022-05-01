@@ -116,6 +116,10 @@ public class UpdateRemain extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
+    public static void main(String[] args) {
+        UpdateRemain ur = new UpdateRemain();
+        ur.setVisible(true);
+    }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JLabel label1;
     private JTextField tfName;

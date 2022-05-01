@@ -1,10 +1,11 @@
 
 package model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 
-public class Cart {
+public class Cart implements Serializable {
    private String cname;
    private BigDecimal price;
    private int num;

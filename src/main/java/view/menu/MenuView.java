@@ -80,6 +80,9 @@ public class MenuView extends JFrame {
 
     private void updatebtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
+        UpdateRemain ur = new UpdateRemain();
+        ur.setVisible(true);
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents

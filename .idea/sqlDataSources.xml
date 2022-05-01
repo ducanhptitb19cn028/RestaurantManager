@@ -10,5 +10,8 @@
         </node>
       </scope>
     </mapping>
+    <mapping uuid="214c1216-0303-49f8-888b-2ad3857b8450" name="@localhost Mapping">
+      <data-sources db="5841840c-5675-4926-9dc2-e61442443932" />
+    </mapping>
   </component>
 </project>

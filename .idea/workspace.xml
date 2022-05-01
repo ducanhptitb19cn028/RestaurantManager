@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit" />
+    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/order/BillManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/order/BillManager.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqlDataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqlDataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CartDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CartDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CartItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CartItemDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Labour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Labour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/OrderLine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/auth/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/auth/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/auth/SignupForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/auth/SignupForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/auth/SignupForm.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/auth/SignupForm.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/UpdateRemain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/UpdateRemain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/order/OrderManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/order/OrderManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/order/OrderManagement.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/order/OrderManagement.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/databasecreated/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/databasecreated/schema.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,10 +43,6 @@
   </component>
   <component name="DatabaseLocalColorSettings">
     <option name="in-editor" value="true" />
-    <colors>
-      <entry key="cart/myrestaurant/d7022632-bb1d-4878-a4b5-c1fab6fe4db3:TABLE" value="Gray" />
-      <entry key="myrestaurant/d7022632-bb1d-4878-a4b5-c1fab6fe4db3:SCHEMA" value="Blue" />
-    </colors>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,6 +54,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -71,12 +99,15 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "database.data.extractors.current.export.id": "SQL Inserts",
-    "last_opened_file_path": "D:/RestaurantManager/src/main/resources/databasecreated",
+    "last_opened_file_path": "D:/OOPJavalonrant",
     "settings.editor.selected.configurable": "database.query.execution"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
       "directory"
+    ],
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
 }]]></component>
@@ -95,7 +126,7 @@
       <recent name="D:\RestaurantManager\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OrderManagement">
+  <component name="RunManager" selected="Application.Login">
     <configuration name="AddMenu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.menu.AddMenu" />
       <module name="RestaurantManager" />
@@ -135,12 +166,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.order.OrderManagement" />
+    <configuration name="MenuView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.menu.MenuView" />
       <module name="RestaurantManager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.order.*" />
+          <option name="PATTERN" value="view.menu.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,12 +179,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignupForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.auth.SignupForm" />
+    <configuration name="OrderManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.order.OrderManagement" />
       <module name="RestaurantManager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.auth.*" />
+          <option name="PATTERN" value="view.order.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -174,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OrderManagement" />
-        <item itemvalue="Application.MainMenu" />
-        <item itemvalue="Application.AddMenu" />
-        <item itemvalue="Application.SignupForm" />
         <item itemvalue="Application.Login" />
+        <item itemvalue="Application.OrderManagement" />
+        <item itemvalue="Application.MenuView" />
+        <item itemvalue="Application.AddMenu" />
+        <item itemvalue="Application.MainMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -248,6 +279,9 @@
       <workItem from="1651064604643" duration="5149000" />
       <workItem from="1651108491901" duration="14527000" />
       <workItem from="1651193451715" duration="23427000" />
+      <workItem from="1651297787117" duration="514000" />
+      <workItem from="1651298593319" duration="12583000" />
+      <workItem from="1651367347002" duration="21253000" />
     </task>
     <task id="LOCAL-00001" summary="new commit">
       <created>1650035411554</created>

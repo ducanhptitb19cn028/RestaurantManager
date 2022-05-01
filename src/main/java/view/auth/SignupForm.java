@@ -92,13 +92,22 @@ public class SignupForm extends JFrame {
         usernamelb.setText("Username:");
         usernamelb.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
+        //---- tfUsername ----
+        tfUsername.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+
         //---- label2 ----
         label2.setText("Password:");
         label2.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
+        //---- tfPassword ----
+        tfPassword.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+
         //---- label3 ----
         label3.setText("Confirm password:");
         label3.setFont(new Font("Segoe UI", Font.BOLD, 14));
+
+        //---- tfConfirm ----
+        tfConfirm.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 
         //---- signupbtn ----
         signupbtn.setText("Sign up");
@@ -155,7 +164,7 @@ public class SignupForm extends JFrame {
                             .addComponent(signupbtn)
                             .addGap(63, 63, 63)
                             .addComponent(Cancelbtn)))
-                    .addContainerGap(23, Short.MAX_VALUE))
+                    .addContainerGap(35, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
