@@ -36,7 +36,7 @@ create table if not exists menu
     kind  varchar(50)    not null,
     constraint menu_mname_uindex
         unique (mname)
-);
+)
 
 create table if not exists cartitem
 (
@@ -65,6 +65,18 @@ create table if not exists users
         unique (email),
     constraint username
         unique (username)
+);
+
+create table if not exists tblorder
+(
+    orderid  int auto_increment
+        primary key,
+    quantity int            not null,
+    oprice   decimal(10, 2) not null,
+    orderday date           not null,
+    staff    varchar(50)    not null,
+    constraint tblorder_users_username_fk
+        foreign key (staff) references users (username)
 );
 
 
