@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/auth/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/auth/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/auth/SignupForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/auth/SignupForm.java" afterDir="false" />
-    </list>
+    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,7 +252,7 @@
       <workItem from="1651298593319" duration="12583000" />
       <workItem from="1651367347002" duration="21691000" />
       <workItem from="1651414720256" duration="6026000" />
-      <workItem from="1651483233694" duration="825000" />
+      <workItem from="1651483233694" duration="1026000" />
     </task>
     <task id="LOCAL-00001" summary="new commit">
       <created>1650035411554</created>
@@ -352,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651404511661</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="new commit">
+      <created>1651484242484</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1651484242484</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

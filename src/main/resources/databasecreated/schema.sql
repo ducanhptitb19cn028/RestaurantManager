@@ -37,6 +37,7 @@ create table if not exists menu
     constraint menu_mname_uindex
         unique (mname)
 )
+    auto_increment = 4;
 
 create table if not exists cartitem
 (
@@ -49,7 +50,8 @@ create table if not exists cartitem
         unique (cname),
     constraint cart_menu_no_fk
         foreign key (id) references menu (no)
-);
+)
+    auto_increment = 4;
 
 create table if not exists users
 (
