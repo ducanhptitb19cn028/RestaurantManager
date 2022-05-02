@@ -5,7 +5,6 @@ import model.Order;
 import model.User;
 import view.db.DBConnection;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

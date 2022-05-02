@@ -4,6 +4,7 @@
 
 package view.auth;
 
+import dao.UserDAO;
 import view.MainMenu;
 import model.User;
 import view.db.DBConnection;
@@ -21,31 +22,31 @@ import javax.swing.GroupLayout;
  * @author unknown
  */
 public class Login extends JFrame {
+    public UserDAO userDAO;
     public Login() {
         initComponents();
+        this.userDAO = new UserDAO();
     }
-    private User user;
     private void loginbtn() {
         // TODO add your code here
         String username = tfUsername.getText();
         String password = String.valueOf(tfPassword.getPassword());
-        user = getAuthenticatedUser(username, password);
-
-        if (user != null) {
-            this.dispose();
-            MainMenu mm = new MainMenu();
-            mm.setVisible(true);
-        }
-        else {
+        User user = new User(username,password);
+        if (username.isEmpty() || password.isEmpty() || !userDAO.getAuthenticatedUser(user) ){
             JOptionPane.showMessageDialog(Login.this,
                     "Email or Password incorrect!!!",
                     "Try again",
                     JOptionPane.ERROR_MESSAGE);
+            return;
         }
+        this.dispose();
+        MainMenu mm = new MainMenu();
+        mm.setVisible(true);
     }
 
     private void signupbtn(ActionEvent e) {
         // TODO add your code here
+        this.dispose();
         SignupForm sf = new SignupForm();
         sf.setVisible(true);
     }
@@ -154,32 +155,7 @@ public class Login extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
-    private User getAuthenticatedUser(String username,String password) {
-        User user = null;
-        try {
-            Connection conn = DBConnection.getConnection();
-            Statement stm= conn.createStatement();
-            String query = "SELECT*FROM users WHERE username=? AND password=?";
-            PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, username);
-            ps.setString(2,password);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                user = new User();
-                user.name=rs.getString("name");
-                user.email=rs.getString("email");
-                user.phone=rs.getString("phone");
-                user.username=rs.getString("username");
-                user.password=rs.getString("password");
-            }
-            stm.close();
-            conn.close();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return user;
-    }
     public static void main(String[] args) {
         Login lg = new Login();
         lg.setVisible(true);

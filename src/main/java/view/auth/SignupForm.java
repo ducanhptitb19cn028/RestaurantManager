@@ -6,19 +6,24 @@ package view.auth;
 
 
 import java.awt.event.*;
+
+import dao.UserDAO;
 import model.User;
 import view.db.DBConnection;
 
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
+import java.util.regex.Pattern;
 
 /**
  * @author unknown
  */
 public class SignupForm extends JFrame {
+    private UserDAO userDAO;
     public SignupForm() {
         initComponents();
+        this.userDAO = new UserDAO();
     }
 
     private void signupbtn(ActionEvent e) {
@@ -28,12 +33,10 @@ public class SignupForm extends JFrame {
 
     private void Cancelbtn(ActionEvent e) {
         // TODO add your code here
-        dispose();
+        this.dispose();
+        Login lg = new Login();
+        lg.setVisible(true);
     }
-    public User user;
-
-
-
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         iconlb = new JLabel();
@@ -221,11 +224,29 @@ public class SignupForm extends JFrame {
         String username = tfUsername.getText();
         String password = String.valueOf(tfPassword.getPassword());
         String confirm = String.valueOf(tfConfirm.getPassword());
-        if (name.isEmpty() || email.isEmpty() || phone.isEmpty() || username.isEmpty() || position.isEmpty() ||password.isEmpty() || confirm.isEmpty()){
-            JOptionPane.showMessageDialog(this,
-                    "Please enter all fields",
-                    "Try again",
-                    JOptionPane.ERROR_MESSAGE);
+        User user = new User(name,email,phone,position,username,password);
+        if (name.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Name field cannot be empty","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (email.isEmpty() || !Pattern.matches("^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$", email)){
+            JOptionPane.showMessageDialog(this, "Email is empty or not valid","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (phone.isEmpty() || !phone.chars().allMatch( Character::isDigit)){
+            JOptionPane.showMessageDialog(this, "Phone is empty or not valid","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (position.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Position can not be empty","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (username.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Username can not be empty","Try again",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (!Pattern.matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$",password) ){
+            JOptionPane.showMessageDialog(this, "Password must have minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
         if (!password.equals(confirm)){
@@ -242,49 +263,18 @@ public class SignupForm extends JFrame {
                     JOptionPane.ERROR_MESSAGE);
             return;
         }
-        user = insert(name, email, phone,position ,username, password);
-        if (user != null){
-            dispose();
-        }
-        else{
-            JOptionPane.showMessageDialog(this,
-                    "Failed to register new user",
-                    "Try again",
-                    JOptionPane.ERROR_MESSAGE);
-        }
-
+        userDAO.insert(user);
+        JOptionPane.showMessageDialog(this, "Account has been registered successfully!!");
+        tfName.setText("");
+        tfEmail.setText("");
+        tfPhone.setText("");
+        tfPosition.setText("");
+        tfUsername.setText("");
+        tfPassword.setText("");
+        tfConfirm.setText("");
     }
 
-    private User insert(String name, String email, String phone,String position ,String username, String password) {
-        User user = null;
 
-        try{
-            String query = "INSERT INTO users (name,email,phone,position,username,password) VALUES"+"(?,?,?,?,?,?)";
-            Connection conn = DBConnection.getConnection();
-            PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, name);
-            ps.setString(2, email);
-            ps.setString(3, phone);
-            ps.setString(4, position);
-            ps.setString(5, username);
-            ps.setString(6, password);
-            int addedRows = ps.executeUpdate();
-            if (addedRows > 0) {
-                user = new User();
-                user.name = name;
-                user.email = email;
-                user.phone = phone;
-                user.position = position;
-                user.username = username;
-                user.password = password;
-            }
-            conn.close();
-        }
-        catch (Exception var15) {
-            var15.printStackTrace();
-        }
-        return user;
-    }
     public static boolean emailExists(String email,String username) {
 
         ResultSet rs = null;
