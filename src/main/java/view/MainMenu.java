@@ -4,14 +4,18 @@
 
 package view;
 
+import view.auth.AdminLogin;
+import view.auth.ChangePassword;
+import view.auth.Login;
 import view.item.ItemManager;
 import view.menu.MenuView;
 import view.order.OrderManagement;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * @author unknown
@@ -19,6 +23,7 @@ import javax.swing.GroupLayout;
 public class MainMenu extends JFrame {
     public MainMenu() {
         initComponents();
+        welcometxt.setText("Welcome "+Login.getUsernametext());
     }
 
     private void labourmngbtn(ActionEvent e) {
@@ -47,6 +52,20 @@ public class MainMenu extends JFrame {
         this.dispose();
         OrderManagement om = new OrderManagement();
         om.setVisible(true);
+    }
+
+    private void logoutbtnMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        this.dispose();
+        Login lg = new Login();
+        lg.setVisible(true);
+    }
+
+    private void changepassbtn(ActionEvent e) {
+        // TODO add your code here
+        this.dispose();
+        ChangePassword changepassbtn = new ChangePassword();
+        changepassbtn.setVisible(true);
     }
 
 
