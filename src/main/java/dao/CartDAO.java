@@ -6,6 +6,7 @@ import view.db.DBConnection;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class CartDAO {
     private Cart cart;
@@ -29,7 +30,7 @@ public class CartDAO {
         }
     }
 
-    public void clearCart() {
+    public static void clearCart() {
         try {
             Connection conn = DBConnection.getConnection();
             String query = "DELETE FROM cart";
@@ -53,7 +54,7 @@ public class CartDAO {
         }
         return sum;
     }
-    public BigDecimal getTotalPrice() {
+    public static BigDecimal getTotalPrice() {
         BigDecimal totalPrice;
         try {
             PreparedStatement ps = DBConnection.getConnection().prepareStatement("SELECT SUM(price) FROM cart");
@@ -64,5 +65,30 @@ public class CartDAO {
             totalPrice = null;
         }
         return totalPrice;
+    }
+    public static ArrayList<Cart> getAllCart(){
+        ArrayList<Cart> carts = null;
+        try {
+            Connection conn = DBConnection.getConnection();
+            String query = "SELECT cname,price,num FROM cart";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+            carts = new ArrayList<>();
+            while (rs.next()) {
+                Cart cart = new Cart(rs.getString("cname"),rs.getBigDecimal("price"),rs.getInt("num"));
+                carts.add(cart);
+            }
+            conn.close();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return carts;
+    }
+    public Cart getCart(){
+        ArrayList<Cart> carts = getAllCart();
+        for (Cart cart :carts){
+            return cart;
+        }
+        return null;
     }
 }

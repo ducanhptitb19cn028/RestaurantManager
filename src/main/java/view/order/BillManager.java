@@ -109,19 +109,108 @@ public class BillManager extends JFrame {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        label1 = new JLabel();
+        scrollPane1 = new JScrollPane();
+        tablebill = new JTable();
+        showbtn = new JButton();
+        printbtn = new JButton();
+        clearcartbtn = new JButton();
+        backbtn = new JButton();
+        scrollPane2 = new JScrollPane();
+        txtbill = new JTextArea();
 
         //======== this ========
         var contentPane = getContentPane();
+
+        //---- label1 ----
+        label1.setText("Thanks for using our service");
+        label1.setFont(new Font("Segoe UI", Font.BOLD, 20));
+
+        //======== scrollPane1 ========
+        {
+
+            //---- tablebill ----
+            tablebill.setModel(new DefaultTableModel(
+                new Object[][] {
+                },
+                new String[] {
+                    "Order ID", "Quantity", "Total Price", "Order day", "Created by"
+                }
+            ));
+            scrollPane1.setViewportView(tablebill);
+        }
+
+        //---- showbtn ----
+        showbtn.setText("Show the bill");
+        showbtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                showbtnMouseClicked(e);
+            }
+        });
+
+        //---- printbtn ----
+        printbtn.setText("Print the bill");
+        printbtn.addActionListener(e -> printbtn(e));
+
+        //---- clearcartbtn ----
+        clearcartbtn.setText("Clear the cart");
+        clearcartbtn.addActionListener(e -> clearcartbtn(e));
+
+        //---- backbtn ----
+        backbtn.setText("Back");
+        backbtn.addActionListener(e -> backbtn(e));
+
+        //======== scrollPane2 ========
+        {
+            scrollPane2.setViewportView(txtbill);
+        }
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
-                .addGap(0, 400, Short.MAX_VALUE)
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addComponent(showbtn, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+                            .addGap(132, 132, 132)
+                            .addComponent(printbtn, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                            .addComponent(clearcartbtn, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap())
+                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
+                    .addContainerGap(285, Short.MAX_VALUE)
+                    .addComponent(backbtn)
+                    .addGap(280, 280, 280))
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addGap(169, 169, 169)
+                    .addComponent(label1)
+                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+                    .addContainerGap())
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
-                .addGap(0, 300, Short.MAX_VALUE)
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addGap(12, 12, 12)
+                    .addComponent(label1)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 194, GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(showbtn)
+                        .addComponent(clearcartbtn)
+                        .addComponent(printbtn))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(backbtn)
+                    .addContainerGap(10, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());
@@ -133,5 +222,14 @@ public class BillManager extends JFrame {
         bm.setVisible(true);
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    private JLabel label1;
+    private JScrollPane scrollPane1;
+    private JTable tablebill;
+    private JButton showbtn;
+    private JButton printbtn;
+    private JButton clearcartbtn;
+    private JButton backbtn;
+    private JScrollPane scrollPane2;
+    private JTextArea txtbill;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

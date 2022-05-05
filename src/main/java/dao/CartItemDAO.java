@@ -26,30 +26,7 @@ public class CartItemDAO {
             e.printStackTrace();
         }
     }
-//    public ArrayList<CartItem> BindtoTable() {
-//        ArrayList<CartItem> list = new ArrayList<>();
-//        Connection conn;
-//        try {
-//            conn = DBConnection.getConnection();
-//        } catch (SQLException | ClassNotFoundException e) {
-//            throw new RuntimeException(e);
-//        }
-//        Statement st;
-//        ResultSet rs;
-//        try {
-//            st = conn.createStatement();
-//            rs = st.executeQuery("SELECT cname,price,cquantity FROM cart");
-//            while (rs.next()) {
-//               CartItem ci = new CartItem(rs.getString("cname"),rs.getBigDecimal("price"),rs.getInt("cquantity"));
-//                list.add(ci);
-//            }
-//        }
-//        catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return list;
-//    }
-    public static void UpdateCartItem(String cname, int cquantity){
+public static void UpdateCartItem(String cname, int cquantity){
         try{
             Connection conn= DBConnection.getConnection();
             String query = "UPDATE cartitem SET cquantity = ?  WHERE cname = ?";
@@ -86,6 +63,27 @@ public class CartItemDAO {
             ps.setInt(1,cartItem.getQuantity()-cart.getNum());
             ps.setString(2, cartItem.getCname());
             ps.executeUpdate();
+            conn.close();
+        }catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void ReturnQuantity(){
+        try{
+            ArrayList<CartItem> cartItems = getAllCartItems();
+            ArrayList<Cart> carts = CartDAO.getAllCart();
+            Connection conn= DBConnection.getConnection();
+            for (Cart i:carts){
+                for (CartItem j : cartItems){
+                    if(i.getCname().equalsIgnoreCase(j.getCname())){
+                        String query = "UPDATE cartitem SET cquantity = ?  WHERE cname = ?";
+                        PreparedStatement ps = conn.prepareStatement(query);
+                        ps.setInt(1, j.getQuantity() + i.getNum());
+                        ps.setString(2, j.getCname());
+                        ps.executeUpdate();
+                    }
+                }
+            }
             conn.close();
         }catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

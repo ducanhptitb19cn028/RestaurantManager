@@ -4,6 +4,7 @@
 
 package view;
 
+import java.awt.event.*;
 import view.auth.AdminLogin;
 import view.auth.ChangePassword;
 import view.auth.Login;
@@ -14,7 +15,6 @@ import view.order.OrderManagement;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
@@ -76,6 +76,9 @@ public class MainMenu extends JFrame {
         menumanbtn = new JButton();
         ordermanbtn = new JButton();
         label1 = new JLabel();
+        logoutbtn = new JButton();
+        changepassbtn = new JButton();
+        welcometxt = new JLabel();
 
         //======== this ========
         setTitle("Main menu");
@@ -101,40 +104,74 @@ public class MainMenu extends JFrame {
         label1.setText("Main menu");
         label1.setFont(new Font("Segoe UI", Font.BOLD, 22));
 
+        //---- logoutbtn ----
+        logoutbtn.setText("Log out");
+        logoutbtn.setIcon(new ImageIcon(getClass().getResource("/images/logout.png")));
+        logoutbtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                logoutbtnMouseClicked(e);
+            }
+        });
+
+        //---- changepassbtn ----
+        changepassbtn.setText("Change password");
+        changepassbtn.setIcon(new ImageIcon(getClass().getResource("/images/changepassword.png")));
+        changepassbtn.addActionListener(e -> changepassbtn(e));
+
+        //---- welcometxt ----
+        welcometxt.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        welcometxt.setText("Welcome ");
+
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGroup(contentPaneLayout.createParallelGroup()
+                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(menumanbtn, GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                                .addComponent(labourmngbtn, GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                            .addGap(29, 29, 29)
+                            .addComponent(welcometxt)
+                            .addGap(77, 77, 77)
+                            .addComponent(label1)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                            .addComponent(logoutbtn))
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addContainerGap()
                             .addGroup(contentPaneLayout.createParallelGroup()
-                                .addComponent(Itemmanbtn, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ordermanbtn, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(labourmngbtn, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(menumanbtn, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                .addComponent(ordermanbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                .addComponent(Itemmanbtn, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(146, 146, 146)
-                            .addComponent(label1)))
-                    .addContainerGap(42, Short.MAX_VALUE))
+                            .addContainerGap(310, Short.MAX_VALUE)
+                            .addComponent(changepassbtn)))
+                    .addContainerGap(29, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(label1, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
-                    .addGap(30, 30, 30)
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addGap(11, 11, 11)
+                            .addComponent(logoutbtn, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE))
+                        .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                            .addComponent(welcometxt)
+                            .addComponent(label1, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(changepassbtn, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(Itemmanbtn)
-                        .addComponent(labourmngbtn))
+                        .addComponent(labourmngbtn)
+                        .addComponent(Itemmanbtn))
                     .addGap(67, 67, 67)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(menumanbtn)
                         .addComponent(ordermanbtn))
-                    .addContainerGap(48, Short.MAX_VALUE))
+                    .addContainerGap(22, Short.MAX_VALUE))
         );
         pack();
         setLocationRelativeTo(getOwner());
@@ -151,5 +188,8 @@ public class MainMenu extends JFrame {
     private JButton menumanbtn;
     private JButton ordermanbtn;
     private JLabel label1;
+    private JButton logoutbtn;
+    private JButton changepassbtn;
+    private JLabel welcometxt;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

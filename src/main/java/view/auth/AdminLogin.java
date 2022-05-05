@@ -2,9 +2,10 @@
  * Created by JFormDesigner on Wed Apr 13 17:32:05 ICT 2022
  */
 
-package view;
+package view.auth;
 
 
+import view.MainMenu;
 import view.db.DBConnection;
 import view.labour.LabourManager;
 import model.User;
@@ -32,7 +33,9 @@ public class AdminLogin extends JFrame {
         MainMenu mm = new MainMenu();
         mm.setVisible(true);
     }
-
+    public static String getUsernametext(){
+        return tfUsername.getText();
+    }
     private void adminbtn(ActionEvent e) {
         // TODO add your code here
         String username = tfUsername.getText();
@@ -173,7 +176,7 @@ public class AdminLogin extends JFrame {
     private JLabel label1;
     private JLabel label2;
     private JLabel label3;
-    private JTextField tfUsername;
+    private static JTextField tfUsername;
     private JPasswordField tfPassword;
     private JButton adminbtn;
     private JButton backbtn;

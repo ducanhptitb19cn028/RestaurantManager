@@ -6,8 +6,10 @@ package view.order;
 
 import dao.CartDAO;
 import dao.CartItemDAO;
+import dao.OrderDAO;
 import model.Cart;
 import model.CartItem;
+import model.Order;
 import view.MainMenu;
 import view.db.DBConnection;
 
@@ -19,6 +21,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  * @author unknown
@@ -108,6 +111,7 @@ public class OrderManagement extends JFrame {
             }
 
             cartDAO.addToCart(cartItem,cart);
+            cartItemDAO.UpdateQuantity(cartItem,cart);
             JOptionPane.showMessageDialog(this, "Add to cart successfully!!");
             AddtoCartTable();
             tfItem.setText("");
@@ -121,6 +125,7 @@ public class OrderManagement extends JFrame {
 
     private void cancelbtn(ActionEvent e) {
         // TODO add your code here
+        cartItemDAO.ReturnQuantity();
         cartDAO.clearCart();
         AddtoCartTable();
         sumMoneyField.setText("");
@@ -136,12 +141,16 @@ public class OrderManagement extends JFrame {
 
     private void orderbtn(ActionEvent e) {
         // TODO add your code here
-//        cartItemDAO.UpdateQuantity();
+        Date dtToday = new Date();
+        java.sql.Date date = new java.sql.Date(dtToday.getTime());
+        Order or = new Order(cartDAO.getSumQuantity(), cartDAO.getTotalPrice(), date);
+        OrderDAO.InsertOrderBill(cartDAO,or);
+        JOptionPane.showMessageDialog(this, "Order successfully!!");
+        this.dispose();
+        BillManager bm = new BillManager();
+        bm.setVisible(true);
     }
 
-    private void billbtn(ActionEvent e) {
-        // TODO add your code here
-    }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         scrollPane1 = new JScrollPane();
@@ -158,7 +167,6 @@ public class OrderManagement extends JFrame {
         addtocartbtn = new JButton();
         orderbtn = new JButton();
         backbtn = new JButton();
-        billbtn = new JButton();
 
         //======== this ========
         var contentPane = getContentPane();
@@ -218,10 +226,6 @@ public class OrderManagement extends JFrame {
         backbtn.setText("Back");
         backbtn.addActionListener(e -> backbtn(e));
 
-        //---- billbtn ----
-        billbtn.setText("Bill");
-        billbtn.addActionListener(e -> billbtn(e));
-
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
@@ -255,14 +259,9 @@ public class OrderManagement extends JFrame {
                                     .addGap(0, 69, Short.MAX_VALUE)
                                     .addComponent(orderbtn))
                                 .addComponent(sumMoneyField, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
-                            .addGroup(contentPaneLayout.createParallelGroup()
-                                .addGroup(contentPaneLayout.createSequentialGroup()
-                                    .addGap(28, 28, 28)
-                                    .addComponent(billbtn, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cancelbtn)
-                                    .addContainerGap())))))
+                            .addGap(28, 28, 28)
+                            .addComponent(cancelbtn)
+                            .addContainerGap())))
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
@@ -287,9 +286,7 @@ public class OrderManagement extends JFrame {
                             .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(label2)
                                 .addComponent(tfNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(orderbtn, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(billbtn)))
+                        .addComponent(orderbtn, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(backbtn)
@@ -316,6 +313,5 @@ public class OrderManagement extends JFrame {
     private JButton addtocartbtn;
     private JButton orderbtn;
     private JButton backbtn;
-    private JButton billbtn;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

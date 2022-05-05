@@ -8,6 +8,7 @@ import dao.CartItemDAO;
 import dao.MenuDAO;
 import model.CartItem;
 import model.Menuuu;
+import view.auth.Login;
 import view.db.DBConnection;
 
 import javax.swing.*;
@@ -90,12 +91,13 @@ public class AddMenu extends JFrame {
         try {
             InputStream is = new FileInputStream(f);
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO menu(mname,image,price,kind) VALUES(?,?,?,?)";
+            String query = "INSERT INTO menu(mname,image,price,kind,added_by) VALUES(?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1,name);
             ps.setBlob(2,is);
             ps.setBigDecimal(3, BigDecimal.valueOf(Double.parseDouble(price)));
             ps.setString(4,kind);
+            ps.setString(5, Login.getUsernametext());
             int i = ps.executeUpdate();
             if (i>0){
                 JOptionPane.showMessageDialog(this,"Menu has been added!!!");

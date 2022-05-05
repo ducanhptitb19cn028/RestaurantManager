@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq {space :p:45:p, par l:::p {comp menumanbtn::::138:x, comp labourmngbtn::::138:x}, space ::78:x, par l {comp Itemmanbtn::t:p:140:p, comp ordermanbtn::t:p:140:p}}, seq l {space :p:146:p, comp label1:::p::p}}, space ::42:x}}"
-			"$verticalGroup": "par l {seq l {space :::p, comp label1:::p:57:p, space :p:30:p, par b {comp Itemmanbtn::b:p::p, comp labourmngbtn::b:p::p}, space :p:67:p, par b {comp menumanbtn::b:p::p, comp ordermanbtn::b:p::p}, space ::48:x}}"
+			"$horizontalGroup": "par l {seq {par t {seq {space :p:29:p, comp welcometxt:::p::p, space :p:77:p, comp label1:::p::p, space ::81:x, comp logoutbtn:::p::p}, seq {space :::p, par l {comp labourmngbtn:::p:138:p, comp menumanbtn::l:p:138:p}, space :::x, par l:::p {comp ordermanbtn::::140:x, comp Itemmanbtn::::140:x}}, seq {space ::310:x, comp changepassbtn:::p::p}}, space ::29:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {seq l {space :p:11:p, comp logoutbtn:::p:46:p}, par t:l {comp welcometxt:::p::p, comp label1:::p:57:p}}, space :::p, comp changepassbtn:::p:44:p, space :::p, par b {comp labourmngbtn::b:p::p, comp Itemmanbtn::b:p::p}, space :p:67:p, par b {comp menumanbtn::b:p::p, comp ordermanbtn::b:p::p}, space ::22:x}}"
 		} ) {
 			name: "this"
 			"title": "Main menu"
@@ -34,9 +34,26 @@ new FormModel {
 				"text": "Main menu"
 				"font": new java.awt.Font( "Segoe UI", 1, 22 )
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "logoutbtn"
+				"text": "Log out"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/images/logout.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "logoutbtnMouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "changepassbtn"
+				"text": "Change password"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/images/changepassword.png" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "changepassbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "welcometxt"
+				"font": new java.awt.Font( "Segoe UI", 0, 14 )
+				"text": "Welcome "
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 5 )
-			"size": new java.awt.Dimension( 445, 300 )
+			"size": new java.awt.Dimension( 505, 300 )
 		} )
 	}
 }

@@ -5,18 +5,12 @@
 package view.auth;
 
 import dao.UserDAO;
-import view.MainMenu;
 import model.User;
-import view.db.DBConnection;
+import view.MainMenu;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * @author unknown
@@ -26,6 +20,9 @@ public class Login extends JFrame {
     public Login() {
         initComponents();
         this.userDAO = new UserDAO();
+    }
+    public static String getUsernametext(){
+        return tfUsername.getText();
     }
     private void loginbtn() {
         // TODO add your code here
@@ -163,7 +160,7 @@ public class Login extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JLabel restaurant;
     private JLabel label1;
-    private JTextField tfUsername;
+    private static JTextField tfUsername;
     private JLabel label2;
     private JPasswordField tfPassword;
     private JButton loginbtn;

@@ -1,5 +1,6 @@
 package dao;
 
+import view.auth.AdminLogin;
 import view.db.DBConnection;
 import model.Labour;
 
@@ -11,7 +12,7 @@ public class LabourDAO {
     public static void addLabour(Labour labour){
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO labour(name,date_ofBirth,email,phone,address,position,salary) VALUES(?,?,?,?,?,?,?)";
+            String query = "INSERT INTO labour(name,date_ofBirth,email,phone,address,position,salary,added_by) VALUES(?,?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, labour.name);
             ps.setString(2, labour.date_ofBirth);
@@ -20,6 +21,7 @@ public class LabourDAO {
             ps.setString(5,labour.address);
             ps.setString(6,labour.position);
             ps.setBigDecimal(7,labour.salary);
+            ps.setString(8, AdminLogin.getUsernametext());
             ps.executeUpdate();
             conn.close();
         }catch (SQLException | ClassNotFoundException e) {

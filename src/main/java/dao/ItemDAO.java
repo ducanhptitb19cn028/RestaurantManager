@@ -1,5 +1,6 @@
 package dao;
 
+import view.auth.Login;
 import view.db.DBConnection;
 import model.Item;
 
@@ -14,12 +15,13 @@ public class ItemDAO {
     public static void addItem(Item item) {
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO items(name,price,quantity,import_date) VALUES(?,?,?,?)";
+            String query = "INSERT INTO items(name,price,quantity,import_date,imported_by) VALUES(?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, item.name);
             ps.setBigDecimal(2,item.price);
             ps.setInt(3,item.quantity);
             ps.setDate(4,item.import_date);
+            ps.setString(5, Login.getUsernametext());
             ps.executeUpdate();
             conn.close();
 

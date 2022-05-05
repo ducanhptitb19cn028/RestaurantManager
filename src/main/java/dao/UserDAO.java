@@ -43,4 +43,18 @@ public class UserDAO {
 
         }
     }
+
+    public void Update(User user, String newPassword) {
+        try{
+            String query = "UPDATE users SET password = ? WHERE username = ?";
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(2, user.getUsername());
+            ps.setString(1, user.getPassword());
+            ps.executeUpdate();
+            conn.close();
+        }catch (SQLException | ClassNotFoundException e) {
+
+        }
+    }
 }

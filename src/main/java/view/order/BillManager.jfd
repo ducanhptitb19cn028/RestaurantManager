@@ -4,13 +4,75 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {space :0:400:x}"
-			"$verticalGroup": "par l {space :0:300:x}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp scrollPane1::::631:x, seq l {comp showbtn:::p:132:p, space :p:132:p, comp printbtn:::p:111:p, space ::148:x, comp clearcartbtn:::p:108:p}}, space :::p}, seq t {space ::285:x, comp backbtn:::p::p, space :p:280:p}, seq {space :p:169:p, comp label1:::p::p, space :::x}, seq l {space :::p, comp scrollPane2::::631:x, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:12:p, comp label1:::p::p, space u:::p, comp scrollPane1:::p:194:p, space s:::p, comp scrollPane2:::p:122:p, space u:::p, par b {comp showbtn::b:p::p, comp clearcartbtn::b:p::p, comp printbtn::b:p::p}, space :::p, comp backbtn:::p::p, space ::10:x}}"
 		} ) {
 			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Thanks for using our service"
+				"font": new java.awt.Font( "Segoe UI", 1, 20 )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tablebill"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "Order ID" )
+						add( "Quantity" )
+						add( "Total Price" )
+						add( "Order day" )
+						add( "Created by" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "showbtn"
+				"text": "Show the bill"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "showbtnMouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "printbtn"
+				"text": "Print the bill"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "printbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "clearcartbtn"
+				"text": "Clear the cart"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "clearcartbtn", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "backbtn"
+				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "txtbill"
+				} )
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"size": new java.awt.Dimension( 645, 505 )
 		} )
 	}
 }
