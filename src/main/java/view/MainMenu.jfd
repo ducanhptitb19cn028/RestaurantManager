@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par t {seq {space :p:29:p, comp welcometxt:::p::p, space :p:77:p, comp label1:::p::p, space ::81:x, comp logoutbtn:::p::p}, seq {space :::p, par l {comp labourmngbtn:::p:138:p, comp menumanbtn::l:p:138:p}, space :::x, par l:::p {comp ordermanbtn::::140:x, comp Itemmanbtn::::140:x}}, seq {space ::310:x, comp changepassbtn:::p::p}}, space ::29:x}}"
-			"$verticalGroup": "par l {seq l {space :::p, par l {seq l {space :p:11:p, comp logoutbtn:::p:46:p}, par t:l {comp welcometxt:::p::p, comp label1:::p:57:p}}, space :::p, comp changepassbtn:::p:44:p, space :::p, par b {comp labourmngbtn::b:p::p, comp Itemmanbtn::b:p::p}, space :p:67:p, par b {comp menumanbtn::b:p::p, comp ordermanbtn::b:p::p}, space ::22:x}}"
+			"$horizontalGroup": "par l {seq {par t {seq {space :p:29:p, comp welcometxt:::p::p, space ::102:x, comp label1:::p::p, space :p:56:p, comp logoutbtn:::p::p}, seq {space ::310:x, comp changepassbtn:::p::p}}, space ::29:x}, seq t {space :::p, par l {comp menumanbtn:::p:138:p, comp labourmngbtn:::p:138:p}, space ::222:x, par l:::p {comp Itemmanbtn::::131:x, comp ordermanbtn::::131:x}, space :::x}}"
+			"$verticalGroup": "par l {seq l {par l {seq l {space :p:8:p, par b {comp logoutbtn::b:p:46:p, comp label1::b:p:57:p}}, seq l {space :p:43:p, comp welcometxt:::p::p}}, space :::p, comp changepassbtn:::p:44:p, space s:::p, par l {comp labourmngbtn:::p:70:p, comp Itemmanbtn:::::x}, space ::34:x, par l {comp menumanbtn:::p:70:p, comp ordermanbtn:::::x}, space :p:31:p}}"
 		} ) {
 			name: "this"
 			"title": "Main menu"
@@ -53,7 +53,7 @@ new FormModel {
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 5 )
-			"size": new java.awt.Dimension( 505, 300 )
+			"size": new java.awt.Dimension( 505, 370 )
 		} )
 	}
 }

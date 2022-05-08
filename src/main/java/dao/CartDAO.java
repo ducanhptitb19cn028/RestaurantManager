@@ -2,7 +2,7 @@ package dao;
 
 import model.Cart;
 import model.CartItem;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import java.math.BigDecimal;
 import java.sql.*;

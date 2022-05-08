@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq t {space :::p, par t {comp scrollPane1:::::x, seq {comp label1:::p::p, space s:::p, comp tfSearch:::p:504:p, space s:::p, comp searchbtn::::37:x}}}, seq l {space :p:71:p, comp drinkbtn:::p::p, space :p:108:p, par l {seq {comp foodbtn:::p::p, space :p:101:p, comp desertbtn:::p::p}, comp button4:::p::p}, space :0:66:x}}, space :::p}}"
-			"$verticalGroup": "par l {seq l {par l {seq {space :p:24:p, par b {comp label1::b:p::p, comp tfSearch::b:p::p}}, seq t {space :::p, comp searchbtn:::p::p}}, space s:::p, comp scrollPane1:::p:293:p, space s:::p, par b {comp drinkbtn::b:p::p, comp desertbtn::b:p::p, comp foodbtn::b:p::p}, space ::39:x, comp button4:::p::p, space :::p}}"
+			"$horizontalGroup": "par l {seq {par l {seq t {space :::p, par t {comp scrollPane1:::::x, seq {comp label1:::p::p, space s:::p, comp tfSearch:::p:504:p, space s:::p, comp searchbtn::::37:x}}}, seq l {space :p:71:p, comp drinkbtn:::p::p, space :p:108:p, par l {comp backbtn:::p:94:p, comp foodbtn:::::x}, space :p:101:p, comp desertbtn:::p::p, space :0:66:x}}, space :::p}}"
+			"$verticalGroup": "par l {seq t {par l {seq {space :p:24:p, par b {comp label1::b:p::p, comp tfSearch::b:p::p}}, seq t {space :::p, comp searchbtn:::p::p}}, space s:::p, comp scrollPane1:::p:293:p, space s:::x, par b {comp drinkbtn::b:p::p, comp desertbtn::b:p::p, comp foodbtn::b:p::p}, space :p:39:p, comp backbtn:::p::p, space :::p}}"
 		} ) {
 			name: "this"
 			"title": "Search menu"
@@ -69,11 +69,12 @@ new FormModel {
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "desertbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button4"
+				name: "backbtn"
 				"text": "Back"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
+			"location": new java.awt.Point( 0, 5 )
 			"size": new java.awt.Dimension( 650, 520 )
 		} )
 	}

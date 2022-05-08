@@ -5,7 +5,7 @@
 package view.labour;
 
 import dao.LabourDAO;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import java.awt.*;
 import java.awt.event.*;

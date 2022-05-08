@@ -1,7 +1,7 @@
 package dao;
 
 import view.auth.AdminLogin;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 import model.Labour;
 
 import java.sql.Connection;

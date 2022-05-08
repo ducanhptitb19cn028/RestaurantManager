@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {comp scrollPane1::::631:x, seq l {comp showbtn:::p:132:p, space :p:132:p, comp printbtn:::p:111:p, space ::148:x, comp clearcartbtn:::p:108:p}}, space :::p}, seq t {space ::285:x, comp backbtn:::p::p, space :p:280:p}, seq {space :p:169:p, comp label1:::p::p, space :::x}, seq l {space :::p, comp scrollPane2::::631:x, space :::p}}"
-			"$verticalGroup": "par l {seq l {space :p:12:p, comp label1:::p::p, space u:::p, comp scrollPane1:::p:194:p, space s:::p, comp scrollPane2:::p:122:p, space u:::p, par b {comp showbtn::b:p::p, comp clearcartbtn::b:p::p, comp printbtn::b:p::p}, space :::p, comp backbtn:::p::p, space ::10:x}}"
+			"$horizontalGroup": "par l {seq {space :p:169:p, comp label1:::p::p, space :::x}, seq {space :::p, par l {comp scrollPane1::::631:x, seq l {comp showbtn:::p:132:p, space :p:132:p, par l:::p {comp backbtn::::111:x, comp printbtn::::111:x}, space ::152:x, comp clearcartbtn:::p::p}, comp scrollPane2::l::631:x}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :p:12:p, comp label1:::p::p, space u:::p, comp scrollPane1:::p:194:p, space s:::p, comp scrollPane2:::p:122:p, space u:::p, par b {comp showbtn::b:p::p, comp printbtn::b:p::p, comp clearcartbtn::b:p::p}, space :::p, comp backbtn:::p::p, space ::10:x}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -71,7 +71,7 @@ new FormModel {
 				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
+			"location": new java.awt.Point( 5, 5 )
 			"size": new java.awt.Dimension( 645, 505 )
 		} )
 	}

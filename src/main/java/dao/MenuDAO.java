@@ -1,7 +1,7 @@
 package dao;
 
 import model.Menuuu;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;

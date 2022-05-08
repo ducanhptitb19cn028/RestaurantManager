@@ -11,7 +11,7 @@ import model.Cart;
 import model.CartItem;
 import model.Order;
 import view.MainMenu;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -34,6 +34,7 @@ public class OrderManagement extends JFrame {
         this.cartDAO = new CartDAO();
         initComponents();
         InsertDatabaseintoTable();
+
     }
     public void InsertDatabaseintoTable(){
         Object[] ob = new Object[10];
@@ -53,6 +54,7 @@ public class OrderManagement extends JFrame {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+        table.fireTableDataChanged();
     }
     public void AddtoCartTable(){
         Object[] ob = new Object[5];
@@ -72,10 +74,7 @@ public class OrderManagement extends JFrame {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-    private void sumMoneyField(ActionEvent e) {
-        // TODO add your code here
-
+        table.fireTableDataChanged();
     }
 
     public static void main(String[] args) {
@@ -116,7 +115,7 @@ public class OrderManagement extends JFrame {
             AddtoCartTable();
             tfItem.setText("");
             tfNumber.setText("");
-            sumMoneyField.setText(String.valueOf(cartDAO.getTotalPrice()));
+            sumMoneyField.setText("Total price: " + cartDAO.getTotalPrice());
         }catch (NumberFormatException ex){
 
         }
@@ -151,6 +150,7 @@ public class OrderManagement extends JFrame {
         bm.setVisible(true);
     }
 
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         scrollPane1 = new JScrollPane();
@@ -158,7 +158,6 @@ public class OrderManagement extends JFrame {
         scrollPane2 = new JScrollPane();
         tablecart = new JTable();
         separator1 = new JSeparator();
-        sumMoneyField = new JTextField();
         cancelbtn = new JButton();
         label1 = new JLabel();
         tfItem = new JTextField();
@@ -167,6 +166,7 @@ public class OrderManagement extends JFrame {
         addtocartbtn = new JButton();
         orderbtn = new JButton();
         backbtn = new JButton();
+        sumMoneyField = new JLabel();
 
         //======== this ========
         var contentPane = getContentPane();
@@ -199,9 +199,6 @@ public class OrderManagement extends JFrame {
             scrollPane2.setViewportView(tablecart);
         }
 
-        //---- sumMoneyField ----
-        sumMoneyField.addActionListener(e -> sumMoneyField(e));
-
         //---- cancelbtn ----
         cancelbtn.setText("Cancel");
         cancelbtn.addActionListener(e -> cancelbtn(e));
@@ -226,14 +223,18 @@ public class OrderManagement extends JFrame {
         backbtn.setText("Back");
         backbtn.addActionListener(e -> backbtn(e));
 
+        //---- sumMoneyField ----
+        sumMoneyField.setText("Total price:");
+        sumMoneyField.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(154, 154, 154)
+                    .addGap(242, 242, 242)
                     .addComponent(separator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(709, Short.MAX_VALUE))
+                    .addContainerGap(621, Short.MAX_VALUE))
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(contentPaneLayout.createParallelGroup()
@@ -241,7 +242,9 @@ public class OrderManagement extends JFrame {
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGroup(contentPaneLayout.createParallelGroup()
                                 .addComponent(label1)
-                                .addComponent(label2))
+                                .addGroup(contentPaneLayout.createSequentialGroup()
+                                    .addGap(106, 106, 106)
+                                    .addComponent(label2)))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                 .addGroup(contentPaneLayout.createSequentialGroup()
@@ -273,7 +276,7 @@ public class OrderManagement extends JFrame {
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(cancelbtn)
-                        .addComponent(sumMoneyField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(sumMoneyField))
                     .addGap(8, 8, 8)
                     .addComponent(separator1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addGap(29, 29, 29)
@@ -304,7 +307,6 @@ public class OrderManagement extends JFrame {
     private JScrollPane scrollPane2;
     private JTable tablecart;
     private JSeparator separator1;
-    private JTextField sumMoneyField;
     private JButton cancelbtn;
     private JLabel label1;
     private JTextField tfItem;
@@ -313,5 +315,6 @@ public class OrderManagement extends JFrame {
     private JButton addtocartbtn;
     private JButton orderbtn;
     private JButton backbtn;
+    private JLabel sumMoneyField;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

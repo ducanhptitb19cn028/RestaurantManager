@@ -8,7 +8,7 @@ import java.awt.event.*;
 
 import dao.LabourDAO;
 import model.Labour;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import java.awt.*;
 import java.math.BigDecimal;

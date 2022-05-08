@@ -1048,7 +1048,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
     </index>
     <column id="300" parent="289" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>6</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1122,7 +1122,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
     </index>
     <column id="315" parent="291" name="labour_id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1182,7 +1182,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
     </key>
     <column id="327" parent="292" name="no">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>6</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1211,116 +1211,125 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <index id="333" parent="292" name="menu_mname_uindex">
+    <foreign-key id="333" parent="292" name="menu_users_username_fk">
+      <ColNames>added_by</ColNames>
+      <RefColNames>username</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="334" parent="292" name="menu_mname_uindex">
       <ColNames>mname</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="334" parent="292" name="PRIMARY">
+    <index id="335" parent="292" name="menu_users_username_fk">
+      <ColNames>added_by</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="336" parent="292" name="PRIMARY">
       <ColNames>no</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="335" parent="292" name="menu_mname_uindex">
+    <key id="337" parent="292" name="menu_mname_uindex">
       <ColNames>mname</ColNames>
       <UnderlyingIndexName>menu_mname_uindex</UnderlyingIndexName>
     </key>
-    <column id="336" parent="293" name="orderid">
-      <AutoIncrement>4</AutoIncrement>
+    <column id="338" parent="293" name="orderid">
+      <AutoIncrement>13</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="337" parent="293" name="quantity">
+    <column id="339" parent="293" name="quantity">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="338" parent="293" name="oprice">
+    <column id="340" parent="293" name="oprice">
       <DataType>decimal(10,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="339" parent="293" name="orderday">
+    <column id="341" parent="293" name="orderday">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="340" parent="293" name="staff">
+    <column id="342" parent="293" name="staff">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <foreign-key id="341" parent="293" name="tblorder_users_username_fk">
+    <foreign-key id="343" parent="293" name="tblorder_users_username_fk">
       <ColNames>staff</ColNames>
       <RefColNames>username</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="342" parent="293" name="tblorder_users_username_fk">
+    <index id="344" parent="293" name="tblorder_users_username_fk">
       <ColNames>staff</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="343" parent="293" name="PRIMARY">
+    <key id="345" parent="293" name="PRIMARY">
       <ColNames>orderid</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="344" parent="294" name="no">
+    <column id="346" parent="294" name="no">
       <AutoIncrement>5</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="345" parent="294" name="name">
+    <column id="347" parent="294" name="name">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="346" parent="294" name="email">
+    <column id="348" parent="294" name="email">
       <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="347" parent="294" name="phone">
+    <column id="349" parent="294" name="phone">
       <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="348" parent="294" name="username">
+    <column id="350" parent="294" name="username">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="349" parent="294" name="password">
+    <column id="351" parent="294" name="password">
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="350" parent="294" name="position">
+    <column id="352" parent="294" name="position">
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <index id="351" parent="294" name="email">
+    <index id="353" parent="294" name="email">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="352" parent="294" name="username">
+    <index id="354" parent="294" name="username">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="353" parent="294" name="PRIMARY">
+    <key id="355" parent="294" name="PRIMARY">
       <ColNames>no</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="354" parent="294" name="email">
+    <key id="356" parent="294" name="email">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
-    <key id="355" parent="294" name="username">
+    <key id="357" parent="294" name="username">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>username</UnderlyingIndexName>
     </key>

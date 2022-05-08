@@ -6,7 +6,7 @@ package view.auth;
 
 
 import view.MainMenu;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 import view.labour.LabourManager;
 import model.User;
 
@@ -59,7 +59,7 @@ public class AdminLogin extends JFrame {
         try {
             Connection conn = DBConnection.getConnection();
             Statement stm= conn.createStatement();
-            String query = "SELECT*FROM users WHERE username=? AND password=? AND position='Chủ nhà hàng'";
+            String query = "SELECT*FROM users WHERE username=? AND password=? AND position='Boss'";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, username);
             ps.setString(2,password);

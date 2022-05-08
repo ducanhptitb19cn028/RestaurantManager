@@ -1,10 +1,8 @@
 package dao;
 
-import model.Cart;
 import model.Order;
-import model.User;
 import view.auth.Login;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

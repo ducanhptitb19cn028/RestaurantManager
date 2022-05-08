@@ -124,6 +124,13 @@ public class SearchMenu extends JFrame {
         tablemenu.getColumnModel().getColumn(2).setPreferredWidth(64);
     }
 
+    private void backbtn(ActionEvent e) {
+        // TODO add your code here
+        this.dispose();
+        MenuView mv = new MenuView();
+        mv.setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         label1 = new JLabel();
@@ -134,7 +141,7 @@ public class SearchMenu extends JFrame {
         drinkbtn = new JButton();
         foodbtn = new JButton();
         desertbtn = new JButton();
-        button4 = new JButton();
+        backbtn = new JButton();
 
         //======== this ========
         setTitle("Search menu");
@@ -182,8 +189,9 @@ public class SearchMenu extends JFrame {
         desertbtn.setText("List of dessert");
         desertbtn.addActionListener(e -> desertbtn(e));
 
-        //---- button4 ----
-        button4.setText("Back");
+        //---- backbtn ----
+        backbtn.setText("Back");
+        backbtn.addActionListener(e -> backbtn(e));
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
@@ -206,17 +214,16 @@ public class SearchMenu extends JFrame {
                             .addComponent(drinkbtn)
                             .addGap(108, 108, 108)
                             .addGroup(contentPaneLayout.createParallelGroup()
-                                .addGroup(contentPaneLayout.createSequentialGroup()
-                                    .addComponent(foodbtn)
-                                    .addGap(101, 101, 101)
-                                    .addComponent(desertbtn))
-                                .addComponent(button4))
+                                .addComponent(backbtn, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(foodbtn, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(101, 101, 101)
+                            .addComponent(desertbtn)
                             .addGap(0, 66, Short.MAX_VALUE)))
                     .addContainerGap())
         );
         contentPaneLayout.setVerticalGroup(
             contentPaneLayout.createParallelGroup()
-                .addGroup(contentPaneLayout.createSequentialGroup()
+                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(24, 24, 24)
@@ -228,13 +235,13 @@ public class SearchMenu extends JFrame {
                             .addComponent(searchbtn)))
                     .addGap(18, 18, 18)
                     .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 293, GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
+                    .addGap(18, 18, Short.MAX_VALUE)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(drinkbtn)
                         .addComponent(desertbtn)
                         .addComponent(foodbtn))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                    .addComponent(button4)
+                    .addGap(39, 39, 39)
+                    .addComponent(backbtn)
                     .addContainerGap())
         );
         pack();
@@ -255,6 +262,6 @@ public class SearchMenu extends JFrame {
     private JButton drinkbtn;
     private JButton foodbtn;
     private JButton desertbtn;
-    private JButton button4;
+    private JButton backbtn;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

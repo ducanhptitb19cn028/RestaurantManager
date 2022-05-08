@@ -7,7 +7,7 @@ package view.item;
 import java.awt.event.*;
 
 import dao.ItemDAO;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import java.awt.*;
 import java.sql.Connection;

@@ -5,7 +5,7 @@
 package view.item;
 
 import dao.ItemDAO;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 import model.Item;
 
 import javax.swing.*;

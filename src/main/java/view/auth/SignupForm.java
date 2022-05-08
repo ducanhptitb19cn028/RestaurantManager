@@ -9,7 +9,7 @@ import java.awt.event.*;
 
 import dao.UserDAO;
 import model.User;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import javax.swing.*;
 import java.awt.*;

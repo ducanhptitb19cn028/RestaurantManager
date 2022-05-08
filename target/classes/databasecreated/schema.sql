@@ -1,43 +1,16 @@
-create table if not exists cart
-(
-    cname varchar(50)   not null,
-    price double(10, 2) not null,
-    num   int           not null
-);
-
-create table if not exists items
-(
-    name        varchar(100)   not null,
-    price       decimal(50, 2) not null,
-    quantity    int            not null,
-    import_date date           not null
-);
-
-create table if not exists labour
-(
-    labour_id    int auto_increment
-        primary key,
-    name         varchar(50)    not null,
-    date_ofBirth varchar(10)    not null,
-    email        varchar(50)    not null,
-    phone        varchar(50)    not null,
-    address      varchar(100)   not null,
-    position     varchar(50)    not null,
-    salary       decimal(50, 2) not null
-);
-
 create table if not exists menu
 (
-    no    int auto_increment
+    no       int auto_increment
         primary key,
-    mname varchar(50)    not null,
-    image longblob       null,
-    price decimal(10, 2) not null,
-    kind  varchar(50)    not null,
+    mname    varchar(50)    not null,
+    image    longblob       null,
+    price    decimal(10, 2) not null,
+    kind     varchar(50)    not null,
+    added_by varchar(50)    not null,
     constraint menu_mname_uindex
         unique (mname)
 )
-    auto_increment = 4;
+    auto_increment = 3;
 
 create table if not exists cartitem
 (
@@ -53,6 +26,15 @@ create table if not exists cartitem
 )
     auto_increment = 4;
 
+create table if not exists cart
+(
+    cname varchar(50)    not null,
+    price decimal(10, 2) not null,
+    num   int            not null,
+    constraint cart_cartitem_cname_fk
+        foreign key (cname) references cartitem (cname)
+);
+
 create table if not exists users
 (
     no       int auto_increment
@@ -67,6 +49,34 @@ create table if not exists users
         unique (email),
     constraint username
         unique (username)
+)
+    auto_increment = 5;
+
+create table if not exists items
+(
+    name        varchar(100)   not null,
+    price       decimal(50, 2) not null,
+    quantity    int            not null,
+    import_date date           not null,
+    imported_by varchar(50)    not null,
+    constraint items_users_username_fk
+        foreign key (imported_by) references users (username)
+);
+
+create table if not exists labour
+(
+    labour_id    int auto_increment
+        primary key,
+    name         varchar(50)    not null,
+    date_ofBirth varchar(10)    not null,
+    email        varchar(50)    not null,
+    phone        varchar(50)    not null,
+    address      varchar(100)   not null,
+    position     varchar(50)    not null,
+    salary       decimal(50, 2) not null,
+    added_by     varchar(50)    not null,
+    constraint labour_users_username_fk
+        foreign key (added_by) references users (username)
 );
 
 create table if not exists tblorder
@@ -79,6 +89,7 @@ create table if not exists tblorder
     staff    varchar(50)    not null,
     constraint tblorder_users_username_fk
         foreign key (staff) references users (username)
-);
+)
+    auto_increment = 4;
 
 

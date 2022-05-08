@@ -6,7 +6,7 @@ package view.item;
 
 import java.awt.*;
 import java.awt.event.*;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

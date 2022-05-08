@@ -6,7 +6,7 @@ package view.menu;
 
 import dao.MenuDAO;
 import model.Menuuu;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import java.awt.*;
 import java.awt.event.*;

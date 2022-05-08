@@ -5,7 +5,7 @@
 package view.order;
 
 import dao.CartDAO;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -171,27 +171,22 @@ public class BillManager extends JFrame {
         contentPaneLayout.setHorizontalGroup(
             contentPaneLayout.createParallelGroup()
                 .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addGap(169, 169, 169)
+                    .addComponent(label1)
+                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(contentPaneLayout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addComponent(showbtn, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
                             .addGap(132, 132, 132)
-                            .addComponent(printbtn, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
-                            .addComponent(clearcartbtn, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap())
-                .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
-                    .addContainerGap(285, Short.MAX_VALUE)
-                    .addComponent(backbtn)
-                    .addGap(280, 280, 280))
-                .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(169, 169, 169)
-                    .addComponent(label1)
-                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                .addComponent(backbtn, GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                                .addComponent(printbtn, GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                            .addComponent(clearcartbtn))
+                        .addComponent(scrollPane2, GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE))
                     .addContainerGap())
         );
         contentPaneLayout.setVerticalGroup(
@@ -206,8 +201,8 @@ public class BillManager extends JFrame {
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(showbtn)
-                        .addComponent(clearcartbtn)
-                        .addComponent(printbtn))
+                        .addComponent(printbtn)
+                        .addComponent(clearcartbtn))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(backbtn)
                     .addContainerGap(10, Short.MAX_VALUE))

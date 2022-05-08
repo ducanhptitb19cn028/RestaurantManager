@@ -9,7 +9,7 @@ import dao.MenuDAO;
 import model.CartItem;
 import model.Menuuu;
 import view.auth.Login;
-import view.db.DBConnection;
+import dao.db.DBConnection;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
