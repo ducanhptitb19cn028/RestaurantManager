@@ -55,7 +55,6 @@
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
     <mapping file-url="file://$APPLICATION_CONFIG_DIR$/consoles/db/d7022632-bb1d-4878-a4b5-c1fab6fe4db3/console_2.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
-    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/databasecreated/schema.sql" connection-id="48858768-62a3-4e60-9c60-6b38017d99bc" session-id="MAIN" current-schema="myrestaurant" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />

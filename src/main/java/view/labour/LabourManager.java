@@ -31,8 +31,8 @@ public class LabourManager extends JFrame {
     private void updatelabbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
-        UpdateItem ui = new UpdateItem();
-        ui.setVisible(true);
+        UpdateLabour ul = new UpdateLabour();
+        ul.setVisible(true);
     }
 
     private void deeletelabbtn(ActionEvent e) {

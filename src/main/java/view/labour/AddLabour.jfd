@@ -1,11 +1,11 @@
-JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.14.1" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq l {space :p:106:p, comp addbtn:::p::p, space :p:52:p, comp button2:::p::p}, seq l {space :p:93:p, comp label7:::p:226:p}, seq {space :p:34:p, par l {comp label2::l:p::p, comp label3::l:p::p, comp label4::l:p::p, comp label5::l:p::p, seq l {par l {comp label6:::p::p, comp label8::l:p::p, comp label1::l:p::p}, space :p:44:p, par l {comp tfEmail::::270:x, comp tfBirthday::::270:x, comp tfPhone::l::270:x, comp tfAddress::l::270:x, comp tfPosition::l::270:x, comp tfSalary::l::270:x, comp tfName::l::270:x}}}}}, space :::p}}"
-			"$verticalGroup": "par l {seq l {comp label7:::p::p, space :p:20:p, par b {comp label1::b:p::p, comp tfName::b:p::p}, space s:::p, par b {comp tfBirthday::b:p::p, comp label8::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfEmail::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfPhone::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp tfAddress::b:p::p}, space s:::p, par b {comp label5::b:p::p, comp tfPosition::b:p::p}, space s:::p, par b {comp tfSalary::b:p::p, comp label6::b:p::p}, space :p:31:p, par b {comp addbtn::b:p::p, comp button2::b:p::p}, space ::35:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:106:p, comp addbtn:::p::p, space :p:52:p, comp backbtn:::p::p}, seq l {space :p:93:p, comp label7:::p:226:p}, seq {space :p:34:p, par l {comp label2::l:p::p, comp label3::l:p::p, comp label4::l:p::p, comp label5::l:p::p, seq l {par l {comp label6:::p::p, comp label8::l:p::p, comp label1::l:p::p}, space :p:44:p, par l {comp tfEmail::::270:x, comp tfBirthday::::270:x, comp tfPhone::l::270:x, comp tfAddress::l::270:x, comp tfPosition::l::270:x, comp tfSalary::l::270:x, comp tfName::l::270:x}}}}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {comp label7:::p::p, space :p:20:p, par b {comp label1::b:p::p, comp tfName::b:p::p}, space s:::p, par b {comp tfBirthday::b:p::p, comp label8::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp tfEmail::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp tfPhone::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp tfAddress::b:p::p}, space s:::p, par b {comp label5::b:p::p, comp tfPosition::b:p::p}, space s:::p, par b {comp tfSalary::b:p::p, comp label6::b:p::p}, space :p:31:p, par b {comp addbtn::b:p::p, comp backbtn::b:p::p}, space ::35:x}}"
 		} ) {
 			name: "this"
 			"title": "Add labour"
@@ -76,9 +76,9 @@ new FormModel {
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "addbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button2"
+				name: "backbtn"
 				"text": "Back"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button2", true ) )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "backbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label8"

@@ -75,7 +75,7 @@ public class AddLabour extends JFrame {
         JOptionPane.showMessageDialog(this, "Item has been added");
     }
 
-    private void button2(ActionEvent e) {
+    private void backbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
         LabourManager lm = new LabourManager();
@@ -88,6 +88,7 @@ public class AddLabour extends JFrame {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         label1 = new JLabel();
         label2 = new JLabel();
         label3 = new JLabel();
@@ -102,7 +103,7 @@ public class AddLabour extends JFrame {
         tfSalary = new JTextField();
         label7 = new JLabel();
         addbtn = new JButton();
-        button2 = new JButton();
+        backbtn = new JButton();
         label8 = new JLabel();
         tfBirthday = new JTextField();
 
@@ -162,9 +163,9 @@ public class AddLabour extends JFrame {
         addbtn.setText("Add");
         addbtn.addActionListener(e -> addbtn(e));
 
-        //---- button2 ----
-        button2.setText("Back");
-        button2.addActionListener(e -> button2(e));
+        //---- backbtn ----
+        backbtn.setText("Back");
+        backbtn.addActionListener(e -> backbtn(e));
 
         //---- label8 ----
         label8.setText("Date of birth:");
@@ -183,7 +184,7 @@ public class AddLabour extends JFrame {
                             .addGap(106, 106, 106)
                             .addComponent(addbtn)
                             .addGap(52, 52, 52)
-                            .addComponent(button2))
+                            .addComponent(backbtn))
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(93, 93, 93)
                             .addComponent(label7, GroupLayout.PREFERRED_SIZE, 226, GroupLayout.PREFERRED_SIZE))
@@ -245,7 +246,7 @@ public class AddLabour extends JFrame {
                     .addGap(31, 31, 31)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(addbtn)
-                        .addComponent(button2))
+                        .addComponent(backbtn))
                     .addContainerGap(35, Short.MAX_VALUE))
         );
         pack();
@@ -254,6 +255,7 @@ public class AddLabour extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JLabel label1;
     private JLabel label2;
     private JLabel label3;
@@ -268,7 +270,7 @@ public class AddLabour extends JFrame {
     private JTextField tfSalary;
     private JLabel label7;
     private JButton addbtn;
-    private JButton button2;
+    private JButton backbtn;
     private JLabel label8;
     private JTextField tfBirthday;
     // JFormDesigner - End of variables declaration  //GEN-END:variables

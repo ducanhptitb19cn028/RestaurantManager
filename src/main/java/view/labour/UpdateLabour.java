@@ -119,6 +119,7 @@ public class UpdateLabour extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         scrollPane1 = new JScrollPane();
         tblLabour = new JTable();
         label1 = new JLabel();
@@ -299,6 +300,7 @@ public class UpdateLabour extends JFrame {
         ul.setVisible(true);
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JScrollPane scrollPane1;
     private JTable tblLabour;
     private JLabel label1;
