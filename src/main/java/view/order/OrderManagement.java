@@ -41,7 +41,7 @@ public class OrderManagement extends JFrame {
         DefaultTableModel table = (DefaultTableModel)tablecartitem.getModel();
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT cname,price,cquantity FROM cartitem";
+            String query = "SELECT cname,price,cquantity FROM tblcartitem";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery(query);
 
@@ -61,7 +61,7 @@ public class OrderManagement extends JFrame {
         DefaultTableModel table = (DefaultTableModel)tablecart.getModel();
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT cname,price,num FROM cart";
+            String query = "SELECT cname,price,num FROM tblcart";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery(query);
 

@@ -20,7 +20,7 @@ public class MenuDAO extends Component {
         ResultSet rs;
         try {
             st = conn.createStatement();
-            rs = st.executeQuery("SELECT * FROM menu");
+            rs = st.executeQuery("SELECT * FROM tblmenu");
             Menuuu mn;
             while (rs.next()) {
                 mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
@@ -37,7 +37,7 @@ public class MenuDAO extends Component {
 
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT * FROM menu WHERE mname like '%"+search+"%'";
+            String query = "SELECT * FROM tblmenu WHERE mname like '%"+search+"%'";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -62,7 +62,7 @@ public class MenuDAO extends Component {
         ResultSet rs;
         try {
             st = conn.createStatement();
-            rs = st.executeQuery("SELECT * FROM menu WHERE kind = 'Drink'");
+            rs = st.executeQuery("SELECT * FROM tblmenu WHERE kind = 'Drink'");
             Menuuu mn;
             while (rs.next()) {
                 mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
@@ -86,7 +86,7 @@ public class MenuDAO extends Component {
         ResultSet rs;
         try {
             st = conn.createStatement();
-            rs = st.executeQuery("SELECT * FROM menu WHERE kind = 'Food'");
+            rs = st.executeQuery("SELECT * FROM tblmenu WHERE kind = 'Food'");
             Menuuu mn;
             while (rs.next()) {
                 mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
@@ -110,7 +110,7 @@ public class MenuDAO extends Component {
         ResultSet rs;
         try {
             st = conn.createStatement();
-            rs = st.executeQuery("SELECT * FROM menu WHERE kind = 'Dessert'");
+            rs = st.executeQuery("SELECT * FROM tblmenu WHERE kind = 'Dessert'");
             Menuuu mn;
             while (rs.next()) {
                 mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
@@ -125,7 +125,7 @@ public class MenuDAO extends Component {
     public static boolean MenuExists(String name){
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT mname FROM menu WHERE mname = ?";
+            String query = "SELECT mname FROM tblmenu WHERE mname = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();

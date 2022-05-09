@@ -108,7 +108,7 @@ public class ModifyMenu extends JFrame {
         try {
             InputStream is = new FileInputStream(f);
             Connection conn = DBConnection.getConnection();
-            String query = "UPDATE menu SET mname = ?, image = ?, price = ?, kind = ? WHERE mname = ?";
+            String query = "UPDATE tblmenu SET mname = ?, image = ?, price = ?, kind = ? WHERE mname = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1,newName);
             ps.setBlob(2,is);

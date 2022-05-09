@@ -36,7 +36,7 @@ public class ViewLabour extends JFrame {
         DefaultTableModel table = (DefaultTableModel)table1.getModel();
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT * FROM labour";
+            String query = "SELECT * FROM tbllabour";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery(query);
 

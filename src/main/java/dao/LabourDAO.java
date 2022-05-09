@@ -12,7 +12,7 @@ public class LabourDAO {
     public static void addLabour(Labour labour){
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO labour(name,date_ofBirth,email,phone,address,position,salary,added_by) VALUES(?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO tbllabour(name,date_ofBirth,email,phone,address,position,salary,added_by) VALUES(?,?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, labour.name);
             ps.setString(2, labour.date_ofBirth);
@@ -31,7 +31,7 @@ public class LabourDAO {
     public static void deleteLabours(String name){
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "DELETE FROM labour WHERE name = ?";
+            String query = "DELETE FROM tbllabour WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, name);
             ps.executeUpdate();
@@ -43,7 +43,7 @@ public class LabourDAO {
     public static void updateLabours(Labour labour,String name){
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "UPDATE labour SET name = ?, date_ofBirth = ?,email = ?,phone = ?, address = ?, position = ?, salary = ? WHERE name = ?";
+            String query = "UPDATE tbllabour SET name = ?, date_ofBirth = ?,email = ?,phone = ?, address = ?, position = ?, salary = ? WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, labour.name);
             ps.setString(2,labour.date_ofBirth);

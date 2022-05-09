@@ -14,7 +14,7 @@ public class CartItemDAO {
     public static void addCartItem(CartItem cartItem) {
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO cartitem(cname,price,cquantity) VALUES(?,?,?)";
+            String query = "INSERT INTO tblcartitem(cname,price,cquantity) VALUES(?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, cartItem.cname);
             ps.setBigDecimal(2,cartItem.price);
@@ -29,7 +29,7 @@ public class CartItemDAO {
 public static void UpdateCartItem(String cname, int cquantity){
         try{
             Connection conn= DBConnection.getConnection();
-            String query = "UPDATE cartitem SET cquantity = ?  WHERE cname = ?";
+            String query = "UPDATE tblcartitem SET cquantity = ?  WHERE cname = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setInt(1,cquantity);
             ps.setString(2,cname);
@@ -42,7 +42,7 @@ public static void UpdateCartItem(String cname, int cquantity){
     public static boolean ExistsCartItem(Cart cart){
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT cname FROM cartitem WHERE cname = ?";
+            String query = "SELECT cname FROM tblcartitem WHERE cname = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, cart.getCname());
             ResultSet rs = ps.executeQuery();
@@ -58,7 +58,7 @@ public static void UpdateCartItem(String cname, int cquantity){
     public static void UpdateQuantity( CartItem cartItem, Cart cart){
         try{
             Connection conn= DBConnection.getConnection();
-            String query = "UPDATE cartitem SET cquantity = ?  WHERE cname = ?";
+            String query = "UPDATE tblcartitem SET cquantity = ?  WHERE cname = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setInt(1,cartItem.getQuantity()-cart.getNum());
             ps.setString(2, cartItem.getCname());
@@ -76,7 +76,7 @@ public static void UpdateCartItem(String cname, int cquantity){
             for (Cart i:carts){
                 for (CartItem j : cartItems){
                     if(i.getCname().equalsIgnoreCase(j.getCname())){
-                        String query = "UPDATE cartitem SET cquantity = ?  WHERE cname = ?";
+                        String query = "UPDATE tblcartitem SET cquantity = ?  WHERE cname = ?";
                         PreparedStatement ps = conn.prepareStatement(query);
                         ps.setInt(1, j.getQuantity() + i.getNum());
                         ps.setString(2, j.getCname());
@@ -93,7 +93,7 @@ public static void UpdateCartItem(String cname, int cquantity){
         ArrayList<CartItem> cartItems = null;
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT cname,price,cquantity FROM cartitem";
+            String query = "SELECT cname,price,cquantity FROM tblcartitem";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             cartItems = new ArrayList<>();

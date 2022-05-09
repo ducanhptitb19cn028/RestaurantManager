@@ -10,7 +10,7 @@ public class UserDAO {
         try {
             Connection conn = DBConnection.getConnection();
             Statement stm= conn.createStatement();
-            String query = "SELECT*FROM users WHERE username=? AND password=?";
+            String query = "SELECT*FROM tblusers WHERE username=? AND password=?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
@@ -28,7 +28,7 @@ public class UserDAO {
     }
     public static void insert(User user) {
         try{
-            String query = "INSERT INTO users (name,email,phone,position,username,password) VALUES"+"(?,?,?,?,?,?)";
+            String query = "INSERT INTO tblusers (name,email,phone,position,username,password) VALUES"+"(?,?,?,?,?,?)";
             Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, user.getName());
@@ -46,7 +46,7 @@ public class UserDAO {
 
     public void Update(User user, String newPassword) {
         try{
-            String query = "UPDATE users SET password = ? WHERE username = ?";
+            String query = "UPDATE tblusers SET password = ? WHERE username = ?";
             Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(2, user.getUsername());

@@ -59,7 +59,7 @@ public class AdminLogin extends JFrame {
         try {
             Connection conn = DBConnection.getConnection();
             Statement stm= conn.createStatement();
-            String query = "SELECT*FROM users WHERE username=? AND password=? AND position='Boss'";
+            String query = "SELECT*FROM tblusers WHERE username=? AND password=? AND position='Boss'";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, username);
             ps.setString(2,password);

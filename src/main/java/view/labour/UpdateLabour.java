@@ -35,7 +35,7 @@ public class UpdateLabour extends JFrame {
         DefaultTableModel table = (DefaultTableModel)tblLabour.getModel();
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT * FROM labour";
+            String query = "SELECT * FROM tbllabour";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery(query);
 

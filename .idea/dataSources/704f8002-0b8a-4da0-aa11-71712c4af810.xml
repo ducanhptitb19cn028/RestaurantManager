@@ -995,23 +995,23 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="288" parent="276" name="cart">
+    <table id="288" parent="276" name="tblcart">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="289" parent="276" name="cartitem">
+    <table id="289" parent="276" name="tblcartitem">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="290" parent="276" name="items">
+    <table id="290" parent="276" name="tblitem">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="291" parent="276" name="labour">
+    <table id="291" parent="276" name="tbllabour">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="292" parent="276" name="menu">
+    <table id="292" parent="276" name="tblmenu">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
@@ -1019,7 +1019,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="294" parent="276" name="users">
+    <table id="294" parent="276" name="tblusers">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
@@ -1041,14 +1041,14 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <foreign-key id="298" parent="288" name="cart_cartitem_cname_fk">
       <ColNames>cname</ColNames>
       <RefColNames>cname</RefColNames>
-      <RefTableName>cartitem</RefTableName>
+      <RefTableName>tblcartitem</RefTableName>
     </foreign-key>
     <index id="299" parent="288" name="cart_cartitem_cname_fk">
       <ColNames>cname</ColNames>
       <Type>btree</Type>
     </index>
     <column id="300" parent="289" name="id">
-      <AutoIncrement>6</AutoIncrement>
+      <AutoIncrement>8</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1071,7 +1071,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <foreign-key id="304" parent="289" name="cart_menu_no_fk">
       <ColNames>id</ColNames>
       <RefColNames>no</RefColNames>
-      <RefTableName>menu</RefTableName>
+      <RefTableName>tblmenu</RefTableName>
     </foreign-key>
     <index id="305" parent="289" name="cart_cname_uindex">
       <ColNames>cname</ColNames>
@@ -1115,7 +1115,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <foreign-key id="313" parent="290" name="items_users_username_fk">
       <ColNames>imported_by</ColNames>
       <RefColNames>username</RefColNames>
-      <RefTableName>users</RefTableName>
+      <RefTableName>tblusers</RefTableName>
     </foreign-key>
     <index id="314" parent="290" name="items_users_username_fk">
       <ColNames>imported_by</ColNames>
@@ -1170,7 +1170,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <foreign-key id="324" parent="291" name="labour_users_username_fk">
       <ColNames>added_by</ColNames>
       <RefColNames>username</RefColNames>
-      <RefTableName>users</RefTableName>
+      <RefTableName>tblusers</RefTableName>
     </foreign-key>
     <index id="325" parent="291" name="labour_users_username_fk">
       <ColNames>added_by</ColNames>
@@ -1182,7 +1182,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
     </key>
     <column id="327" parent="292" name="no">
-      <AutoIncrement>6</AutoIncrement>
+      <AutoIncrement>8</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1214,7 +1214,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <foreign-key id="333" parent="292" name="menu_users_username_fk">
       <ColNames>added_by</ColNames>
       <RefColNames>username</RefColNames>
-      <RefTableName>users</RefTableName>
+      <RefTableName>tblusers</RefTableName>
     </foreign-key>
     <index id="334" parent="292" name="menu_mname_uindex">
       <ColNames>mname</ColNames>
@@ -1263,7 +1263,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <foreign-key id="343" parent="293" name="tblorder_users_username_fk">
       <ColNames>staff</ColNames>
       <RefColNames>username</RefColNames>
-      <RefTableName>users</RefTableName>
+      <RefTableName>tblusers</RefTableName>
     </foreign-key>
     <index id="344" parent="293" name="tblorder_users_username_fk">
       <ColNames>staff</ColNames>

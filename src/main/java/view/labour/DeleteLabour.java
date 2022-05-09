@@ -32,7 +32,7 @@ public class DeleteLabour extends JFrame {
         DefaultTableModel table = (DefaultTableModel)table1.getModel();
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT name,date_ofBirth,address FROM labour";
+            String query = "SELECT name,date_ofBirth,address FROM tbllabour";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery(query);
 

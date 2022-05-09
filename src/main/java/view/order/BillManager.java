@@ -84,7 +84,7 @@ public class BillManager extends JFrame {
             String header = "Name  \tPrice  \tNumber\n";
             sb.append(header);
             Connection conn = DBConnection.getConnection();
-            String query="SELECT * FROM cart";
+            String query="SELECT * FROM tblcart";
             PreparedStatement ps=conn.prepareStatement(query);
             ResultSet rs=ps.executeQuery();
 

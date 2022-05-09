@@ -15,7 +15,7 @@ public class ItemDAO {
     public static void addItem(Item item) {
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO items(name,price,quantity,import_date,imported_by) VALUES(?,?,?,?,?)";
+            String query = "INSERT INTO tblitem(name,price,quantity,import_date,imported_by) VALUES(?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, item.name);
             ps.setBigDecimal(2,item.price);
@@ -32,7 +32,7 @@ public class ItemDAO {
     public static void updateItem(String name, Item item){
         try{
             Connection conn= DBConnection.getConnection();
-            String query = "UPDATE items SET name = ?, price = ?, quantity = ?  WHERE name = ?";
+            String query = "UPDATE tblitem SET name = ?, price = ?, quantity = ?  WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1,item.name);
             ps.setBigDecimal(2,item.price);
@@ -47,7 +47,7 @@ public class ItemDAO {
     public static void deleteItem(String name) {
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "DELETE FROM items WHERE name = ?";
+            String query = "DELETE FROM tblitem WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, name);
             ps.executeUpdate();
@@ -59,7 +59,7 @@ public class ItemDAO {
     public static boolean existsItem(String name) {
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT name FROM items WHERE name = ?";
+            String query = "SELECT name FROM tblitem WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();

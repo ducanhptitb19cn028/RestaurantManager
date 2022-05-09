@@ -1,4 +1,4 @@
-create table labour
+create table tbllabour
 (
     labour_id    int auto_increment
         primary key,
@@ -11,7 +11,8 @@ create table labour
     salary       decimal(50, 2) not null,
     added_by     varchar(50)    not null,
     constraint labour_users_username_fk
-        foreign key (added_by) references users (username)
-);
+        foreign key (added_by) references tblusers (username)
+)
+    auto_increment = 2;
 
-INSERT INTO myrestaurant.labour (labour_id, name, date_ofBirth, email, phone, address, position, salary, added_by) VALUES (1, 'Duc Anh', '03/12/2001', 'ducanh.3122001@gmail.com', '0984620952', 'Thanh Mai, Thanh Oai, Ha Noi', 'Boss', 450000000.00, 'ducanhboss');
+INSERT INTO myrestaurant.tbllabour (labour_id, name, date_ofBirth, email, phone, address, position, salary, added_by) VALUES (1, 'Duc Anh', '03/12/2001', 'ducanh.3122001@gmail.com', '0984620952', 'Thanh Mai, Thanh Oai, Ha Noi', 'Boss', 450000000.00, 'ducanhboss');

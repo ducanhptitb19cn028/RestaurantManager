@@ -278,7 +278,7 @@ public class SignupForm extends JFrame {
     public static boolean emailExists(String email,String username) {
 
         ResultSet rs = null;
-        String query = "SELECT email,username FROM users "
+        String query = "SELECT email,username FROM tblusers "
                 + "WHERE email = ?"+"OR username = ?";
         try {
             Connection conn = DBConnection.getConnection();

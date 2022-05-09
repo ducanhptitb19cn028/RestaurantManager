@@ -91,7 +91,7 @@ public class AddMenu extends JFrame {
         try {
             InputStream is = new FileInputStream(f);
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO menu(mname,image,price,kind,added_by) VALUES(?,?,?,?,?)";
+            String query = "INSERT INTO tblmenu(mname,image,price,kind,added_by) VALUES(?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1,name);
             ps.setBlob(2,is);

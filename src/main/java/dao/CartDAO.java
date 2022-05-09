@@ -17,7 +17,7 @@ public class CartDAO {
     public void addToCart( CartItem cartItem,Cart cart) {
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "INSERT INTO cart(cname,price,num) VALUES(?,?,?) ";
+            String query = "INSERT INTO tblcart(cname,price,num) VALUES(?,?,?) ";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, cartItem.getCname());
             ps.setBigDecimal(2,cartItem.getPrice().multiply(BigDecimal.valueOf(cart.getNum())));
@@ -33,7 +33,7 @@ public class CartDAO {
     public static void clearCart() {
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "DELETE FROM cart";
+            String query = "DELETE FROM tblcart";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.executeUpdate();
             conn.close();
@@ -45,7 +45,7 @@ public class CartDAO {
     public int getSumQuantity(){
         int sum;
         try {
-            PreparedStatement ps = DBConnection.getConnection().prepareStatement("SELECT SUM(num) FROM cart");
+            PreparedStatement ps = DBConnection.getConnection().prepareStatement("SELECT SUM(num) FROM tblcart");
             ResultSet resultSet = ps.executeQuery();
             resultSet.next();
             sum = resultSet.getInt(1);
@@ -57,7 +57,7 @@ public class CartDAO {
     public static BigDecimal getTotalPrice() {
         BigDecimal totalPrice;
         try {
-            PreparedStatement ps = DBConnection.getConnection().prepareStatement("SELECT SUM(price) FROM cart");
+            PreparedStatement ps = DBConnection.getConnection().prepareStatement("SELECT SUM(price) FROM tblcart");
             ResultSet resultSet = ps.executeQuery();
             resultSet.next();
             totalPrice = resultSet.getBigDecimal(1);
@@ -70,7 +70,7 @@ public class CartDAO {
         ArrayList<Cart> carts = null;
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT cname,price,num FROM cart";
+            String query = "SELECT cname,price,num FROM tblcart";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             carts = new ArrayList<>();

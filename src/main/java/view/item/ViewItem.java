@@ -29,7 +29,7 @@ public class ViewItem extends JFrame {
         DefaultTableModel table = (DefaultTableModel)itemtb.getModel();
         try {
             Connection conn = DBConnection.getConnection();
-            String query = "SELECT * FROM items";
+            String query = "SELECT * FROM tblitem";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery(query);
 
