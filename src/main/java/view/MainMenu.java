@@ -71,6 +71,7 @@ public class MainMenu extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         labourmngbtn = new JButton();
         Itemmanbtn = new JButton();
         menumanbtn = new JButton();
@@ -185,6 +186,7 @@ public class MainMenu extends JFrame {
         mm.setVisible(true);
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JButton labourmngbtn;
     private JButton Itemmanbtn;
     private JButton menumanbtn;
