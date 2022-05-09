@@ -9,16 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/704f8002-0b8a-4da0-aa11-71712c4af810.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/704f8002-0b8a-4da0-aa11-71712c4af810.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_2_2022_4_50_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_2_2022_4_50_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/AddLabour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/AddLabour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/AddLabour.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/AddLabour.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/LabourManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/LabourManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/UpdateLabour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/UpdateLabour.java" afterDir="false" />
-    </list>
+    <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -268,7 +259,7 @@
       <workItem from="1651927518776" duration="4364000" />
       <workItem from="1651971033503" duration="4058000" />
       <workItem from="1652065978613" duration="1824000" />
-      <workItem from="1652089095988" duration="6396000" />
+      <workItem from="1652089095988" duration="7013000" />
     </task>
     <task id="LOCAL-00001" summary="new commit">
       <created>1650035411554</created>
@@ -403,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652089165474</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="new commit">
+      <created>1652113920316</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1652113920316</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
