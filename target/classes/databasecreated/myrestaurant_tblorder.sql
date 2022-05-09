@@ -7,9 +7,9 @@ create table tblorder
     orderday date           not null,
     staff    varchar(50)    not null,
     constraint tblorder_users_username_fk
-        foreign key (staff) references users (username)
+        foreign key (staff) references tblusers (username)
 )
-    auto_increment = 4;
+    auto_increment = 13;
 
 INSERT INTO myrestaurant.tblorder (orderid, quantity, oprice, orderday, staff) VALUES (1, 17, 952000.00, '2022-05-03', 'ducanhboss');
 INSERT INTO myrestaurant.tblorder (orderid, quantity, oprice, orderday, staff) VALUES (2, 17, 952000.00, '2022-05-03', 'ducanhboss');
@@ -22,3 +22,4 @@ INSERT INTO myrestaurant.tblorder (orderid, quantity, oprice, orderday, staff) V
 INSERT INTO myrestaurant.tblorder (orderid, quantity, oprice, orderday, staff) VALUES (9, 4, 210000.00, '2022-05-05', 'ducanhboss');
 INSERT INTO myrestaurant.tblorder (orderid, quantity, oprice, orderday, staff) VALUES (10, 4, 158000.00, '2022-05-05', 'ducanhboss');
 INSERT INTO myrestaurant.tblorder (orderid, quantity, oprice, orderday, staff) VALUES (11, 4, 158000.00, '2022-05-05', 'ducanhboss');
+INSERT INTO myrestaurant.tblorder (orderid, quantity, oprice, orderday, staff) VALUES (12, 4, 210000.00, '2022-05-07', 'ducanhboss');
