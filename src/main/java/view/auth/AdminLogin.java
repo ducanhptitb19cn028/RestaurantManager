@@ -7,7 +7,7 @@ package view.auth;
 
 import view.MainMenu;
 import dao.db.DBConnection;
-import view.labour.LabourManager;
+import view.labour.LabourManagement;
 import model.User;
 
 import java.awt.*;
@@ -44,7 +44,7 @@ public class AdminLogin extends JFrame {
 
         if (user != null) {
             this.dispose();
-            LabourManager lm = new LabourManager();
+            LabourManagement lm = new LabourManagement();
             lm.setVisible(true);
         }
         else {

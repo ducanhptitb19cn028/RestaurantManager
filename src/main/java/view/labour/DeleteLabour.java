@@ -61,7 +61,7 @@ public class DeleteLabour extends JFrame {
     private void button2(ActionEvent e) {
         // TODO add your code here
         this.dispose();
-        LabourManager lm = new LabourManager();
+        LabourManagement lm = new LabourManagement();
         lm.setVisible(true);
     }
 

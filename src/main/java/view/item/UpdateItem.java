@@ -93,7 +93,7 @@ public class UpdateItem extends JFrame {
     private void backbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
-        ItemManager im = new ItemManager();
+        ItemManagement im = new ItemManagement();
         im.setVisible(true);
 
     }

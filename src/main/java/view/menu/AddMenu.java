@@ -135,12 +135,13 @@ public class AddMenu extends JFrame {
     private void backbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
-        MenuView mv = new MenuView();
+        MenuManagement mv = new MenuManagement();
         mv.setVisible(true);
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         scrollPane1 = new JScrollPane();
         tablemenu = new JTable();
         label1 = new JLabel();
@@ -292,6 +293,7 @@ public class AddMenu extends JFrame {
         af.setVisible(true);
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JScrollPane scrollPane1;
     private JTable tablemenu;
     private JLabel label1;

@@ -1,32 +1,32 @@
-JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.5.1.409" Java: "11.0.14.1" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par t {seq {space :p:29:p, comp welcometxt:::p::p, space ::102:x, comp label1:::p::p, space :p:56:p, comp logoutbtn:::p::p}, seq {space ::310:x, comp changepassbtn:::p::p}}, space ::29:x}, seq t {space :::p, par l {comp menumanbtn:::p:138:p, comp labourmngbtn:::p:138:p}, space ::222:x, par l:::p {comp Itemmanbtn::::131:x, comp ordermanbtn::::131:x}, space :::x}}"
-			"$verticalGroup": "par l {seq l {par l {seq l {space :p:8:p, par b {comp logoutbtn::b:p:46:p, comp label1::b:p:57:p}}, seq l {space :p:43:p, comp welcometxt:::p::p}}, space :::p, comp changepassbtn:::p:44:p, space s:::p, par l {comp labourmngbtn:::p:70:p, comp Itemmanbtn:::::x}, space ::34:x, par l {comp menumanbtn:::p:70:p, comp ordermanbtn:::::x}, space :p:31:p}}"
+			"$horizontalGroup": "par l {seq {par t {seq {space :p:29:p, comp welcometxt:::p::p, space ::102:x, comp label1:::p::p, space :p:56:p, comp logoutbtn:::p::p}, seq {space ::310:x, comp changepassbtn:::p::p}}, space ::29:x}, seq t {space :::p, par l:::p {comp labourmngbtn:::::x, comp menumanbtn:::::x}, space ::208:x, par l:::p {comp Itemmanbtn:::::x, comp ordermanbtn:::::x}, space :::x}}"
+			"$verticalGroup": "par l {seq l {par l {seq l {space :p:8:p, par b {comp logoutbtn::b:p:46:p, comp label1::b:p:57:p}}, seq l {space :p:43:p, comp welcometxt:::p::p}}, space :::p, comp changepassbtn:::p:44:p, space s:::p, par l {comp Itemmanbtn:::::x, seq {comp labourmngbtn:::p:70:p, space :0:0:x}}, space ::34:x, par l {comp ordermanbtn:::::x, seq {comp menumanbtn:::p:70:p, space :0:0:x}}, space :p:31:p}}"
 		} ) {
 			name: "this"
 			"title": "Main menu"
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "labourmngbtn"
-				"text": "Labour manager"
+				"text": "Labour management"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "labourmngbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "Itemmanbtn"
-				"text": " Item manager"
+				"text": " Item management"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Itemmanbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "menumanbtn"
-				"text": "Menu manager"
+				"text": "Menu management"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menumanbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "ordermanbtn"
-				"text": "Order manager"
+				"text": "Order management"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ordermanbtn", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {

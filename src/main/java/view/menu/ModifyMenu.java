@@ -128,7 +128,7 @@ public class ModifyMenu extends JFrame {
     private void backbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
-        MenuView mv = new MenuView();
+        MenuManagement mv = new MenuManagement();
         mv.setVisible(true);
 
     }

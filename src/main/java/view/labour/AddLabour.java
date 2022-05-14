@@ -78,7 +78,7 @@ public class AddLabour extends JFrame {
     private void backbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
-        LabourManager lm = new LabourManager();
+        LabourManagement lm = new LabourManagement();
         lm.setVisible(true);
     }
 

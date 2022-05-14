@@ -5,7 +5,6 @@
 package view.menu;
 
 import dao.CartItemDAO;
-import model.CartItem;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -25,7 +24,7 @@ public class UpdateRemain extends JFrame {
     private void backbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
-        MenuView mv = new MenuView();
+        MenuManagement mv = new MenuManagement();
         mv.setVisible(true);
     }
 
