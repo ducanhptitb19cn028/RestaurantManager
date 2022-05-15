@@ -7,7 +7,7 @@ package view.menu;
 import dao.CartItemDAO;
 import dao.MenuDAO;
 import model.CartItem;
-import model.Menuuu;
+import model.Menu;
 import view.auth.Login;
 import dao.db.DBConnection;
 
@@ -32,7 +32,7 @@ import static java.awt.Image.SCALE_SMOOTH;
  */
 public class AddMenu extends JFrame {
     public File file = null;
-    public Menuuu menu;
+    public Menu menu;
     public static String path = null;
     public CartItemDAO cartItemDAO;
     public MenuDAO menuDAO;
@@ -44,7 +44,7 @@ public class AddMenu extends JFrame {
     }
     public void InsertDatabaseintoTable(){
         MenuDAO md = new MenuDAO();
-        ArrayList<Menuuu> list = md.BindtoTable();
+        ArrayList<Menu> list = md.BindtoTable();
         String[] columns = {"No", "Name", "Image", "Price", "Kind"};
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
@@ -71,7 +71,7 @@ public class AddMenu extends JFrame {
         String price = tfPrice.getText().trim();
         String kind = tfKind.getText().trim();
         String quantity = tfCQuantity.getText().trim();
-        Menuuu menu = new Menuuu(Login.getUsernametext());
+        Menu menu = new Menu(Login.getUsernametext());
         if (name.isEmpty()){
             JOptionPane.showMessageDialog(this, "Name field can not be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;

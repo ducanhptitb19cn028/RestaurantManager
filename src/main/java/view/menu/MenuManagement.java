@@ -7,7 +7,7 @@ package view.menu;
 import java.awt.*;
 import java.awt.event.*;
 import dao.MenuDAO;
-import model.Menuuu;
+import model.Menu;
 import view.MainMenu;
 
 import javax.swing.*;
@@ -27,7 +27,7 @@ public class MenuManagement extends JFrame {
     }
     public void InsertDatabaseintoTable(){
         MenuDAO md = new MenuDAO();
-        ArrayList<Menuuu> list = md.BindtoTable();
+        ArrayList<Menu> list = md.BindtoTable();
         String[] columns = {"No", "Name", "Image", "Price", "Kind"};
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){

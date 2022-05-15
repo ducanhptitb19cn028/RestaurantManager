@@ -1,6 +1,6 @@
 package dao;
 
-import model.Menuuu;
+import model.Menu;
 import dao.db.DBConnection;
 import java.awt.*;
 import java.sql.*;
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 
 public class MenuDAO extends Component {
-    public ArrayList<Menuuu> BindtoTable() {
-        ArrayList<Menuuu> list = new ArrayList<>();
+    public ArrayList<Menu> BindtoTable() {
+        ArrayList<Menu> list = new ArrayList<>();
         Connection conn;
         try {
             conn = DBConnection.getConnection();
@@ -21,9 +21,9 @@ public class MenuDAO extends Component {
         try {
             st = conn.createStatement();
             rs = st.executeQuery("SELECT * FROM tblmenu");
-            Menuuu mn;
+            Menu mn;
             while (rs.next()) {
-                mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                mn = new Menu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
                 list.add(mn);
             }
         }
@@ -32,8 +32,8 @@ public class MenuDAO extends Component {
         }
         return list;
     }
-    public ArrayList<Menuuu> BindToSearch(String search) {
-        ArrayList<Menuuu> list = new ArrayList<>();
+    public ArrayList<Menu> BindToSearch(String search) {
+        ArrayList<Menu> list = new ArrayList<>();
 
         try {
             Connection conn = DBConnection.getConnection();
@@ -41,7 +41,7 @@ public class MenuDAO extends Component {
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Menuuu mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                Menu mn = new Menu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
                 list.add(mn);
             }
         }
@@ -50,8 +50,8 @@ public class MenuDAO extends Component {
         }
         return list;
     }
-    public ArrayList<Menuuu> BindtoDrinksearch(){
-        ArrayList<Menuuu> list = new ArrayList<>();
+    public ArrayList<Menu> BindtoDrinksearch(){
+        ArrayList<Menu> list = new ArrayList<>();
         Connection conn;
         try {
             conn = DBConnection.getConnection();
@@ -63,9 +63,9 @@ public class MenuDAO extends Component {
         try {
             st = conn.createStatement();
             rs = st.executeQuery("SELECT * FROM tblmenu WHERE kind = 'Drink'");
-            Menuuu mn;
+            Menu mn;
             while (rs.next()) {
-                mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                mn = new Menu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
                 list.add(mn);
             }
         }
@@ -74,8 +74,8 @@ public class MenuDAO extends Component {
         }
         return list;
     }
-    public ArrayList<Menuuu> BindtoFoodsearch(){
-        ArrayList<Menuuu> list = new ArrayList<>();
+    public ArrayList<Menu> BindtoFoodsearch(){
+        ArrayList<Menu> list = new ArrayList<>();
         Connection conn;
         try {
             conn = DBConnection.getConnection();
@@ -87,9 +87,9 @@ public class MenuDAO extends Component {
         try {
             st = conn.createStatement();
             rs = st.executeQuery("SELECT * FROM tblmenu WHERE kind = 'Food'");
-            Menuuu mn;
+            Menu mn;
             while (rs.next()) {
-                mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                mn = new Menu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
                 list.add(mn);
             }
         }
@@ -98,8 +98,8 @@ public class MenuDAO extends Component {
         }
         return list;
     }
-    public ArrayList<Menuuu> BindtoDessertsearch(){
-        ArrayList<Menuuu> list = new ArrayList<>();
+    public ArrayList<Menu> BindtoDessertsearch(){
+        ArrayList<Menu> list = new ArrayList<>();
         Connection conn;
         try {
             conn = DBConnection.getConnection();
@@ -111,9 +111,9 @@ public class MenuDAO extends Component {
         try {
             st = conn.createStatement();
             rs = st.executeQuery("SELECT * FROM tblmenu WHERE kind = 'Dessert'");
-            Menuuu mn;
+            Menu mn;
             while (rs.next()) {
-                mn = new Menuuu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
+                mn = new Menu(rs.getInt("no"),rs.getString("mname"),rs.getBytes("image"),rs.getBigDecimal("price"),rs.getString("kind"));
                 list.add(mn);
             }
         }

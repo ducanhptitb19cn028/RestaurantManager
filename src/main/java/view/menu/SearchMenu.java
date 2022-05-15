@@ -5,7 +5,7 @@
 package view.menu;
 
 import dao.MenuDAO;
-import model.Menuuu;
+import model.Menu;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -27,7 +27,7 @@ public class SearchMenu extends JFrame {
         // TODO add your code here
         String search= tfSearch.getText().trim();
         MenuDAO md = new MenuDAO();
-        ArrayList<Menuuu> list = md.BindToSearch(search);
+        ArrayList<Menu> list = md.BindToSearch(search);
         String[] columns = {"No", "Name", "Image", "Price", "Kind"};
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
@@ -52,7 +52,7 @@ public class SearchMenu extends JFrame {
     private void drinkbtn(ActionEvent e) {
         // TODO add your code here
         MenuDAO md = new MenuDAO();
-        ArrayList<Menuuu> list = md.BindtoDrinksearch();
+        ArrayList<Menu> list = md.BindtoDrinksearch();
         String[] columns = {"No", "Name", "Image", "Price", "Kind"};
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
@@ -77,7 +77,7 @@ public class SearchMenu extends JFrame {
     private void foodbtn(ActionEvent e) {
         // TODO add your code here
         MenuDAO md = new MenuDAO();
-        ArrayList<Menuuu> list = md.BindtoFoodsearch();
+        ArrayList<Menu> list = md.BindtoFoodsearch();
         String[] columns = {"No", "Name", "Image", "Price", "Kind"};
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){
@@ -102,7 +102,7 @@ public class SearchMenu extends JFrame {
     private void desertbtn(ActionEvent e) {
         // TODO add your code here
         MenuDAO md = new MenuDAO();
-        ArrayList<Menuuu> list = md.BindtoDessertsearch();
+        ArrayList<Menu> list = md.BindtoDessertsearch();
         String[] columns = {"No", "Name", "Image", "Price", "Kind"};
         Object[][] rows = new Object[list.size()][6];
         for(int i = 0; i < list.size(); i++){

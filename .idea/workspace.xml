@@ -11,31 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f505160b-01b9-4658-847e-0bde494ad218" name="Changes" comment="new commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RestaurantManager_jar/RestaurantManager.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RestaurantManager_jar/RestaurantManager.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CartItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CartItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/LabourDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/LabourDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Labour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Labour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Menuuu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Menuuu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/auth/AdminLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/auth/AdminLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/item/AddItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/item/AddItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/item/UpdateItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/item/UpdateItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/item/ViewItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/item/ViewItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/item/ViewItem.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/item/ViewItem.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/AddLabour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/AddLabour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/DeleteLabour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/DeleteLabour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/DeleteLabour.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/DeleteLabour.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/UpdateLabour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/UpdateLabour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/labour/ViewLabour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/labour/ViewLabour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MenuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MenuDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Menuuu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/AddMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/AddMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/order/OrderManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/order/OrderManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/report/Đề tài quản lý nhà hàng-Nguyễn Ngọc Đức Anh B19DCCN028.docx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/report/Đề tài quản lý nhà hàng-Nguyễn Ngọc Đức Anh B19DCCN028.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/MenuManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/MenuManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/ModifyMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/ModifyMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/SearchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/SearchMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +280,7 @@
       <workItem from="1652460648132" duration="550000" />
       <workItem from="1652491476737" duration="3792000" />
       <workItem from="1652522709441" duration="7131000" />
-      <workItem from="1652574941012" duration="11824000" />
+      <workItem from="1652574941012" duration="13195000" />
     </task>
     <task id="LOCAL-00001" summary="new commit">
       <created>1650035411554</created>
@@ -462,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652544130830</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="new commit">
+      <created>1652611949981</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1652611949981</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
