@@ -5,18 +5,19 @@ import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Item implements Serializable {
-    public String name;
-    public BigDecimal price;
-    public Integer quantity;
-    public java.sql.Date import_date;
-
+    private String name;
+    private BigDecimal price;
+    private Integer quantity;
+    private java.sql.Date import_date;
+    private String imported_by;
     public Item() {
     }
-    public Item(String name, BigDecimal price, Integer quantity, java.sql.Date import_date) {
+    public Item(String name, BigDecimal price, Integer quantity, java.sql.Date import_date,String imported_by) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.import_date = import_date;
+        this.imported_by = imported_by;
     }
 
     public String getName() {
@@ -49,5 +50,13 @@ public class Item implements Serializable {
 
     public void setImported_date(Date import_date) {
         this.import_date = import_date;
+    }
+
+    public String getImported_by() {
+        return imported_by;
+    }
+
+    public void setImported_by(String imported_by) {
+        this.imported_by = imported_by;
     }
 }

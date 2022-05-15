@@ -6,6 +6,7 @@ package view.item;
 
 import dao.ItemDAO;
 import model.Item;
+import view.auth.Login;
 
 import javax.swing.*;
 import java.awt.*;
@@ -52,7 +53,8 @@ public class AddItem extends JFrame {
             JOptionPane.showMessageDialog(this, "Please enter a valid quantity for the item!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        Item item = new Item(name,BigDecimal.valueOf(Double.parseDouble(price)),Integer.parseInt(quantity),date);
+        Item item;
+        item = new Item(name,BigDecimal.valueOf(Double.parseDouble(price)),Integer.parseInt(quantity),date, Login.getUsernametext());
         itemDAO.addItem(item);
         tfItemname.setText("");
         tfItemprice.setText("");
@@ -62,6 +64,7 @@ public class AddItem extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         label1 = new JLabel();
         tfItemname = new JTextField();
         label2 = new JLabel();
@@ -161,6 +164,7 @@ public class AddItem extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JLabel label1;
     private JTextField tfItemname;
     private JLabel label2;

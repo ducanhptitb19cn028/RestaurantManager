@@ -6,18 +6,24 @@ import java.sql.Date;
 
 public class Order implements Serializable {
     private int quantity;
-
-
     private BigDecimal price;
     private java.sql.Date orderday;
+    private String staff;
 
-    public Order(  int quantity, BigDecimal price,java.sql.Date orderday) {
+    public Order(int quantity, BigDecimal price, java.sql.Date orderday, String staff) {
         this.quantity = quantity;
         this.price = price;
         this.orderday= orderday;
+        this.staff = staff;
     }
 
+    public String getStaff() {
+        return staff;
+    }
 
+    public void setStaff(String staff) {
+        this.staff = staff;
+    }
 
     public int getQuantity() {
         return quantity;

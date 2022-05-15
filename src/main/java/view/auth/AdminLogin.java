@@ -5,19 +5,14 @@
 package view.auth;
 
 
-import view.MainMenu;
-import dao.db.DBConnection;
-import view.labour.LabourManagement;
+import dao.UserDAO;
 import model.User;
+import view.MainMenu;
+import view.labour.LabourManagement;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 /**
  * @author unknown
@@ -40,46 +35,20 @@ public class AdminLogin extends JFrame {
         // TODO add your code here
         String username = tfUsername.getText();
         String password = String.valueOf(tfPassword.getPassword());
-        user = getAuthenticatedAdminUser(username, password);
-
-        if (user != null) {
-            this.dispose();
-            LabourManagement lm = new LabourManagement();
-            lm.setVisible(true);
-        }
-        else {
-            JOptionPane.showMessageDialog(AdminLogin.this,
-                    "Email or Password invalid!!!",
+        User user = new User(username,password);
+        UserDAO userDAO = new UserDAO();
+        if (username.isEmpty() || password.isEmpty() || !userDAO.getAuthenticatedAdmin(user) ){
+            JOptionPane.showMessageDialog(this,
+                    "You may be not admin!!!",
                     "Try again",
                     JOptionPane.ERROR_MESSAGE);
+            return;
         }
+        this.dispose();
+        LabourManagement lm = new LabourManagement();
+        lm.setVisible(true);
     }
-    private User getAuthenticatedAdminUser(String username, String password) {
-        User user = null;
-        try {
-            Connection conn = DBConnection.getConnection();
-            Statement stm= conn.createStatement();
-            String query = "SELECT*FROM tblusers WHERE username=? AND password=? AND position='Boss'";
-            PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, username);
-            ps.setString(2,password);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                user = new User();
-                user.name=rs.getString("name");
-                user.email=rs.getString("email");
-                user.phone=rs.getString("phone");
-                user.username=rs.getString("username");
-                user.password=rs.getString("password");
-            }
-            stm.close();
-            conn.close();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return user;
-    }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         label1 = new JLabel();

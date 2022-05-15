@@ -3,13 +3,13 @@ package model;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    public String phone;
+    private String phone;
 
-    public String name;
-    public String email;
-    public String position;
-    public String username;
-    public String password;
+    private String name;
+    private String email;
+    private String position;
+    private String username;
+    private String password;
     public User() {
 
     }

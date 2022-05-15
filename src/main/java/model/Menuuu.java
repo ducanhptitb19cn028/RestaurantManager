@@ -4,11 +4,12 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class Menuuu implements Serializable {
-    public int id;
-    public String mname;
-    public byte[] images;
-    public BigDecimal price;
-    public String kind;
+    private int id;
+    private String mname;
+    private byte[] images;
+    private BigDecimal price;
+    private String kind;
+    private String added_by;
 
     public Menuuu(int id, String mname, byte[] images, BigDecimal price, String kind) {
         this.id = id;
@@ -17,7 +18,9 @@ public class Menuuu implements Serializable {
         this.price = price;
         this.kind = kind;
     }
-
+    public Menuuu(String added_by){
+        this.added_by = added_by;
+    }
     public String getMname() {
         return mname;
     }
@@ -56,5 +59,13 @@ public class Menuuu implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getAdded_by() {
+        return added_by;
+    }
+
+    public void setAdded_by(String added_by) {
+        this.added_by = added_by;
     }
 }

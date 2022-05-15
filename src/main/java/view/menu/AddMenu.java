@@ -71,6 +71,7 @@ public class AddMenu extends JFrame {
         String price = tfPrice.getText().trim();
         String kind = tfKind.getText().trim();
         String quantity = tfCQuantity.getText().trim();
+        Menuuu menu = new Menuuu(Login.getUsernametext());
         if (name.isEmpty()){
             JOptionPane.showMessageDialog(this, "Name field can not be empty!!","Try again",JOptionPane.ERROR_MESSAGE);
             return;
@@ -97,7 +98,7 @@ public class AddMenu extends JFrame {
             ps.setBlob(2,is);
             ps.setBigDecimal(3, BigDecimal.valueOf(Double.parseDouble(price)));
             ps.setString(4,kind);
-            ps.setString(5, Login.getUsernametext());
+            ps.setString(5,menu.getAdded_by());
             int i = ps.executeUpdate();
             if (i>0){
                 JOptionPane.showMessageDialog(this,"Menu has been added!!!");

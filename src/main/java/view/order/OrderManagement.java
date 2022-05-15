@@ -12,6 +12,7 @@ import model.CartItem;
 import model.Order;
 import view.MainMenu;
 import dao.db.DBConnection;
+import view.auth.Login;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -142,7 +143,7 @@ public class OrderManagement extends JFrame {
         // TODO add your code here
         Date dtToday = new Date();
         java.sql.Date date = new java.sql.Date(dtToday.getTime());
-        Order or = new Order(cartDAO.getSumQuantity(), cartDAO.getTotalPrice(), date);
+        Order or = new Order(cartDAO.getSumQuantity(), cartDAO.getTotalPrice(), date, Login.getUsernametext());
         OrderDAO.InsertOrderBill(cartDAO,or);
         JOptionPane.showMessageDialog(this, "Order successfully!!");
         this.dispose();
@@ -153,6 +154,7 @@ public class OrderManagement extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         scrollPane1 = new JScrollPane();
         tablecartitem = new JTable();
         scrollPane2 = new JScrollPane();
@@ -302,6 +304,7 @@ public class OrderManagement extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JScrollPane scrollPane1;
     private JTable tablecartitem;
     private JScrollPane scrollPane2;

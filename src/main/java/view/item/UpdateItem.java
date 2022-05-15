@@ -7,6 +7,7 @@ package view.item;
 import dao.ItemDAO;
 import dao.db.DBConnection;
 import model.Item;
+import view.auth.Login;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -81,7 +82,7 @@ public class UpdateItem extends JFrame {
         }
         Date dtToday = new Date();
         java.sql.Date date = new java.sql.Date(dtToday.getTime());
-        Item item = new Item(newName,BigDecimal.valueOf(Double.parseDouble(newPrice)),Integer.parseInt(newQuantity),date);
+        Item item = new Item(newName,BigDecimal.valueOf(Double.parseDouble(newPrice)),Integer.parseInt(newQuantity),date, Login.getUsernametext());
         itemDAO.updateItem(name,item);
         tfName.setText("");
         tfNewname.setText("");

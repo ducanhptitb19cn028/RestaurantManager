@@ -26,6 +26,26 @@ public class UserDAO {
         }
         return false;
     }
+    public static boolean getAuthenticatedAdmin(User user){
+        try {
+            Connection conn = DBConnection.getConnection();
+            Statement stm= conn.createStatement();
+            String query = "SELECT*FROM tblusers WHERE username=? AND password=? AND position='Boss'";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getPassword());
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return true;
+            }
+            stm.close();
+            conn.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public static void insert(User user) {
         try{
             String query = "INSERT INTO tblusers (name,email,phone,position,username,password) VALUES"+"(?,?,?,?,?,?)";

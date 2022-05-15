@@ -6,6 +6,7 @@ package view.labour;
 
 import dao.LabourDAO;
 import model.Labour;
+import view.auth.AdminLogin;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,7 +64,7 @@ public class AddLabour extends JFrame {
             JOptionPane.showMessageDialog(this, "Salary is empty or not valid","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        Labour labour = new Labour(name,dob,email,phone,address,position,BigDecimal.valueOf(Double.parseDouble(sal.trim())));
+        Labour labour = new Labour(name,dob,email,phone,address,position,BigDecimal.valueOf(Double.parseDouble(sal.trim())), AdminLogin.getUsernametext());
         labctrl.addLabour(labour);
         tfName.setText("");
         tfBirthday.setText("");
@@ -72,7 +73,7 @@ public class AddLabour extends JFrame {
         tfAddress.setText("");
         tfPosition.setText("");
         tfSalary.setText("");
-        JOptionPane.showMessageDialog(this, "Item has been added");
+        JOptionPane.showMessageDialog(this, "Labour has been added");
     }
 
     private void backbtn(ActionEvent e) {

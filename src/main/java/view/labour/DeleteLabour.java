@@ -58,7 +58,7 @@ public class DeleteLabour extends JFrame {
         JOptionPane.showMessageDialog(this, "Delete labour successfully!!!");
     }
 
-    private void button2(ActionEvent e) {
+    private void backbtn(ActionEvent e) {
         // TODO add your code here
         this.dispose();
         LabourManagement lm = new LabourManagement();
@@ -71,10 +71,11 @@ public class DeleteLabour extends JFrame {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
         deletebtn = new JButton();
-        button2 = new JButton();
+        backbtn = new JButton();
         label2 = new JLabel();
         tfName = new JTextField();
 
@@ -100,9 +101,9 @@ public class DeleteLabour extends JFrame {
         deletebtn.setText("Delete");
         deletebtn.addActionListener(e -> deletebtn(e));
 
-        //---- button2 ----
-        button2.setText("Back");
-        button2.addActionListener(e -> button2(e));
+        //---- backbtn ----
+        backbtn.setText("Back");
+        backbtn.addActionListener(e -> backbtn(e));
 
         //---- label2 ----
         label2.setText("Enter name that need delete");
@@ -120,7 +121,7 @@ public class DeleteLabour extends JFrame {
                     .addGap(61, 61, 61)
                     .addComponent(deletebtn)
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
-                    .addComponent(button2)
+                    .addComponent(backbtn)
                     .addGap(95, 95, 95))
                 .addGroup(contentPaneLayout.createSequentialGroup()
                     .addContainerGap()
@@ -141,7 +142,7 @@ public class DeleteLabour extends JFrame {
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(deletebtn)
-                        .addComponent(button2))
+                        .addComponent(backbtn))
                     .addGap(30, 30, 30))
         );
         pack();
@@ -150,10 +151,11 @@ public class DeleteLabour extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JScrollPane scrollPane1;
     private JTable table1;
     private JButton deletebtn;
-    private JButton button2;
+    private JButton backbtn;
     private JLabel label2;
     private JTextField tfName;
     // JFormDesigner - End of variables declaration  //GEN-END:variables

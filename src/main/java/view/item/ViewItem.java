@@ -38,7 +38,7 @@ public class ViewItem extends JFrame {
                 ob[1]=rs.getBigDecimal("price");
                 ob[2]=rs.getInt("quantity");
                 ob[3]=rs.getDate("import_date");
-
+                ob[4]=rs.getString("imported_by");
                 table.addRow(ob);
             }
         } catch (SQLException | ClassNotFoundException e) {
@@ -72,6 +72,7 @@ public class ViewItem extends JFrame {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         scrollPane1 = new JScrollPane();
         itemtb = new JTable();
         backbtn = new JButton();
@@ -96,11 +97,11 @@ public class ViewItem extends JFrame {
                 new Object[][] {
                 },
                 new String[] {
-                    "name", "price", "quantity", "import_date"
+                    "name", "price", "quantity", "import_date", "imported_by"
                 }
             ) {
                 Class<?>[] columnTypes = new Class<?>[] {
-                    String.class, Object.class, Object.class, Object.class
+                    String.class, Object.class, Object.class, Object.class, Object.class
                 };
                 @Override
                 public Class<?> getColumnClass(int columnIndex) {
@@ -183,6 +184,7 @@ public class ViewItem extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JScrollPane scrollPane1;
     private JTable itemtb;
     private JButton backbtn;

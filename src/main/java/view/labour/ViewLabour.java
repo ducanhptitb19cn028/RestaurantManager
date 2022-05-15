@@ -79,6 +79,7 @@ public class ViewLabour extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - Duc Anh
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
         label1 = new JLabel();
@@ -175,6 +176,7 @@ public class ViewLabour extends JFrame {
         vl.setVisible(true);
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Duc Anh
     private JScrollPane scrollPane1;
     private JTable table1;
     private JLabel label1;

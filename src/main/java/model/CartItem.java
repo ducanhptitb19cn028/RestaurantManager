@@ -6,10 +6,10 @@ import java.math.BigDecimal;
 
 public class CartItem implements Serializable {
     
-    public String cname;
-    public BigDecimal price;
+    private String cname;
+    private BigDecimal price;
 
-    public int quantity;
+    private int quantity;
     public CartItem(){
 
     }

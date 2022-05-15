@@ -9,7 +9,7 @@ import java.awt.event.*;
 import dao.LabourDAO;
 import model.Labour;
 import dao.db.DBConnection;
-
+import view.auth.AdminLogin;
 import java.awt.*;
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -97,7 +97,7 @@ public class UpdateLabour extends JFrame {
             JOptionPane.showMessageDialog(this, "Salary is empty or not valid","Try again",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        Labour labour = new Labour(newname,newbirth,newemail,newphone,newaddress,newposition, BigDecimal.valueOf(Double.parseDouble(newsalary)));
+        Labour labour = new Labour(newname,newbirth,newemail,newphone,newaddress,newposition, BigDecimal.valueOf(Double.parseDouble(newsalary)), AdminLogin.getUsernametext());
         labourDAO.updateLabours(labour,name);
         tfName.setText("");
         tfNewName.setText("");

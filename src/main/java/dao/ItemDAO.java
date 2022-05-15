@@ -17,11 +17,11 @@ public class ItemDAO {
             Connection conn = DBConnection.getConnection();
             String query = "INSERT INTO tblitem(name,price,quantity,import_date,imported_by) VALUES(?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, item.name);
-            ps.setBigDecimal(2,item.price);
-            ps.setInt(3,item.quantity);
-            ps.setDate(4,item.import_date);
-            ps.setString(5, Login.getUsernametext());
+            ps.setString(1, item.getName());
+            ps.setBigDecimal(2,item.getPrice());
+            ps.setInt(3,item.getQuantity());
+            ps.setDate(4,item.getImported_date());
+            ps.setString(5, item.getImported_by());
             ps.executeUpdate();
             conn.close();
 
@@ -34,9 +34,9 @@ public class ItemDAO {
             Connection conn= DBConnection.getConnection();
             String query = "UPDATE tblitem SET name = ?, price = ?, quantity = ?  WHERE name = ?";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1,item.name);
-            ps.setBigDecimal(2,item.price);
-            ps.setInt(3,item.quantity);
+            ps.setString(1,item.getName());
+            ps.setBigDecimal(2,item.getPrice());
+            ps.setInt(3,item.getQuantity());
             ps.setString(4,name);
             ps.executeUpdate();
             conn.close();

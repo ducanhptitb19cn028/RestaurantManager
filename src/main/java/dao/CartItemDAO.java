@@ -16,9 +16,9 @@ public class CartItemDAO {
             Connection conn = DBConnection.getConnection();
             String query = "INSERT INTO tblcartitem(cname,price,cquantity) VALUES(?,?,?)";
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, cartItem.cname);
-            ps.setBigDecimal(2,cartItem.price);
-            ps.setInt(3,cartItem.quantity);
+            ps.setString(1, cartItem.getCname());
+            ps.setBigDecimal(2,cartItem.getPrice());
+            ps.setInt(3,cartItem.getQuantity());
             ps.executeUpdate();
             conn.close();
 
